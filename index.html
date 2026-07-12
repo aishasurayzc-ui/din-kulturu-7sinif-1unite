@@ -437,6 +437,51 @@
 .ozel-toast{ position:fixed; bottom:24px; left:50%; transform:translateX(-50%); background:#22333b; color:#fff; padding:14px 22px; border-radius:24px; box-shadow:0 6px 20px rgba(0,0,0,.3); z-index:1000; animation:ozelToastGir .3s ease; font-weight:bold; max-width:80vw; text-align:center; }
 @keyframes ozelToastGir{ from{opacity:0; transform:translateX(-50%) translateY(20px);} to{opacity:1; transform:translateX(-50%) translateY(0);} }
 
+
+/* ===================== 6 BOLUMLU ZENGINLESTIRME (Konu Ozeti) ===================== */
+.zb-kutu{ border-radius:12px; padding:16px 18px; margin:16px 0; box-shadow:0 3px 10px rgba(0,0,0,.08); }
+.zb-baslik{ font-weight:bold; font-size:1.05em; margin:0 0 8px; display:flex; align-items:center; gap:8px; }
+.zb-metin{ margin:0; line-height:1.55; font-size:.97em; }
+.zb-merak{ background:#f3ecfb; border-left:6px solid #7c3aed; }
+.zb-merak .zb-baslik{ color:#7c3aed; }
+.zb-yanlis{ background:#fff0f0; border-left:6px solid #d62828; }
+.zb-yanlis .zb-baslik{ color:#d62828; }
+.zb-yanlis .zb-yanlis-satir{ color:#a31515; margin:4px 0; }
+.zb-yanlis .zb-dogru-satir{ color:#2d6a4f; margin:4px 0; font-weight:bold; }
+.zb-ornek{ background:#eafaf1; border-left:6px solid #40916c; }
+.zb-ornek .zb-baslik{ color:#40916c; }
+.zb-dusun{ background:#fff4e6; border-left:6px solid #f4a261; }
+.zb-dusun .zb-baslik{ color:#c9740b; }
+.zb-aile{ background:#fdeef5; border-left:6px solid #d6336c; }
+.zb-aile .zb-baslik{ color:#d6336c; }
+.zb-degerlendir{ background:#eaf2ff; border-left:6px solid #2a6f97; }
+.zb-degerlendir .zb-baslik{ color:#2a6f97; }
+.zb-degerlendir ul{ list-style:none; padding:0; margin:0; }
+.zb-degerlendir li{ display:flex; align-items:flex-start; gap:8px; margin:8px 0; font-size:.95em; line-height:1.4; }
+.zb-degerlendir input[type=checkbox]{ width:18px; height:18px; margin-top:2px; flex-shrink:0; accent-color:#2a6f97; cursor:pointer; }
+.zb-degerlendir label{ cursor:pointer; }
+
+/* ===================== 6 BOLUMLU ZENGINLESTIRME (Sunum slaytlari) ===================== */
+.s-zb{ color:#22333b; }
+.s-zb-merak{ background:#f3ecfb; }
+.s-zb-yanlis{ background:#fff0f0; }
+.s-zb-ornek{ background:#eafaf1; }
+.s-zb-dusun{ background:#fff4e6; }
+.s-zb-aile{ background:#fdeef5; }
+.s-zb-degerlendir{ background:#eaf2ff; }
+.zb-slayt-ust{ font-weight:bold; letter-spacing:1.5px; font-size:.95em; margin-bottom:14px; }
+.s-zb-merak .zb-slayt-ust{ color:#7c3aed; }
+.s-zb-yanlis .zb-slayt-ust{ color:#d62828; }
+.s-zb-ornek .zb-slayt-ust{ color:#40916c; }
+.s-zb-dusun .zb-slayt-ust{ color:#c9740b; }
+.s-zb-aile .zb-slayt-ust{ color:#d6336c; }
+.s-zb-degerlendir .zb-slayt-ust{ color:#2a6f97; }
+.zb-slayt-metin{ font-size:1.1em; line-height:1.5; max-width:640px; }
+.zb-slayt-yanlis{ color:#a31515; font-size:1em; margin:6px 0; }
+.zb-slayt-dogru{ color:#2d6a4f; font-size:1em; margin:6px 0; font-weight:bold; }
+.zb-slayt-liste{ list-style:none; padding:0; margin:0; text-align:left; max-width:600px; }
+.zb-slayt-liste li{ font-size:1em; margin:8px 0; }
+
 </style>
 </head>
 <body>
@@ -579,10 +624,11 @@
       <li>Hurafe ve batıl inanç, akla aykırı, din adına öne sürülen uydurma sözlerdir.</li><li>Sihir, hile yapıp insanları aldatmadır; fal, geleceği öğrenmek amacıyla nesnelere bakarak anlam çıkarmadır.</li><li>Bunlar genelde cahillikten ve dinî bilgi eksikliğinden kaynaklanır, kişisel ve toplumsal zararları vardır.</li>
     </ul>
   </div>
-  <div class="sunum-slayt s-zg s-zg-bilgi" data-tip="zg">
-    <p class="zg-slayt-ust">💡 BİLGİ KUTUSU</p>
-    <p class="zg-slayt-metin">Dört büyük melek vardır: Cebrail (vahiy getirir), Mikâil (rızık/tabiat olayları), İsrafil (sûra üfler), Azrail (canları alır).</p>
+  <div class="sunum-slayt s-zb s-zb-merak" data-tip="zb">
+    <p class="zb-slayt-ust">🤔 MERAK ETTİN Mİ?</p>
+    <p class="zb-slayt-metin">Kiramen Kâtibin melekleri, insanların sağında ve solunda bulunup yaptıkları her iyilik ve kötülüğü kaydeder.</p>
   </div>
+
 
 
   <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--mavi)">
@@ -591,10 +637,12 @@
       <li>Melek, nurdan yaratılmış, cinsiyeti olmayan, Allah'ın emirlerine tam itaat eden, görülemeyen varlıktır.</li><li>Meleklere iman, imanın altı şartından biridir.</li><li>Dört büyük melek: Cebrail (vahiy meleği, Allah'ın emirlerini peygamberlere iletir), Azrail (ölüm meleği, canları alır), Mikâil (tabiat olaylarını düzenler, rızkı dağıtır), İsrafil (sûra üfleyen melek).</li>
     </ul>
   </div>
-  <div class="sunum-slayt s-zg s-zg-merak" data-tip="zg">
-    <p class="zg-slayt-ust">🤔 MERAK ETTİN Mİ?</p>
-    <p class="zg-slayt-metin">Kiramen Kâtibin melekleri ne iş yapar? İnsanların sağında ve solunda bulunup yaptıkları her iyilik ve kötülüğü kaydederler.</p>
+  <div class="sunum-slayt s-zb s-zb-yanlis" data-tip="zb">
+    <p class="zb-slayt-ust">❌ YANLIŞ BİLİNENLER</p>
+    <p class="zb-slayt-yanlis">❌ Bazıları meleklerin insan gibi cinsiyeti ve iradesi olan varlıklar olduğunu düşünür.</p>
+    <p class="zb-slayt-dogru">✅ Melekler nurdan yaratılmış, cinsiyeti olmayan, Allah'ın emirlerine tam itaat eden, günah işlemeyen varlıklardır.</p>
   </div>
+
 
 
   <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--mavi)">
@@ -603,6 +651,11 @@
       <li>Diğer melekler: Kiramen Kâtibin (yazıcı melekler, iyilik-kötülükleri kaydeder), Hafaza (koruyucu melekler), Rahmet melekleri (müminler için dua eder), Münker ve Nekir (sorgu melekleri, kabirde sorgular).</li>
     </ul>
   </div>
+  <div class="sunum-slayt s-zb s-zb-ornek" data-tip="zb">
+    <p class="zb-slayt-ust">🌍 GERÇEK HAYATTAN BİR ÖRNEK</p>
+    <p class="zb-slayt-metin">Bir öğrencinin, kimse görmese bile doğru davranması, "her an kaydedildiğimiz" bilincinin günlük hayattaki güzel bir yansımasıdır.</p>
+  </div>
+
 
   <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--kirmizi)">
     <h3>📌 Dünya ve Ahiret Hayatı, Ahiretin Aşamaları</h3>
@@ -610,10 +663,11 @@
       <li>Ahiret, dünya yaşamından sonraki hayattır; imanın şartlarından biridir.</li><li>Aşamaları sırasıyla: Ölüm (ecel: belirlenen zaman) → Berzah (kabir hayatı, sadece insanlar için geçerlidir) → Kıyamet (evrenin yok olması, İsrafil'in ilk üflemesi) → Diriliş/Baas (İsrafil'in ikinci üflemesi) →…</li>
     </ul>
   </div>
-  <div class="sunum-slayt s-zg s-zg-soru" data-tip="zg">
-    <p class="zg-slayt-ust">❓ GÜNÜN SORUSU</p>
-    <p class="zg-slayt-metin">Ahirete inanmak, bugünkü davranışlarını nasıl etkiliyor?</p>
+  <div class="sunum-slayt s-zb s-zb-dusun" data-tip="zb">
+    <p class="zb-slayt-ust">💭 DÜŞÜN VE CEVAPLA</p>
+    <p class="zb-slayt-metin">Ahirete inanmak, bugünkü davranışlarını nasıl etkiliyor?</p>
   </div>
+
 
 
   <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--turkuaz)">
@@ -622,10 +676,11 @@
       <li>Ahiret inancı olan insan iyilik yapmaya gayret eder, hesap vereceğinin bilinciyle hareket eder, sabreder ve Allah'ın affediciliğine güvenir.</li><li>Hz. İsa, Nasıra'da babasız doğdu; annesi Hz. Meryem'dir (Kur'an'da adı geçen tek kadın).</li><li>İsrailoğullarına gönderildi, kendisine İncil verildi. Ona inanan 12 kişiye havari denir.</li>
     </ul>
   </div>
-  <div class="sunum-slayt s-zg s-zg-hayat" data-tip="zg">
-    <p class="zg-slayt-ust">🌍 GERÇEK HAYAT BAĞLANTISI</p>
-    <p class="zg-slayt-metin">Her davranışımızın kaydedildiğini bilmek, günlük hayatta daha dikkatli ve sorumlu davranmamızı sağlar.</p>
+  <div class="sunum-slayt s-zb s-zb-aile" data-tip="zb">
+    <p class="zb-slayt-ust">👨‍👩‍👧 AİLEMLE YAPIYORUM</p>
+    <p class="zb-slayt-metin">Ailenle birlikte dört büyük meleğin (Cebrail, Mikâil, İsrafil, Azrail) görevlerini konuşup küçük bir kart oyunu hazırlayın.</p>
   </div>
+
 
 
   <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--turkuaz)">
@@ -634,6 +689,16 @@
       <li>Yahudiler onu öldürmek istedi ama Allah onu kurtardı, benzeri öldürüldü. Sonradan Hristiyanlar teslis inancını ortaya attı.</li><li>Nâs suresi, Kur'an'ın 114. ve son suresidir, Mekke'de inmiştir, 6 ayettir. Felak suresiyle birlikte "Muavvizeteyn" denir.</li><li>Şeytanın ve insanların kalbine vesvese veren varlıkların şerrinden Allah'a sığınmayı öğütler.</li>
     </ul>
   </div>
+  <div class="sunum-slayt s-zb s-zb-degerlendir" data-tip="zb">
+    <p class="zb-slayt-ust">✅ KENDİMİ DEĞERLENDİRİYORUM</p>
+    <ul class="zb-slayt-liste">
+      <li>☐ Dört büyük meleği ve görevlerini sayabilirim.</li>
+      <li>☐ Ahiret inancının insan davranışlarına etkisini açıklayabilirim.</li>
+      <li>☐ Kıyamet ve ahiret kavramlarını biliyorum.</li>
+      <li>☐ Her davranışımın önemli olduğu bilinciyle hareket ediyorum.</li>
+    </ul>
+  </div>
+
 
   <div class="sunum-slayt s-kavram" data-tip="kavram">
     <h3>🔑 Önemli Kavramlar (1/2)</h3>
@@ -700,10 +765,11 @@
     <p><b>Âlem</b>, akıl ve duyu organlarıyla bilinebilen veya varlığı düşünülebilen, Allah'ın dışındaki tüm varlıklara verilen isimdir. <b>Gayb</b>, gözle görülemeyen, duyularımızla bilgi edinemeyeceğimiz varlıklar âlemidir; bunu ancak Allah'ın bildirmesiyle biliriz. Gayb âleminde <b>cin</b> (irade sahibi, ateşten yaratılan varlık), <b>şeytan</b> (Âdem'e secde emrine isyan edip kovulan varlık) ve <b>melek</b>ler bulunur.</p>
     <p><b>Hurafe</b> ve batıl inanç, akla aykırı, din adına öne sürülen uydurma sözlerdir. <b>Sihir</b>, hile yapıp insanları aldatmadır; <b>fal</b>, geleceği öğrenmek amacıyla nesnelere bakarak anlam çıkarmadır. Bunlar genelde cahillikten ve dinî bilgi eksikliğinden kaynaklanır, kişisel ve toplumsal zararları vardır.</p>
   </div>
-  <div class="zg-kutu zg-bilgi">
-    <p class="zg-baslik">💡 Bilgi Kutusu</p>
-    <p class="zg-metin">Dört büyük melek vardır: Cebrail (vahiy getirir), Mikâil (rızık/tabiat olayları), İsrafil (sûra üfler), Azrail (canları alır).</p>
+  <div class="zb-kutu zb-merak">
+    <p class="zb-baslik">🤔 Merak Ettin mi?</p>
+    <p class="zb-metin">Kiramen Kâtibin melekleri, insanların sağında ve solunda bulunup yaptıkları her iyilik ve kötülüğü kaydeder.</p>
   </div>
+
 
 
   <div class="kutu-panel">
@@ -711,20 +777,31 @@
     <p><b>Melek</b>, nurdan yaratılmış, cinsiyeti olmayan, Allah'ın emirlerine tam itaat eden, görülemeyen varlıktır. Meleklere iman, imanın altı şartından biridir. Dört büyük melek: <b>Cebrail</b> (vahiy meleği, Allah'ın emirlerini peygamberlere iletir), <b>Azrail</b> (ölüm meleği, canları alır), <b>Mikâil</b> (tabiat olaylarını düzenler, rızkı dağıtır), <b>İsrafil</b> (sûra üfleyen melek).</p>
     <p>Diğer melekler: <b>Kiramen Kâtibin</b> (yazıcı melekler, iyilik-kötülükleri kaydeder), <b>Hafaza</b> (koruyucu melekler), Rahmet melekleri (müminler için dua eder), <b>Münker ve Nekir</b> (sorgu melekleri, kabirde sorgular).</p>
   </div>
-  <div class="zg-kutu zg-merak">
-    <p class="zg-baslik">🤔 Merak Ettin mi?</p>
-    <p class="zg-metin">Kiramen Kâtibin melekleri ne iş yapar? İnsanların sağında ve solunda bulunup yaptıkları her iyilik ve kötülüğü kaydederler.</p>
+  <div class="zb-kutu zb-yanlis">
+    <p class="zb-baslik">❌ Yanlış Bilinenler</p>
+    <p class="zb-metin zb-yanlis-satir">❌ Bazıları meleklerin insan gibi cinsiyeti ve iradesi olan varlıklar olduğunu düşünür.</p>
+    <p class="zb-metin zb-dogru-satir">✅ Melekler nurdan yaratılmış, cinsiyeti olmayan, Allah'ın emirlerine tam itaat eden, günah işlemeyen varlıklardır.</p>
   </div>
+  <div class="zb-kutu zb-ornek">
+    <p class="zb-baslik">🌍 Gerçek Hayattan Bir Örnek</p>
+    <p class="zb-metin">Bir öğrencinin, kimse görmese bile doğru davranması, "her an kaydedildiğimiz" bilincinin günlük hayattaki güzel bir yansımasıdır.</p>
+  </div>
+
 
 
   <div class="kutu-panel">
     <h3 style="color:var(--mavi)">3️⃣ Dünya ve Ahiret Hayatı, Ahiretin Aşamaları</h3>
     <p><b>Ahiret</b>, dünya yaşamından sonraki hayattır; imanın şartlarından biridir. Aşamaları sırasıyla: Ölüm (<b>ecel</b>: belirlenen zaman) → <b>Berzah</b> (kabir hayatı, sadece insanlar için geçerlidir) → <b>Kıyamet</b> (evrenin yok olması, İsrafil'in ilk üflemesi) → Diriliş/<b>Baas</b> (İsrafil'in ikinci üflemesi) → <b>Haşir</b>/<b>Mahşer</b> (toplanma) → Hesap/<b>Mizan</b> (amellerin tartılması) → <b>Cennet</b> veya <b>Cehennem</b>.</p>
   </div>
-  <div class="zg-kutu zg-soru">
-    <p class="zg-baslik">❓ Günün Sorusu</p>
-    <p class="zg-metin">Ahirete inanmak, bugünkü davranışlarını nasıl etkiliyor?</p>
+  <div class="zb-kutu zb-dusun">
+    <p class="zb-baslik">💭 Düşün ve Cevapla</p>
+    <p class="zb-metin">Ahirete inanmak, bugünkü davranışlarını nasıl etkiliyor?</p>
   </div>
+  <div class="zb-kutu zb-aile">
+    <p class="zb-baslik">👨‍👩‍👧 Ailemle Yapıyorum</p>
+    <p class="zb-metin">Ailenle birlikte dört büyük meleğin (Cebrail, Mikâil, İsrafil, Azrail) görevlerini konuşup küçük bir kart oyunu hazırlayın.</p>
+  </div>
+
 
 
   <div class="kutu-panel">
@@ -732,10 +809,16 @@
     <p>Ahiret inancı olan insan iyilik yapmaya gayret eder, hesap vereceğinin bilinciyle hareket eder, sabreder ve Allah'ın affediciliğine güvenir. <b>Hz. İsa</b>, Nasıra'da babasız doğdu; annesi Hz. Meryem'dir (Kur'an'da adı geçen tek kadın). İsrailoğullarına gönderildi, kendisine <b>İncil</b> verildi. Ona inanan 12 kişiye <b>havari</b> denir. Yahudiler onu öldürmek istedi ama Allah onu kurtardı, benzeri öldürüldü. Sonradan Hristiyanlar <b>teslis</b> inancını ortaya attı.</p>
     <p><b>Nâs suresi</b>, Kur'an'ın 114. ve son suresidir, Mekke'de inmiştir, 6 ayettir. Felak suresiyle birlikte "Muavvizeteyn" denir. Şeytanın ve insanların kalbine <b>vesvese</b> veren varlıkların şerrinden Allah'a sığınmayı öğütler.</p>
   </div>
-  <div class="zg-kutu zg-hayat">
-    <p class="zg-baslik">🌍 Gerçek Hayat Bağlantısı</p>
-    <p class="zg-metin">Her davranışımızın kaydedildiğini bilmek, günlük hayatta daha dikkatli ve sorumlu davranmamızı sağlar.</p>
+  <div class="zb-kutu zb-degerlendir">
+    <p class="zb-baslik">✅ Kendimi Değerlendiriyorum</p>
+    <ul>
+      <li><input type="checkbox" id="deg_7-1_0" onchange="degKaydet('7-1')"><label for="deg_7-1_0">Dört büyük meleği ve görevlerini sayabilirim.</label></li>
+      <li><input type="checkbox" id="deg_7-1_1" onchange="degKaydet('7-1')"><label for="deg_7-1_1">Ahiret inancının insan davranışlarına etkisini açıklayabilirim.</label></li>
+      <li><input type="checkbox" id="deg_7-1_2" onchange="degKaydet('7-1')"><label for="deg_7-1_2">Kıyamet ve ahiret kavramlarını biliyorum.</label></li>
+      <li><input type="checkbox" id="deg_7-1_3" onchange="degKaydet('7-1')"><label for="deg_7-1_3">Her davranışımın önemli olduğu bilinciyle hareket ediyorum.</label></li>
+    </ul>
   </div>
+
 
 </section>
 
@@ -3182,6 +3265,27 @@ function ozelOnay(mesaj, callback){
   btnler[0].onclick = ()=>{ arka.remove(); callback(true); };
   btnler[1].onclick = ()=>{ arka.remove(); callback(false); };
 }
+
+
+// ===================== KENDIMI DEGERLENDIRIYORUM - CHECKBOX KAYDI =====================
+function degOku(uniteKimlik){
+  try{ return JSON.parse(localStorage.getItem('dkabDegerlendirme_'+uniteKimlik)) || {}; }catch(e){ return {}; }
+}
+function degKaydet(uniteKimlik){
+  const durum = {};
+  document.querySelectorAll('[id^="deg_'+uniteKimlik+'_"]').forEach(cb=>{ durum[cb.id] = cb.checked; });
+  try{ localStorage.setItem('dkabDegerlendirme_'+uniteKimlik, JSON.stringify(durum)); }catch(e){}
+}
+function degYukle(uniteKimlik){
+  const durum = degOku(uniteKimlik);
+  Object.keys(durum).forEach(id=>{
+    const cb = document.getElementById(id);
+    if(cb) cb.checked = durum[id];
+  });
+}
+document.addEventListener('DOMContentLoaded', function(){
+  if(typeof UNITE_KIMLIK !== 'undefined') degYukle(UNITE_KIMLIK);
+});
 
 </script>
 </body>

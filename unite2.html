@@ -437,6 +437,51 @@
 .ozel-toast{ position:fixed; bottom:24px; left:50%; transform:translateX(-50%); background:#22333b; color:#fff; padding:14px 22px; border-radius:24px; box-shadow:0 6px 20px rgba(0,0,0,.3); z-index:1000; animation:ozelToastGir .3s ease; font-weight:bold; max-width:80vw; text-align:center; }
 @keyframes ozelToastGir{ from{opacity:0; transform:translateX(-50%) translateY(20px);} to{opacity:1; transform:translateX(-50%) translateY(0);} }
 
+
+/* ===================== 6 BOLUMLU ZENGINLESTIRME (Konu Ozeti) ===================== */
+.zb-kutu{ border-radius:12px; padding:16px 18px; margin:16px 0; box-shadow:0 3px 10px rgba(0,0,0,.08); }
+.zb-baslik{ font-weight:bold; font-size:1.05em; margin:0 0 8px; display:flex; align-items:center; gap:8px; }
+.zb-metin{ margin:0; line-height:1.55; font-size:.97em; }
+.zb-merak{ background:#f3ecfb; border-left:6px solid #7c3aed; }
+.zb-merak .zb-baslik{ color:#7c3aed; }
+.zb-yanlis{ background:#fff0f0; border-left:6px solid #d62828; }
+.zb-yanlis .zb-baslik{ color:#d62828; }
+.zb-yanlis .zb-yanlis-satir{ color:#a31515; margin:4px 0; }
+.zb-yanlis .zb-dogru-satir{ color:#2d6a4f; margin:4px 0; font-weight:bold; }
+.zb-ornek{ background:#eafaf1; border-left:6px solid #40916c; }
+.zb-ornek .zb-baslik{ color:#40916c; }
+.zb-dusun{ background:#fff4e6; border-left:6px solid #f4a261; }
+.zb-dusun .zb-baslik{ color:#c9740b; }
+.zb-aile{ background:#fdeef5; border-left:6px solid #d6336c; }
+.zb-aile .zb-baslik{ color:#d6336c; }
+.zb-degerlendir{ background:#eaf2ff; border-left:6px solid #2a6f97; }
+.zb-degerlendir .zb-baslik{ color:#2a6f97; }
+.zb-degerlendir ul{ list-style:none; padding:0; margin:0; }
+.zb-degerlendir li{ display:flex; align-items:flex-start; gap:8px; margin:8px 0; font-size:.95em; line-height:1.4; }
+.zb-degerlendir input[type=checkbox]{ width:18px; height:18px; margin-top:2px; flex-shrink:0; accent-color:#2a6f97; cursor:pointer; }
+.zb-degerlendir label{ cursor:pointer; }
+
+/* ===================== 6 BOLUMLU ZENGINLESTIRME (Sunum slaytlari) ===================== */
+.s-zb{ color:#22333b; }
+.s-zb-merak{ background:#f3ecfb; }
+.s-zb-yanlis{ background:#fff0f0; }
+.s-zb-ornek{ background:#eafaf1; }
+.s-zb-dusun{ background:#fff4e6; }
+.s-zb-aile{ background:#fdeef5; }
+.s-zb-degerlendir{ background:#eaf2ff; }
+.zb-slayt-ust{ font-weight:bold; letter-spacing:1.5px; font-size:.95em; margin-bottom:14px; }
+.s-zb-merak .zb-slayt-ust{ color:#7c3aed; }
+.s-zb-yanlis .zb-slayt-ust{ color:#d62828; }
+.s-zb-ornek .zb-slayt-ust{ color:#40916c; }
+.s-zb-dusun .zb-slayt-ust{ color:#c9740b; }
+.s-zb-aile .zb-slayt-ust{ color:#d6336c; }
+.s-zb-degerlendir .zb-slayt-ust{ color:#2a6f97; }
+.zb-slayt-metin{ font-size:1.1em; line-height:1.5; max-width:640px; }
+.zb-slayt-yanlis{ color:#a31515; font-size:1em; margin:6px 0; }
+.zb-slayt-dogru{ color:#2d6a4f; font-size:1em; margin:6px 0; font-weight:bold; }
+.zb-slayt-liste{ list-style:none; padding:0; margin:0; text-align:left; max-width:600px; }
+.zb-slayt-liste li{ font-size:1em; margin:8px 0; }
+
 </style>
 </head>
 <body>
@@ -579,10 +624,11 @@
       <li>Haccın farzı üçtür: ihrama girmek, Arafat'ta vakfe yapmak, Kâbe'yi tavaf etmek.</li>
     </ul>
   </div>
-  <div class="sunum-slayt s-zg s-zg-bilgi" data-tip="zg">
-    <p class="zg-slayt-ust">💡 BİLGİ KUTUSU</p>
-    <p class="zg-slayt-metin">Hac ibadeti, hicretin dokuzuncu yılında farz kılınmıştır ve İslam'ın beş şartından biridir.</p>
+  <div class="sunum-slayt s-zb s-zb-merak" data-tip="zb">
+    <p class="zb-slayt-ust">🤔 MERAK ETTİN Mİ?</p>
+    <p class="zb-slayt-metin">Zemzem suyu, Hz. Hacer'in oğlu Hz. İsmail için su ararken ortaya çıkan bir Allah mucizesidir.</p>
   </div>
+
 
 
   <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--mavi)">
@@ -591,6 +637,12 @@
       <li>Mikat'ta ihrama girilir, telbiye duası okunur. Kâbe'nin etrafında bir kez dönmeye şavt, yedi kez dönmeye tavaf denir.</li><li>Say, Safa ile Merve arasında yapılan yürüyüştür. Vakfe, Arafat'ta beklemektir. Zemzem, Hz. Hacer'e ikram edilen kutsal sudur.</li><li>Hacerülesved, Kâbe'nin köşesindeki siyah taştır.</li>
     </ul>
   </div>
+  <div class="sunum-slayt s-zb s-zb-yanlis" data-tip="zb">
+    <p class="zb-slayt-ust">❌ YANLIŞ BİLİNENLER</p>
+    <p class="zb-slayt-yanlis">❌ Bazıları kurban ibadetinin sadece hayvan kesmekten ibaret olduğunu düşünür.</p>
+    <p class="zb-slayt-dogru">✅ Kur'an'a göre kurbanın eti ve kanı Allah'a ulaşmaz; asıl ulaşan kulun takvasıdır — kurban, paylaşma ve fedakârlık bilincidir.</p>
+  </div>
+
 
   <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--mavi)">
     <h3>📌 Haccın Yapılışı (2/2)</h3>
@@ -598,10 +650,11 @@
       <li>Mekânlar: Kâbe (yeryüzündeki ilk mabet, Beytullah), Safa ve Merve tepeleri, Müzdelife (Arafat-Mina arası, gece vakfesi), Mina (kurban kesme, şeytan taşlama yeri), Arafat (Arife Günü vakfe alanı).</li>
     </ul>
   </div>
-  <div class="sunum-slayt s-zg s-zg-merak" data-tip="zg">
-    <p class="zg-slayt-ust">🤔 MERAK ETTİN Mİ?</p>
-    <p class="zg-slayt-metin">Zemzem suyu nereden çıkmıştır? Hz. Hacer, oğlu Hz. İsmail için su ararken Allah'ın bir mucizesi olarak Zemzem kaynağı ortaya çıkmıştır.</p>
+  <div class="sunum-slayt s-zb s-zb-ornek" data-tip="zb">
+    <p class="zb-slayt-ust">🌍 GERÇEK HAYATTAN BİR ÖRNEK</p>
+    <p class="zb-slayt-metin">Kesilen kurban etinin üçe bölünüp (ev halkı, ihtiyaç sahipleri, komşu-misafir) paylaşılması, dayanışmanın somut bir örneğidir.</p>
   </div>
+
 
 
   <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--kirmizi)">
@@ -610,10 +663,11 @@
       <li>Umre, hac mevsimi dışında ihramlı olarak Kâbe'yi tavaf edip Safa-Merve arasında say yaptıktan sonra tıraş olup ihramdan çıkılan ibadettir.</li><li>Hac farz, umre sünnettir. Hac yılda bir kez, umre her zaman yapılabilir. Umrede vakfe, şeytan taşlama ve kurban kesme yoktur.</li>
     </ul>
   </div>
-  <div class="sunum-slayt s-zg s-zg-soru" data-tip="zg">
-    <p class="zg-slayt-ust">❓ GÜNÜN SORUSU</p>
-    <p class="zg-slayt-metin">Kurban ibadetinin paylaşma boyutu sence neden önemlidir?</p>
+  <div class="sunum-slayt s-zb s-zb-dusun" data-tip="zb">
+    <p class="zb-slayt-ust">💭 DÜŞÜN VE CEVAPLA</p>
+    <p class="zb-slayt-metin">Milyonlarca Müslümanın aynı anda, aynı kıyafetle (ihramla) Kâbe'yi tavaf etmesi, İslam'daki eşitlik anlayışını nasıl yansıtır?</p>
   </div>
+
 
 
   <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--turkuaz)">
@@ -622,6 +676,11 @@
       <li>Kurban, belli hayvanları belirli günlerde ibadet niyetiyle kesmektir; vacip bir ibadettir. Kurban Bayramı'nın ilk 3 günü kesilir.</li><li>Küçükbaş 1 kişi, büyükbaş 1-7 kişi, deve (5 yaş üstü) 1-7 kişi adına kesilebilir.</li><li>Kurban eti üçe ayrılır: ev halkı, ihtiyaç sahipleri, komşu-misafir.</li>
     </ul>
   </div>
+  <div class="sunum-slayt s-zb s-zb-aile" data-tip="zb">
+    <p class="zb-slayt-ust">👨‍👩‍👧 AİLEMLE YAPIYORUM</p>
+    <p class="zb-slayt-metin">Ailenle birlikte kurban bayramında komşularınıza veya ihtiyaç sahiplerine et ikram etmeyi planlayın.</p>
+  </div>
+
 
   <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--turkuaz)">
     <h3>📌 Kurban İbadeti, Hz. İsmail (as), Enam 162 (2/3)</h3>
@@ -629,10 +688,16 @@
       <li>Adak (nezir) bir dileğin gerçekleşmesiyle kesilen kurbandır; akika çocuk doğumunda şükür için kesilir.</li><li>Alevilik-Bektaşilikte kurban kesmeye tığlama denir.</li><li>Hz. İsmail, Hz. İbrahim ile Hz. Hacer'in oğludur; kurban edilmek istenmesiyle (Saffat suresi) kurban ibadeti başlamıştır.</li>
     </ul>
   </div>
-  <div class="sunum-slayt s-zg s-zg-hayat" data-tip="zg">
-    <p class="zg-slayt-ust">🌍 GERÇEK HAYAT BAĞLANTISI</p>
-    <p class="zg-slayt-metin">Kurban etinin üçe bölünüp paylaşılması (ev halkı, ihtiyaç sahipleri, komşu-misafir), bize günlük hayatta da paylaşmayı öğretir.</p>
+  <div class="sunum-slayt s-zb s-zb-degerlendir" data-tip="zb">
+    <p class="zb-slayt-ust">✅ KENDİMİ DEĞERLENDİRİYORUM</p>
+    <ul class="zb-slayt-liste">
+      <li>☐ Haccın farzlarını sayabilirim.</li>
+      <li>☐ Kurbanın anlamını ve amacını açıklayabilirim.</li>
+      <li>☐ Hac ile umre arasındaki farkı biliyorum.</li>
+      <li>☐ Paylaşma ve dayanışma bilinciyle hareket ediyorum.</li>
+    </ul>
   </div>
+
 
 
   <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--turkuaz)">
@@ -706,10 +771,11 @@
     <h3 style="color:var(--mavi)">1️⃣ İslam'da Hac İbadeti ve Önemi</h3>
     <p><b>Hac</b>, imkânı olan Müslümanların zilhicce ayında ihram giyerek, Arafat'ta vakfe yaparak ve Kâbe'yi tavaf ederek yaptıkları farz ibadettir. Haccın Hz. Âdem zamanında başladığı, Hz. İbrahim ile oğlu Hz. İsmail'in Kâbe'yi yeniden inşa ettiği bildirilir. Hac, Hicret'in 9. yılında farz kılınmıştır ve İslam'ın beş şartından biridir. Haccın farzı üçtür: ihrama girmek, Arafat'ta vakfe yapmak, Kâbe'yi tavaf etmek.</p>
   </div>
-  <div class="zg-kutu zg-bilgi">
-    <p class="zg-baslik">💡 Bilgi Kutusu</p>
-    <p class="zg-metin">Hac ibadeti, hicretin dokuzuncu yılında farz kılınmıştır ve İslam'ın beş şartından biridir.</p>
+  <div class="zb-kutu zb-merak">
+    <p class="zb-baslik">🤔 Merak Ettin mi?</p>
+    <p class="zb-metin">Zemzem suyu, Hz. Hacer'in oğlu Hz. İsmail için su ararken ortaya çıkan bir Allah mucizesidir.</p>
   </div>
+
 
 
   <div class="kutu-panel">
@@ -717,20 +783,31 @@
     <p><b>Mikat</b>'ta <b>ihram</b>a girilir, <b>telbiye</b> duası okunur. Kâbe'nin etrafında bir kez dönmeye <b>şavt</b>, yedi kez dönmeye <b>tavaf</b> denir. <b>Say</b>, Safa ile Merve arasında yapılan yürüyüştür. <b>Vakfe</b>, Arafat'ta beklemektir. <b>Zemzem</b>, Hz. Hacer'e ikram edilen kutsal sudur. <b>Hacerülesved</b>, Kâbe'nin köşesindeki siyah taştır.</p>
     <p>Mekânlar: <b>Kâbe</b> (yeryüzündeki ilk mabet, Beytullah), <b>Safa</b> ve <b>Merve</b> tepeleri, <b>Müzdelife</b> (Arafat-Mina arası, gece vakfesi), <b>Mina</b> (kurban kesme, şeytan taşlama yeri), <b>Arafat</b> (Arife Günü vakfe alanı).</p>
   </div>
-  <div class="zg-kutu zg-merak">
-    <p class="zg-baslik">🤔 Merak Ettin mi?</p>
-    <p class="zg-metin">Zemzem suyu nereden çıkmıştır? Hz. Hacer, oğlu Hz. İsmail için su ararken Allah'ın bir mucizesi olarak Zemzem kaynağı ortaya çıkmıştır.</p>
+  <div class="zb-kutu zb-yanlis">
+    <p class="zb-baslik">❌ Yanlış Bilinenler</p>
+    <p class="zb-metin zb-yanlis-satir">❌ Bazıları kurban ibadetinin sadece hayvan kesmekten ibaret olduğunu düşünür.</p>
+    <p class="zb-metin zb-dogru-satir">✅ Kur'an'a göre kurbanın eti ve kanı Allah'a ulaşmaz; asıl ulaşan kulun takvasıdır — kurban, paylaşma ve fedakârlık bilincidir.</p>
   </div>
+  <div class="zb-kutu zb-ornek">
+    <p class="zb-baslik">🌍 Gerçek Hayattan Bir Örnek</p>
+    <p class="zb-metin">Kesilen kurban etinin üçe bölünüp (ev halkı, ihtiyaç sahipleri, komşu-misafir) paylaşılması, dayanışmanın somut bir örneğidir.</p>
+  </div>
+
 
 
   <div class="kutu-panel">
     <h3 style="color:var(--mavi)">3️⃣ Umre ve Önemi</h3>
     <p><b>Umre</b>, hac mevsimi dışında ihramlı olarak Kâbe'yi tavaf edip Safa-Merve arasında say yaptıktan sonra tıraş olup ihramdan çıkılan ibadettir. Hac farz, umre sünnettir. Hac yılda bir kez, umre her zaman yapılabilir. Umrede vakfe, şeytan taşlama ve kurban kesme yoktur.</p>
   </div>
-  <div class="zg-kutu zg-soru">
-    <p class="zg-baslik">❓ Günün Sorusu</p>
-    <p class="zg-metin">Kurban ibadetinin paylaşma boyutu sence neden önemlidir?</p>
+  <div class="zb-kutu zb-dusun">
+    <p class="zb-baslik">💭 Düşün ve Cevapla</p>
+    <p class="zb-metin">Milyonlarca Müslümanın aynı anda, aynı kıyafetle (ihramla) Kâbe'yi tavaf etmesi, İslam'daki eşitlik anlayışını nasıl yansıtır?</p>
   </div>
+  <div class="zb-kutu zb-aile">
+    <p class="zb-baslik">👨‍👩‍👧 Ailemle Yapıyorum</p>
+    <p class="zb-metin">Ailenle birlikte kurban bayramında komşularınıza veya ihtiyaç sahiplerine et ikram etmeyi planlayın.</p>
+  </div>
+
 
 
   <div class="kutu-panel">
@@ -738,10 +815,16 @@
     <p><b>Kurban</b>, belli hayvanları belirli günlerde ibadet niyetiyle kesmektir; vacip bir ibadettir. Kurban Bayramı'nın ilk 3 günü kesilir. Küçükbaş 1 kişi, büyükbaş 1-7 kişi, deve (5 yaş üstü) 1-7 kişi adına kesilebilir. Kurban eti üçe ayrılır: ev halkı, ihtiyaç sahipleri, komşu-misafir. <b>Adak</b> (nezir) bir dileğin gerçekleşmesiyle kesilen kurbandır; <b>akika</b> çocuk doğumunda şükür için kesilir. Alevilik-Bektaşilikte kurban kesmeye <b>tığlama</b> denir.</p>
     <p><b>Hz. İsmail</b>, Hz. İbrahim ile Hz. Hacer'in oğludur; kurban edilmek istenmesiyle (Saffat suresi) kurban ibadeti başlamıştır. Kâbe'yi babasıyla inşa etmiştir. Kabri Hicr-i İsmail'dedir. <b>Enam suresi 162. ayet</b>, namazın, ibadetin, hayatın ve ölümün yalnızca Allah için olduğunu bildirir.</p>
   </div>
-  <div class="zg-kutu zg-hayat">
-    <p class="zg-baslik">🌍 Gerçek Hayat Bağlantısı</p>
-    <p class="zg-metin">Kurban etinin üçe bölünüp paylaşılması (ev halkı, ihtiyaç sahipleri, komşu-misafir), bize günlük hayatta da paylaşmayı öğretir.</p>
+  <div class="zb-kutu zb-degerlendir">
+    <p class="zb-baslik">✅ Kendimi Değerlendiriyorum</p>
+    <ul>
+      <li><input type="checkbox" id="deg_7-2_0" onchange="degKaydet('7-2')"><label for="deg_7-2_0">Haccın farzlarını sayabilirim.</label></li>
+      <li><input type="checkbox" id="deg_7-2_1" onchange="degKaydet('7-2')"><label for="deg_7-2_1">Kurbanın anlamını ve amacını açıklayabilirim.</label></li>
+      <li><input type="checkbox" id="deg_7-2_2" onchange="degKaydet('7-2')"><label for="deg_7-2_2">Hac ile umre arasındaki farkı biliyorum.</label></li>
+      <li><input type="checkbox" id="deg_7-2_3" onchange="degKaydet('7-2')"><label for="deg_7-2_3">Paylaşma ve dayanışma bilinciyle hareket ediyorum.</label></li>
+    </ul>
   </div>
+
 
 </section>
 
@@ -3188,6 +3271,27 @@ function ozelOnay(mesaj, callback){
   btnler[0].onclick = ()=>{ arka.remove(); callback(true); };
   btnler[1].onclick = ()=>{ arka.remove(); callback(false); };
 }
+
+
+// ===================== KENDIMI DEGERLENDIRIYORUM - CHECKBOX KAYDI =====================
+function degOku(uniteKimlik){
+  try{ return JSON.parse(localStorage.getItem('dkabDegerlendirme_'+uniteKimlik)) || {}; }catch(e){ return {}; }
+}
+function degKaydet(uniteKimlik){
+  const durum = {};
+  document.querySelectorAll('[id^="deg_'+uniteKimlik+'_"]').forEach(cb=>{ durum[cb.id] = cb.checked; });
+  try{ localStorage.setItem('dkabDegerlendirme_'+uniteKimlik, JSON.stringify(durum)); }catch(e){}
+}
+function degYukle(uniteKimlik){
+  const durum = degOku(uniteKimlik);
+  Object.keys(durum).forEach(id=>{
+    const cb = document.getElementById(id);
+    if(cb) cb.checked = durum[id];
+  });
+}
+document.addEventListener('DOMContentLoaded', function(){
+  if(typeof UNITE_KIMLIK !== 'undefined') degYukle(UNITE_KIMLIK);
+});
 
 </script>
 </body>

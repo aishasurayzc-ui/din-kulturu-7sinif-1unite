@@ -437,6 +437,51 @@
 .ozel-toast{ position:fixed; bottom:24px; left:50%; transform:translateX(-50%); background:#22333b; color:#fff; padding:14px 22px; border-radius:24px; box-shadow:0 6px 20px rgba(0,0,0,.3); z-index:1000; animation:ozelToastGir .3s ease; font-weight:bold; max-width:80vw; text-align:center; }
 @keyframes ozelToastGir{ from{opacity:0; transform:translateX(-50%) translateY(20px);} to{opacity:1; transform:translateX(-50%) translateY(0);} }
 
+
+/* ===================== 6 BOLUMLU ZENGINLESTIRME (Konu Ozeti) ===================== */
+.zb-kutu{ border-radius:12px; padding:16px 18px; margin:16px 0; box-shadow:0 3px 10px rgba(0,0,0,.08); }
+.zb-baslik{ font-weight:bold; font-size:1.05em; margin:0 0 8px; display:flex; align-items:center; gap:8px; }
+.zb-metin{ margin:0; line-height:1.55; font-size:.97em; }
+.zb-merak{ background:#f3ecfb; border-left:6px solid #7c3aed; }
+.zb-merak .zb-baslik{ color:#7c3aed; }
+.zb-yanlis{ background:#fff0f0; border-left:6px solid #d62828; }
+.zb-yanlis .zb-baslik{ color:#d62828; }
+.zb-yanlis .zb-yanlis-satir{ color:#a31515; margin:4px 0; }
+.zb-yanlis .zb-dogru-satir{ color:#2d6a4f; margin:4px 0; font-weight:bold; }
+.zb-ornek{ background:#eafaf1; border-left:6px solid #40916c; }
+.zb-ornek .zb-baslik{ color:#40916c; }
+.zb-dusun{ background:#fff4e6; border-left:6px solid #f4a261; }
+.zb-dusun .zb-baslik{ color:#c9740b; }
+.zb-aile{ background:#fdeef5; border-left:6px solid #d6336c; }
+.zb-aile .zb-baslik{ color:#d6336c; }
+.zb-degerlendir{ background:#eaf2ff; border-left:6px solid #2a6f97; }
+.zb-degerlendir .zb-baslik{ color:#2a6f97; }
+.zb-degerlendir ul{ list-style:none; padding:0; margin:0; }
+.zb-degerlendir li{ display:flex; align-items:flex-start; gap:8px; margin:8px 0; font-size:.95em; line-height:1.4; }
+.zb-degerlendir input[type=checkbox]{ width:18px; height:18px; margin-top:2px; flex-shrink:0; accent-color:#2a6f97; cursor:pointer; }
+.zb-degerlendir label{ cursor:pointer; }
+
+/* ===================== 6 BOLUMLU ZENGINLESTIRME (Sunum slaytlari) ===================== */
+.s-zb{ color:#22333b; }
+.s-zb-merak{ background:#f3ecfb; }
+.s-zb-yanlis{ background:#fff0f0; }
+.s-zb-ornek{ background:#eafaf1; }
+.s-zb-dusun{ background:#fff4e6; }
+.s-zb-aile{ background:#fdeef5; }
+.s-zb-degerlendir{ background:#eaf2ff; }
+.zb-slayt-ust{ font-weight:bold; letter-spacing:1.5px; font-size:.95em; margin-bottom:14px; }
+.s-zb-merak .zb-slayt-ust{ color:#7c3aed; }
+.s-zb-yanlis .zb-slayt-ust{ color:#d62828; }
+.s-zb-ornek .zb-slayt-ust{ color:#40916c; }
+.s-zb-dusun .zb-slayt-ust{ color:#c9740b; }
+.s-zb-aile .zb-slayt-ust{ color:#d6336c; }
+.s-zb-degerlendir .zb-slayt-ust{ color:#2a6f97; }
+.zb-slayt-metin{ font-size:1.1em; line-height:1.5; max-width:640px; }
+.zb-slayt-yanlis{ color:#a31515; font-size:1em; margin:6px 0; }
+.zb-slayt-dogru{ color:#2d6a4f; font-size:1em; margin:6px 0; font-weight:bold; }
+.zb-slayt-liste{ list-style:none; padding:0; margin:0; text-align:left; max-width:600px; }
+.zb-slayt-liste li{ font-size:1em; margin:8px 0; }
+
 </style>
 </head>
 <body>
@@ -572,6 +617,11 @@
       <li>Hz. Peygamber'in iki yönü vardır: insani yönü ve peygamberlik yönü.</li><li>O, bizler gibi bir kul olarak yaratılmış, kulluk görevini hayatı boyunca yerine getirmiştir.</li><li>Bir anne babadan doğmuş, ticaretle uğraşmış, aile kurmuş, Mekke'de yoksulların hakkını koruyan Hilfülfudul (Erdemliler Topluluğu)'e katılmıştır.</li>
     </ul>
   </div>
+  <div class="sunum-slayt s-zb s-zb-merak" data-tip="zb">
+    <p class="zb-slayt-ust">🤔 MERAK ETTİN Mİ?</p>
+    <p class="zb-slayt-metin">Hz. Muhammed'e "rahmet peygamberi" denmesinin sebebi, Kur'an'daki "Seni ancak âlemlere rahmet olarak gönderdik" ayetidir.</p>
+  </div>
+
 
   <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--yesil)">
     <h3>📌 Allah'ın Kulu Hz. Muhammed (2/2)</h3>
@@ -579,10 +629,12 @@
       <li>Müşrikler onun bir melek olmasını beklerken Kur'an "De ki: Ben de ancak sizin gibi bir insanım" (Fussilet 6) diyerek bunun yanlışlığını bildirmiştir.</li><li>Kelimeişehadette önce "Allah'ın kulu" sonra "Resulü" denilmesi bu sırayı vurgular.</li>
     </ul>
   </div>
-  <div class="sunum-slayt s-zg s-zg-bilgi" data-tip="zg">
-    <p class="zg-slayt-ust">💡 BİLGİ KUTUSU</p>
-    <p class="zg-slayt-metin">Hz. Muhammed'e "rahmet peygamberi" denmesinin sebebi, Kur'an'daki "Seni ancak âlemlere rahmet olarak gönderdik." ayetidir.</p>
+  <div class="sunum-slayt s-zb s-zb-yanlis" data-tip="zb">
+    <p class="zb-slayt-ust">❌ YANLIŞ BİLİNENLER</p>
+    <p class="zb-slayt-yanlis">❌ Bazıları Hz. Muhammed'in sadece dini bir lider olduğunu, sıradan bir insan olmadığını düşünür.</p>
+    <p class="zb-slayt-dogru">✅ Kur'an'a göre Hz. Muhammed de bizim gibi bir insandı; farkı, kendisine vahiy gelmesiydi — bu, onu bizim için daha da ulaşılabilir bir örnek yapar.</p>
   </div>
+
 
 
   <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--mavi)">
@@ -591,10 +643,11 @@
       <li>Elçi/Resul/Nebi: insanları hak dine çağıran, vahiy alan peygamber.</li><li>Risalet=elçilik görevi, Nübüvvet=peygamberlik makamı, Tebliğ=vahyi eksiksiz bildirme. Hz.</li><li>Muhammed 40 yaşında peygamber oldu; Hatemülenbiya (peygamberlerin sonuncusu)dır — ondan sonra peygamber gelmeyecektir (Ahzab 40).</li><li>O bir Rahmet (incelik, şefkat, merhamet) peygamberidir: "Biz seni âlemlere ancak rahmet olarak gönderdik" (Enbiya 107).</li>
     </ul>
   </div>
-  <div class="sunum-slayt s-zg s-zg-merak" data-tip="zg">
-    <p class="zg-slayt-ust">🤔 MERAK ETTİN Mİ?</p>
-    <p class="zg-slayt-metin">Hz. Muhammed Taif'te taşlandığında ne yapmıştır? Cebrail'in "isterseniz bu halkı helak edeyim" teklifine karşılık, onları helak etmek istemediğini söylemiştir.</p>
+  <div class="sunum-slayt s-zb s-zb-ornek" data-tip="zb">
+    <p class="zb-slayt-ust">🌍 GERÇEK HAYATTAN BİR ÖRNEK</p>
+    <p class="zb-slayt-metin">Hz. Muhammed'in Taif'te taşlanmasına rağmen halkına beddua etmeyip affetmesi, günümüzde çatışma çözümüne örnek olabilecek somut bir davranıştır.</p>
   </div>
+
 
 
   <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--mavi)">
@@ -603,10 +656,11 @@
       <li>Taif'te taşlanmasına rağmen halkına beddua etmemiştir.</li><li>Kur'an'ı açıklayıcıdır: namazı, haccı, orucu (siyah-beyaz iplik=gece-gündüz), "zulüm"ü (=şirk) açıklamıştır.</li><li>Uyarıcı (Kur'an'da nezir) ve Müjdeleyici (Kur'an'da beşir)dir.</li><li>Güzel ahlakı tamamlamak için gönderilmiştir: "Sen elbette yüce bir ahlak üzeresin" (Kalem 4). Hz.</li>
     </ul>
   </div>
-  <div class="sunum-slayt s-zg s-zg-soru" data-tip="zg">
-    <p class="zg-slayt-ust">❓ GÜNÜN SORUSU</p>
-    <p class="zg-slayt-metin">Hz. Muhammed'in affedicilik örneğinden ne öğrendin?</p>
+  <div class="sunum-slayt s-zb s-zb-dusun" data-tip="zb">
+    <p class="zb-slayt-ust">💭 DÜŞÜN VE CEVAPLA</p>
+    <p class="zb-slayt-metin">Hz. Muhammed'in affedicilik örneğinden ne öğrendin? Bunu hayatına nasıl uygulayabilirsin?</p>
   </div>
+
 
 
   <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--mavi)">
@@ -615,10 +669,11 @@
       <li>Hatice peygamberlik gelince onu güzel ahlakından dolayı teselli etmiştir.</li><li>Vahiy meleği Cebrail, ilk vahiy Hira mağarasında geldi. Medine'de Mescid-i Nebevi'yi inşa etti. Hz.</li><li>Peygamber'in söz, fiil ve onayları Sünnettir.</li>
     </ul>
   </div>
-  <div class="sunum-slayt s-zg s-zg-hayat" data-tip="zg">
-    <p class="zg-slayt-ust">🌍 GERÇEK HAYAT BAĞLANTISI</p>
-    <p class="zg-slayt-metin">Kızgın anlarımızda bile affedici ve sabırlı olmayı, Hz. Muhammed'in hayatından örnek alabiliriz.</p>
+  <div class="sunum-slayt s-zb s-zb-aile" data-tip="zb">
+    <p class="zb-slayt-ust">👨‍👩‍👧 AİLEMLE YAPIYORUM</p>
+    <p class="zb-slayt-metin">Ailenle birlikte Hz. Muhammed'in bir hadisini (örneğin "Size iki emanet bırakıyorum...") okuyup anlamı üzerine sohbet edin.</p>
   </div>
+
 
 
   <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--kirmizi)">
@@ -627,6 +682,16 @@
       <li>Kâfirun suresi, Mekke döneminde inmiş, 6 ayetlik suredir; "kâfirun" (inkârcılar) kelimesinden adını alır.</li><li>Müşrikler "bir sene bizim ilahlarımıza, bir sene de biz seninkine tapalım" teklif edince inmiştir.</li><li>Mesajı: şirk ile iman asla bir arada olamaz, tevhitten taviz verilemez; "Sizin dininiz size, benim dinim de banadır" diyerek herkesin inancının sorumluluğu kendisine aittir.</li>
     </ul>
   </div>
+  <div class="sunum-slayt s-zb s-zb-degerlendir" data-tip="zb">
+    <p class="zb-slayt-ust">✅ KENDİMİ DEĞERLENDİRİYORUM</p>
+    <ul class="zb-slayt-liste">
+      <li>☐ Hz. Muhammed'in 'rahmet peygamberi' olarak anılma sebebini açıklayabilirim.</li>
+      <li>☐ Taif olayını anlatabilirim.</li>
+      <li>☐ Hz. Muhammed'in beşer (insan) yönünü açıklayabilirim.</li>
+      <li>☐ Hz. Muhammed'i örnek alarak affedici olmaya çalışıyorum.</li>
+    </ul>
+  </div>
+
 
   <div class="sunum-slayt s-kavram" data-tip="kavram">
     <h3>🔑 Önemli Kavramlar (1/2)</h3>
@@ -692,10 +757,16 @@
     <h3 style="color:var(--mavi)">1️⃣ Allah'ın Kulu Hz. Muhammed</h3>
     <p>Hz. Peygamber'in iki yönü vardır: insani yönü ve peygamberlik yönü. O, bizler gibi bir <b>kul</b> olarak yaratılmış, kulluk görevini hayatı boyunca yerine getirmiştir. Bir anne babadan doğmuş, ticaretle uğraşmış, aile kurmuş, Mekke'de yoksulların hakkını koruyan <b>Hilfülfudul</b> (Erdemliler Topluluğu)'e katılmıştır. Müşrikler onun bir melek olmasını beklerken Kur'an "De ki: Ben de ancak sizin gibi bir insanım" (Fussilet 6) diyerek bunun yanlışlığını bildirmiştir. <b>Kelimeişehadet</b>te önce "Allah'ın kulu" sonra "Resulü" denilmesi bu sırayı vurgular.</p>
   </div>
-  <div class="zg-kutu zg-bilgi">
-    <p class="zg-baslik">💡 Bilgi Kutusu</p>
-    <p class="zg-metin">Hz. Muhammed'e "rahmet peygamberi" denmesinin sebebi, Kur'an'daki "Seni ancak âlemlere rahmet olarak gönderdik." ayetidir.</p>
+  <div class="zb-kutu zb-merak">
+    <p class="zb-baslik">🤔 Merak Ettin mi?</p>
+    <p class="zb-metin">Hz. Muhammed'e "rahmet peygamberi" denmesinin sebebi, Kur'an'daki "Seni ancak âlemlere rahmet olarak gönderdik" ayetidir.</p>
   </div>
+  <div class="zb-kutu zb-yanlis">
+    <p class="zb-baslik">❌ Yanlış Bilinenler</p>
+    <p class="zb-metin zb-yanlis-satir">❌ Bazıları Hz. Muhammed'in sadece dini bir lider olduğunu, sıradan bir insan olmadığını düşünür.</p>
+    <p class="zb-metin zb-dogru-satir">✅ Kur'an'a göre Hz. Muhammed de bizim gibi bir insandı; farkı, kendisine vahiy gelmesiydi — bu, onu bizim için daha da ulaşılabilir bir örnek yapar.</p>
+  </div>
+
 
 
   <div class="kutu-panel">
@@ -703,24 +774,35 @@
     <p><b>Elçi/Resul/Nebi</b>: insanları hak dine çağıran, vahiy alan peygamber. <b>Risalet</b>=elçilik görevi, <b>Nübüvvet</b>=peygamberlik makamı, <b>Tebliğ</b>=vahyi eksiksiz bildirme. Hz. Muhammed 40 yaşında peygamber oldu; <b>Hatemülenbiya</b> (peygamberlerin sonuncusu)dır — ondan sonra peygamber gelmeyecektir (Ahzab 40). O bir <b>Rahmet</b> (incelik, şefkat, merhamet) peygamberidir: "Biz seni âlemlere ancak rahmet olarak gönderdik" (Enbiya 107). Taif'te taşlanmasına rağmen halkına beddua etmemiştir.</p>
     <p>Kur'an'ı açıklayıcıdır: namazı, haccı, orucu (siyah-beyaz iplik=gece-gündüz), "zulüm"ü (=şirk) açıklamıştır. <b>Uyarıcı</b> (Kur'an'da <b>nezir</b>) ve <b>Müjdeleyici</b> (Kur'an'da <b>beşir</b>)dir. Güzel <b>ahlak</b>ı tamamlamak için gönderilmiştir: "Sen elbette yüce bir ahlak üzeresin" (Kalem 4). Hz. <b>Hatice</b> peygamberlik gelince onu güzel ahlakından dolayı teselli etmiştir. Vahiy meleği <b>Cebrail</b>, ilk vahiy <b>Hira</b> mağarasında geldi. Medine'de <b>Mescid-i Nebevi</b>'yi inşa etti. Hz. Peygamber'in söz, fiil ve onayları <b>Sünnet</b>tir.</p>
   </div>
-  <div class="zg-kutu zg-merak">
-    <p class="zg-baslik">🤔 Merak Ettin mi?</p>
-    <p class="zg-metin">Hz. Muhammed Taif'te taşlandığında ne yapmıştır? Cebrail'in "isterseniz bu halkı helak edeyim" teklifine karşılık, onları helak etmek istemediğini söylemiştir.</p>
+  <div class="zb-kutu zb-ornek">
+    <p class="zb-baslik">🌍 Gerçek Hayattan Bir Örnek</p>
+    <p class="zb-metin">Hz. Muhammed'in Taif'te taşlanmasına rağmen halkına beddua etmeyip affetmesi, günümüzde çatışma çözümüne örnek olabilecek somut bir davranıştır.</p>
   </div>
-  <div class="zg-kutu zg-soru">
-    <p class="zg-baslik">❓ Günün Sorusu</p>
-    <p class="zg-metin">Hz. Muhammed'in affedicilik örneğinden ne öğrendin?</p>
+  <div class="zb-kutu zb-dusun">
+    <p class="zb-baslik">💭 Düşün ve Cevapla</p>
+    <p class="zb-metin">Hz. Muhammed'in affedicilik örneğinden ne öğrendin? Bunu hayatına nasıl uygulayabilirsin?</p>
   </div>
+
 
 
   <div class="kutu-panel">
     <h3 style="color:var(--mavi)">3️⃣ Bir Sure Tanıyorum: Kâfirun Suresi</h3>
     <p><b>Kâfirun suresi</b>, Mekke döneminde inmiş, 6 ayetlik suredir; "kâfirun" (inkârcılar) kelimesinden adını alır. Müşrikler "bir sene bizim ilahlarımıza, bir sene de biz seninkine tapalım" teklif edince inmiştir. Mesajı: şirk ile iman asla bir arada olamaz, tevhitten taviz verilemez; "Sizin dininiz size, benim dinim de banadır" diyerek herkesin inancının sorumluluğu kendisine aittir.</p>
   </div>
-  <div class="zg-kutu zg-hayat">
-    <p class="zg-baslik">🌍 Gerçek Hayat Bağlantısı</p>
-    <p class="zg-metin">Kızgın anlarımızda bile affedici ve sabırlı olmayı, Hz. Muhammed'in hayatından örnek alabiliriz.</p>
+  <div class="zb-kutu zb-aile">
+    <p class="zb-baslik">👨‍👩‍👧 Ailemle Yapıyorum</p>
+    <p class="zb-metin">Ailenle birlikte Hz. Muhammed'in bir hadisini (örneğin "Size iki emanet bırakıyorum...") okuyup anlamı üzerine sohbet edin.</p>
   </div>
+  <div class="zb-kutu zb-degerlendir">
+    <p class="zb-baslik">✅ Kendimi Değerlendiriyorum</p>
+    <ul>
+      <li><input type="checkbox" id="deg_7-4_0" onchange="degKaydet('7-4')"><label for="deg_7-4_0">Hz. Muhammed'in 'rahmet peygamberi' olarak anılma sebebini açıklayabilirim.</label></li>
+      <li><input type="checkbox" id="deg_7-4_1" onchange="degKaydet('7-4')"><label for="deg_7-4_1">Taif olayını anlatabilirim.</label></li>
+      <li><input type="checkbox" id="deg_7-4_2" onchange="degKaydet('7-4')"><label for="deg_7-4_2">Hz. Muhammed'in beşer (insan) yönünü açıklayabilirim.</label></li>
+      <li><input type="checkbox" id="deg_7-4_3" onchange="degKaydet('7-4')"><label for="deg_7-4_3">Hz. Muhammed'i örnek alarak affedici olmaya çalışıyorum.</label></li>
+    </ul>
+  </div>
+
 
 </section>
 
@@ -3166,6 +3248,27 @@ function ozelOnay(mesaj, callback){
   btnler[0].onclick = ()=>{ arka.remove(); callback(true); };
   btnler[1].onclick = ()=>{ arka.remove(); callback(false); };
 }
+
+
+// ===================== KENDIMI DEGERLENDIRIYORUM - CHECKBOX KAYDI =====================
+function degOku(uniteKimlik){
+  try{ return JSON.parse(localStorage.getItem('dkabDegerlendirme_'+uniteKimlik)) || {}; }catch(e){ return {}; }
+}
+function degKaydet(uniteKimlik){
+  const durum = {};
+  document.querySelectorAll('[id^="deg_'+uniteKimlik+'_"]').forEach(cb=>{ durum[cb.id] = cb.checked; });
+  try{ localStorage.setItem('dkabDegerlendirme_'+uniteKimlik, JSON.stringify(durum)); }catch(e){}
+}
+function degYukle(uniteKimlik){
+  const durum = degOku(uniteKimlik);
+  Object.keys(durum).forEach(id=>{
+    const cb = document.getElementById(id);
+    if(cb) cb.checked = durum[id];
+  });
+}
+document.addEventListener('DOMContentLoaded', function(){
+  if(typeof UNITE_KIMLIK !== 'undefined') degYukle(UNITE_KIMLIK);
+});
 
 </script>
 </body>

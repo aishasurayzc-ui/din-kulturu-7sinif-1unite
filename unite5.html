@@ -437,6 +437,51 @@
 .ozel-toast{ position:fixed; bottom:24px; left:50%; transform:translateX(-50%); background:#22333b; color:#fff; padding:14px 22px; border-radius:24px; box-shadow:0 6px 20px rgba(0,0,0,.3); z-index:1000; animation:ozelToastGir .3s ease; font-weight:bold; max-width:80vw; text-align:center; }
 @keyframes ozelToastGir{ from{opacity:0; transform:translateX(-50%) translateY(20px);} to{opacity:1; transform:translateX(-50%) translateY(0);} }
 
+
+/* ===================== 6 BOLUMLU ZENGINLESTIRME (Konu Ozeti) ===================== */
+.zb-kutu{ border-radius:12px; padding:16px 18px; margin:16px 0; box-shadow:0 3px 10px rgba(0,0,0,.08); }
+.zb-baslik{ font-weight:bold; font-size:1.05em; margin:0 0 8px; display:flex; align-items:center; gap:8px; }
+.zb-metin{ margin:0; line-height:1.55; font-size:.97em; }
+.zb-merak{ background:#f3ecfb; border-left:6px solid #7c3aed; }
+.zb-merak .zb-baslik{ color:#7c3aed; }
+.zb-yanlis{ background:#fff0f0; border-left:6px solid #d62828; }
+.zb-yanlis .zb-baslik{ color:#d62828; }
+.zb-yanlis .zb-yanlis-satir{ color:#a31515; margin:4px 0; }
+.zb-yanlis .zb-dogru-satir{ color:#2d6a4f; margin:4px 0; font-weight:bold; }
+.zb-ornek{ background:#eafaf1; border-left:6px solid #40916c; }
+.zb-ornek .zb-baslik{ color:#40916c; }
+.zb-dusun{ background:#fff4e6; border-left:6px solid #f4a261; }
+.zb-dusun .zb-baslik{ color:#c9740b; }
+.zb-aile{ background:#fdeef5; border-left:6px solid #d6336c; }
+.zb-aile .zb-baslik{ color:#d6336c; }
+.zb-degerlendir{ background:#eaf2ff; border-left:6px solid #2a6f97; }
+.zb-degerlendir .zb-baslik{ color:#2a6f97; }
+.zb-degerlendir ul{ list-style:none; padding:0; margin:0; }
+.zb-degerlendir li{ display:flex; align-items:flex-start; gap:8px; margin:8px 0; font-size:.95em; line-height:1.4; }
+.zb-degerlendir input[type=checkbox]{ width:18px; height:18px; margin-top:2px; flex-shrink:0; accent-color:#2a6f97; cursor:pointer; }
+.zb-degerlendir label{ cursor:pointer; }
+
+/* ===================== 6 BOLUMLU ZENGINLESTIRME (Sunum slaytlari) ===================== */
+.s-zb{ color:#22333b; }
+.s-zb-merak{ background:#f3ecfb; }
+.s-zb-yanlis{ background:#fff0f0; }
+.s-zb-ornek{ background:#eafaf1; }
+.s-zb-dusun{ background:#fff4e6; }
+.s-zb-aile{ background:#fdeef5; }
+.s-zb-degerlendir{ background:#eaf2ff; }
+.zb-slayt-ust{ font-weight:bold; letter-spacing:1.5px; font-size:.95em; margin-bottom:14px; }
+.s-zb-merak .zb-slayt-ust{ color:#7c3aed; }
+.s-zb-yanlis .zb-slayt-ust{ color:#d62828; }
+.s-zb-ornek .zb-slayt-ust{ color:#40916c; }
+.s-zb-dusun .zb-slayt-ust{ color:#c9740b; }
+.s-zb-aile .zb-slayt-ust{ color:#d6336c; }
+.s-zb-degerlendir .zb-slayt-ust{ color:#2a6f97; }
+.zb-slayt-metin{ font-size:1.1em; line-height:1.5; max-width:640px; }
+.zb-slayt-yanlis{ color:#a31515; font-size:1em; margin:6px 0; }
+.zb-slayt-dogru{ color:#2d6a4f; font-size:1em; margin:6px 0; font-weight:bold; }
+.zb-slayt-liste{ list-style:none; padding:0; margin:0; text-align:left; max-width:600px; }
+.zb-slayt-liste li{ font-size:1em; margin:8px 0; }
+
 </style>
 </head>
 <body>
@@ -572,6 +617,11 @@
       <li>Din anlayışı, insanların Allah'ın buyruklarını algılama, yorumlama ve uygulama biçimidir.</li><li>Din değişmez (Kur'an ve sünnet), din anlayışı ise kişiye, topluma ve döneme göre değişebilir.</li><li>Farklılıkların sebepleri: farklı coğrafya/kültürler, dinin temel kaynaklarında yoruma açık hükümler, sosyal-siyasi-insani sebepler, teknolojik gelişmeler, tarihteki savaş ve göçler.</li>
     </ul>
   </div>
+  <div class="sunum-slayt s-zb s-zb-merak" data-tip="zb">
+    <p class="zb-slayt-ust">🤔 MERAK ETTİN Mİ?</p>
+    <p class="zb-slayt-metin">Tasavvuf, İslam'ın manevi/ruhi yönünü öne çıkaran bir yorumdur; Mevlana, Yunus Emre, Hacı Bektaş Veli gibi önemli isimleri vardır.</p>
+  </div>
+
 
   <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--mavi)">
     <h3>📌 İslam Düşüncesinde Yorum Biçimleri (1/2)</h3>
@@ -579,10 +629,12 @@
       <li>Mezhep, bir âlimin dinin ayrıntılarına ilişkin oluşturduğu görüşlerin bütünüdür.</li><li>Üç grupta incelenir: İtikadi yorumlar (inançla ilgili — itikat, tevhit): Matüridilik (Ebû Mansur Matüridi), Eşarilik (Ebülhasan Eşâri), Şiilik (Hz.</li><li>Ali'nin halifeliği).</li>
     </ul>
   </div>
-  <div class="sunum-slayt s-zg s-zg-bilgi" data-tip="zg">
-    <p class="zg-slayt-ust">💡 BİLGİ KUTUSU</p>
-    <p class="zg-slayt-metin">Tasavvuf, İslam'ın manevi/ruhi yönünü öne çıkaran bir yorumdur; Mevlana, Yunus Emre, Hacı Bektaş Veli gibi önemli isimleri vardır.</p>
+  <div class="sunum-slayt s-zb s-zb-yanlis" data-tip="zb">
+    <p class="zb-slayt-ust">❌ YANLIŞ BİLİNENLER</p>
+    <p class="zb-slayt-yanlis">❌ Bazıları farklı mezhep ve yorumların İslam'ı bölen, olumsuz bir durum olduğunu düşünür.</p>
+    <p class="zb-slayt-dogru">✅ Farklı yorumlar, Kur'an ve sünnetin farklı âlim ve coğrafyalarda yorumlanmasından doğan doğal bir zenginliktir; temel iman esasları ortaktır.</p>
   </div>
+
 
 
   <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--mavi)">
@@ -591,10 +643,11 @@
       <li>Fıkhi yorumlar (ibadet/muamelat — fıkıh): Hanefilik (Ebu Hanife, Türkiye), Malikilik (Malik bin Enes, Afrika), Şafiilik (İmam Şafii, Mısır/GD Anadolu), Hanbelilik (Ahmet bin Hanbel, Suudi Arabistan), Caferilik (Cafer…</li><li>Tasavvufi yorumlar (ahlak).</li>
     </ul>
   </div>
-  <div class="sunum-slayt s-zg s-zg-merak" data-tip="zg">
-    <p class="zg-slayt-ust">🤔 MERAK ETTİN Mİ?</p>
-    <p class="zg-slayt-metin">Neden İslam düşüncesinde farklı mezhepler ortaya çıkmıştır? Farklı coğrafya, kültür ve âlimlerin Kur'an ve sünneti farklı yöntemlerle yorumlamasından kaynaklanır.</p>
+  <div class="sunum-slayt s-zb s-zb-ornek" data-tip="zb">
+    <p class="zb-slayt-ust">🌍 GERÇEK HAYATTAN BİR ÖRNEK</p>
+    <p class="zb-slayt-metin">Farklı bölgelerdeki camilerin mimarisinin farklı olması gibi, İslam düşüncesindeki farklı yorumlar da aynı temel inancın farklı kültürel ifadeleridir.</p>
   </div>
+
 
 
   <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--kirmizi)">
@@ -603,10 +656,11 @@
       <li>Tasavvuf, İslam'ın ruhi/manevi yönünü öne çıkarır.</li><li>Şeyh (mürşit) tekkede dervişlere önderlik eder, mürit onu takip eder, tekke/dergâhta eğitim alınır.</li><li>Başlıca yorumlar: Yesevilik (Hoca Ahmet Yesevi, Divan-ı Hikmet), Kadirilik (Abdülkadir Geylani, Fütûhu'l-Gayb), Mevlevilik (Mevlana Celaleddin Rumi, Mesnevi, sema ayini, Şebiarus), Nakşibendilik (Bahaeddin Nakşibend),…</li>
     </ul>
   </div>
-  <div class="sunum-slayt s-zg s-zg-soru" data-tip="zg">
-    <p class="zg-slayt-ust">❓ GÜNÜN SORUSU</p>
-    <p class="zg-slayt-metin">Farklı görüşlere sahip insanlarla nasıl hoşgörüyle iletişim kurabiliriz?</p>
+  <div class="sunum-slayt s-zb s-zb-dusun" data-tip="zb">
+    <p class="zb-slayt-ust">💭 DÜŞÜN VE CEVAPLA</p>
+    <p class="zb-slayt-metin">Farklı görüşlere sahip insanlarla nasıl hoşgörüyle iletişim kurabiliriz?</p>
   </div>
+
 
 
   <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--kirmizi)">
@@ -615,10 +669,11 @@
       <li>Ali sevgisi; Hacı Bektaş Veli, Makâlât, dört kapı: Şeriat-Tarikat-Hakikat-Marifet).</li><li>Alevilik Bektaşilik kavramları: Cem (dede/pir önderliğinde toplantı), cemevi (kırklar meydanı), semah (dönerek yapılan ayin), gülbank (dua), musahiplik, talip, ocak.</li><li>Cemde on iki hizmet (dede, rehber, peykçi, çerağcı, gözcü, zakir, sakkacı, pervane, iznikçi, sofracı, bekçi, ferraş) on iki imamı temsil eder.</li>
     </ul>
   </div>
-  <div class="sunum-slayt s-zg s-zg-hayat" data-tip="zg">
-    <p class="zg-slayt-ust">🌍 GERÇEK HAYAT BAĞLANTISI</p>
-    <p class="zg-slayt-metin">Farklı yorumların var olması İslam düşüncesinin zenginliğidir; farklı görüşlere saygı duymak, günlük hayatta da hoşgörülü olmayı öğretir.</p>
+  <div class="sunum-slayt s-zb s-zb-aile" data-tip="zb">
+    <p class="zb-slayt-ust">👨‍👩‍👧 AİLEMLE YAPIYORUM</p>
+    <p class="zb-slayt-metin">Ailenle birlikte çevrenizdeki farklı kültürel/dinî uygulamaları (örneğin farklı bölgelerin gelenekleri) konuşup hoşgörü üzerine sohbet edin.</p>
   </div>
+
 
 
   <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--kirmizi)">
@@ -627,6 +682,16 @@
       <li>Hızır orucu (Şubat 13-14-15) ve Muharrem orucu (Hz. Hüseyin'in Kerbela'da şehadeti anısına) önemli oruçlardır.</li>
     </ul>
   </div>
+  <div class="sunum-slayt s-zb s-zb-degerlendir" data-tip="zb">
+    <p class="zb-slayt-ust">✅ KENDİMİ DEĞERLENDİRİYORUM</p>
+    <ul class="zb-slayt-liste">
+      <li>☐ Mezhep kavramını açıklayabilirim.</li>
+      <li>☐ Tasavvufun ne olduğunu biliyorum.</li>
+      <li>☐ Farklı yorumların ortaya çıkış sebeplerini sayabilirim.</li>
+      <li>☐ Farklı görüşlere karşı hoşgörülü davranmaya özen gösteriyorum.</li>
+    </ul>
+  </div>
+
 
   <div class="sunum-slayt s-kavram" data-tip="kavram">
     <h3>🔑 Önemli Kavramlar (1/2)</h3>
@@ -692,24 +757,31 @@
     <h3 style="color:var(--mavi)">1️⃣ Din Anlayışındaki Yorum Farklılıklarının Sebepleri</h3>
     <p><b>Din anlayışı</b>, insanların Allah'ın buyruklarını algılama, yorumlama ve uygulama biçimidir. Din değişmez (Kur'an ve sünnet), din anlayışı ise kişiye, topluma ve döneme göre değişebilir. Farklılıkların sebepleri: farklı coğrafya/kültürler, dinin temel kaynaklarında yoruma açık hükümler, sosyal-siyasi-insani sebepler, teknolojik gelişmeler, tarihteki savaş ve göçler.</p>
   </div>
-  <div class="zg-kutu zg-bilgi">
-    <p class="zg-baslik">💡 Bilgi Kutusu</p>
-    <p class="zg-metin">Tasavvuf, İslam'ın manevi/ruhi yönünü öne çıkaran bir yorumdur; Mevlana, Yunus Emre, Hacı Bektaş Veli gibi önemli isimleri vardır.</p>
+  <div class="zb-kutu zb-merak">
+    <p class="zb-baslik">🤔 Merak Ettin mi?</p>
+    <p class="zb-metin">Tasavvuf, İslam'ın manevi/ruhi yönünü öne çıkaran bir yorumdur; Mevlana, Yunus Emre, Hacı Bektaş Veli gibi önemli isimleri vardır.</p>
   </div>
+  <div class="zb-kutu zb-yanlis">
+    <p class="zb-baslik">❌ Yanlış Bilinenler</p>
+    <p class="zb-metin zb-yanlis-satir">❌ Bazıları farklı mezhep ve yorumların İslam'ı bölen, olumsuz bir durum olduğunu düşünür.</p>
+    <p class="zb-metin zb-dogru-satir">✅ Farklı yorumlar, Kur'an ve sünnetin farklı âlim ve coğrafyalarda yorumlanmasından doğan doğal bir zenginliktir; temel iman esasları ortaktır.</p>
+  </div>
+
 
 
   <div class="kutu-panel">
     <h3 style="color:var(--mavi)">2️⃣ İslam Düşüncesinde Yorum Biçimleri</h3>
     <p><b>Mezhep</b>, bir âlimin dinin ayrıntılarına ilişkin oluşturduğu görüşlerin bütünüdür. Üç grupta incelenir: <b>İtikadi yorumlar</b> (inançla ilgili — <b>itikat</b>, <b>tevhit</b>): Matüridilik (Ebû Mansur Matüridi), Eşarilik (Ebülhasan Eşâri), Şiilik (Hz. Ali'nin halifeliği). <b>Fıkhi yorumlar</b> (ibadet/muamelat — <b>fıkıh</b>): Hanefilik (Ebu Hanife, Türkiye), Malikilik (Malik bin Enes, Afrika), Şafiilik (İmam Şafii, Mısır/GD Anadolu), Hanbelilik (Ahmet bin Hanbel, Suudi Arabistan), Caferilik (Cafer Sadık, İran). <b>Tasavvufi yorumlar</b> (ahlak).</p>
   </div>
-  <div class="zg-kutu zg-merak">
-    <p class="zg-baslik">🤔 Merak Ettin mi?</p>
-    <p class="zg-metin">Neden İslam düşüncesinde farklı mezhepler ortaya çıkmıştır? Farklı coğrafya, kültür ve âlimlerin Kur'an ve sünneti farklı yöntemlerle yorumlamasından kaynaklanır.</p>
+  <div class="zb-kutu zb-ornek">
+    <p class="zb-baslik">🌍 Gerçek Hayattan Bir Örnek</p>
+    <p class="zb-metin">Farklı bölgelerdeki camilerin mimarisinin farklı olması gibi, İslam düşüncesindeki farklı yorumlar da aynı temel inancın farklı kültürel ifadeleridir.</p>
   </div>
-  <div class="zg-kutu zg-soru">
-    <p class="zg-baslik">❓ Günün Sorusu</p>
-    <p class="zg-metin">Farklı görüşlere sahip insanlarla nasıl hoşgörüyle iletişim kurabiliriz?</p>
+  <div class="zb-kutu zb-dusun">
+    <p class="zb-baslik">💭 Düşün ve Cevapla</p>
+    <p class="zb-metin">Farklı görüşlere sahip insanlarla nasıl hoşgörüyle iletişim kurabiliriz?</p>
   </div>
+
 
 
   <div class="kutu-panel">
@@ -717,10 +789,20 @@
     <p><b>Tasavvuf</b>, İslam'ın ruhi/manevi yönünü öne çıkarır. <b>Şeyh</b> (mürşit) tekkede dervişlere önderlik eder, <b>mürit</b> onu takip eder, <b>tekke/dergâh</b>ta eğitim alınır. Başlıca yorumlar: <b>Yesevilik</b> (Hoca Ahmet Yesevi, Divan-ı Hikmet), <b>Kadirilik</b> (Abdülkadir Geylani, Fütûhu'l-Gayb), <b>Mevlevilik</b> (Mevlana Celaleddin Rumi, Mesnevi, <b>sema</b> ayini, Şebiarus), <b>Nakşibendilik</b> (Bahaeddin Nakşibend), <b>Alevilik Bektaşilik</b> (Hz. Ali sevgisi; Hacı Bektaş Veli, Makâlât, dört kapı: Şeriat-Tarikat-Hakikat-Marifet).</p>
     <p>Alevilik Bektaşilik kavramları: <b>Cem</b> (dede/pir önderliğinde toplantı), <b>cemevi</b> (kırklar meydanı), <b>semah</b> (dönerek yapılan ayin), <b>gülbank</b> (dua), musahiplik, talip, ocak. Cemde on iki hizmet (dede, rehber, peykçi, çerağcı, gözcü, zakir, sakkacı, pervane, iznikçi, sofracı, bekçi, ferraş) on iki imamı temsil eder. Hızır orucu (Şubat 13-14-15) ve Muharrem orucu (Hz. Hüseyin'in Kerbela'da şehadeti anısına) önemli oruçlardır.</p>
   </div>
-  <div class="zg-kutu zg-hayat">
-    <p class="zg-baslik">🌍 Gerçek Hayat Bağlantısı</p>
-    <p class="zg-metin">Farklı yorumların var olması İslam düşüncesinin zenginliğidir; farklı görüşlere saygı duymak, günlük hayatta da hoşgörülü olmayı öğretir.</p>
+  <div class="zb-kutu zb-aile">
+    <p class="zb-baslik">👨‍👩‍👧 Ailemle Yapıyorum</p>
+    <p class="zb-metin">Ailenle birlikte çevrenizdeki farklı kültürel/dinî uygulamaları (örneğin farklı bölgelerin gelenekleri) konuşup hoşgörü üzerine sohbet edin.</p>
   </div>
+  <div class="zb-kutu zb-degerlendir">
+    <p class="zb-baslik">✅ Kendimi Değerlendiriyorum</p>
+    <ul>
+      <li><input type="checkbox" id="deg_7-5_0" onchange="degKaydet('7-5')"><label for="deg_7-5_0">Mezhep kavramını açıklayabilirim.</label></li>
+      <li><input type="checkbox" id="deg_7-5_1" onchange="degKaydet('7-5')"><label for="deg_7-5_1">Tasavvufun ne olduğunu biliyorum.</label></li>
+      <li><input type="checkbox" id="deg_7-5_2" onchange="degKaydet('7-5')"><label for="deg_7-5_2">Farklı yorumların ortaya çıkış sebeplerini sayabilirim.</label></li>
+      <li><input type="checkbox" id="deg_7-5_3" onchange="degKaydet('7-5')"><label for="deg_7-5_3">Farklı görüşlere karşı hoşgörülü davranmaya özen gösteriyorum.</label></li>
+    </ul>
+  </div>
+
 
 </section>
 
@@ -3168,6 +3250,27 @@ function ozelOnay(mesaj, callback){
   btnler[0].onclick = ()=>{ arka.remove(); callback(true); };
   btnler[1].onclick = ()=>{ arka.remove(); callback(false); };
 }
+
+
+// ===================== KENDIMI DEGERLENDIRIYORUM - CHECKBOX KAYDI =====================
+function degOku(uniteKimlik){
+  try{ return JSON.parse(localStorage.getItem('dkabDegerlendirme_'+uniteKimlik)) || {}; }catch(e){ return {}; }
+}
+function degKaydet(uniteKimlik){
+  const durum = {};
+  document.querySelectorAll('[id^="deg_'+uniteKimlik+'_"]').forEach(cb=>{ durum[cb.id] = cb.checked; });
+  try{ localStorage.setItem('dkabDegerlendirme_'+uniteKimlik, JSON.stringify(durum)); }catch(e){}
+}
+function degYukle(uniteKimlik){
+  const durum = degOku(uniteKimlik);
+  Object.keys(durum).forEach(id=>{
+    const cb = document.getElementById(id);
+    if(cb) cb.checked = durum[id];
+  });
+}
+document.addEventListener('DOMContentLoaded', function(){
+  if(typeof UNITE_KIMLIK !== 'undefined') degYukle(UNITE_KIMLIK);
+});
 
 </script>
 </body>

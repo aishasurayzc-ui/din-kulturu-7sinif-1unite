@@ -437,6 +437,51 @@
 .ozel-toast{ position:fixed; bottom:24px; left:50%; transform:translateX(-50%); background:#22333b; color:#fff; padding:14px 22px; border-radius:24px; box-shadow:0 6px 20px rgba(0,0,0,.3); z-index:1000; animation:ozelToastGir .3s ease; font-weight:bold; max-width:80vw; text-align:center; }
 @keyframes ozelToastGir{ from{opacity:0; transform:translateX(-50%) translateY(20px);} to{opacity:1; transform:translateX(-50%) translateY(0);} }
 
+
+/* ===================== 6 BOLUMLU ZENGINLESTIRME (Konu Ozeti) ===================== */
+.zb-kutu{ border-radius:12px; padding:16px 18px; margin:16px 0; box-shadow:0 3px 10px rgba(0,0,0,.08); }
+.zb-baslik{ font-weight:bold; font-size:1.05em; margin:0 0 8px; display:flex; align-items:center; gap:8px; }
+.zb-metin{ margin:0; line-height:1.55; font-size:.97em; }
+.zb-merak{ background:#f3ecfb; border-left:6px solid #7c3aed; }
+.zb-merak .zb-baslik{ color:#7c3aed; }
+.zb-yanlis{ background:#fff0f0; border-left:6px solid #d62828; }
+.zb-yanlis .zb-baslik{ color:#d62828; }
+.zb-yanlis .zb-yanlis-satir{ color:#a31515; margin:4px 0; }
+.zb-yanlis .zb-dogru-satir{ color:#2d6a4f; margin:4px 0; font-weight:bold; }
+.zb-ornek{ background:#eafaf1; border-left:6px solid #40916c; }
+.zb-ornek .zb-baslik{ color:#40916c; }
+.zb-dusun{ background:#fff4e6; border-left:6px solid #f4a261; }
+.zb-dusun .zb-baslik{ color:#c9740b; }
+.zb-aile{ background:#fdeef5; border-left:6px solid #d6336c; }
+.zb-aile .zb-baslik{ color:#d6336c; }
+.zb-degerlendir{ background:#eaf2ff; border-left:6px solid #2a6f97; }
+.zb-degerlendir .zb-baslik{ color:#2a6f97; }
+.zb-degerlendir ul{ list-style:none; padding:0; margin:0; }
+.zb-degerlendir li{ display:flex; align-items:flex-start; gap:8px; margin:8px 0; font-size:.95em; line-height:1.4; }
+.zb-degerlendir input[type=checkbox]{ width:18px; height:18px; margin-top:2px; flex-shrink:0; accent-color:#2a6f97; cursor:pointer; }
+.zb-degerlendir label{ cursor:pointer; }
+
+/* ===================== 6 BOLUMLU ZENGINLESTIRME (Sunum slaytlari) ===================== */
+.s-zb{ color:#22333b; }
+.s-zb-merak{ background:#f3ecfb; }
+.s-zb-yanlis{ background:#fff0f0; }
+.s-zb-ornek{ background:#eafaf1; }
+.s-zb-dusun{ background:#fff4e6; }
+.s-zb-aile{ background:#fdeef5; }
+.s-zb-degerlendir{ background:#eaf2ff; }
+.zb-slayt-ust{ font-weight:bold; letter-spacing:1.5px; font-size:.95em; margin-bottom:14px; }
+.s-zb-merak .zb-slayt-ust{ color:#7c3aed; }
+.s-zb-yanlis .zb-slayt-ust{ color:#d62828; }
+.s-zb-ornek .zb-slayt-ust{ color:#40916c; }
+.s-zb-dusun .zb-slayt-ust{ color:#c9740b; }
+.s-zb-aile .zb-slayt-ust{ color:#d6336c; }
+.s-zb-degerlendir .zb-slayt-ust{ color:#2a6f97; }
+.zb-slayt-metin{ font-size:1.1em; line-height:1.5; max-width:640px; }
+.zb-slayt-yanlis{ color:#a31515; font-size:1em; margin:6px 0; }
+.zb-slayt-dogru{ color:#2d6a4f; font-size:1em; margin:6px 0; font-weight:bold; }
+.zb-slayt-liste{ list-style:none; padding:0; margin:0; text-align:left; max-width:600px; }
+.zb-slayt-liste li{ font-size:1em; margin:8px 0; }
+
 </style>
 </head>
 <body>
@@ -572,6 +617,11 @@
       <li>Ahlak, insanın yaratılışından gelen özellikleriyle iyilik ve mutluluğu hedef alan kuralların hayata geçirilmesiyle kazanılan güzel davranışlardır.</li><li>Değer üstün nitelik ve kıymetlerdir; tutum bir duruma karşı izlenen yoldur; davranış dıştan gözlemlenebilen hareketlerdir.</li><li>Ahlak ilkelerinin iki temel kaynağı Kur'an-ı Kerim ve Hz. Peygamber'in sünnetidir.</li>
     </ul>
   </div>
+  <div class="sunum-slayt s-zb s-zb-merak" data-tip="zb">
+    <p class="zb-slayt-ust">🤔 MERAK ETTİN Mİ?</p>
+    <p class="zb-slayt-metin">Hz. Salih (as), Semud kavmine gönderilmiş, kayadan çıkan dişi deve mucizesiyle desteklenmiş bir peygamberdir.</p>
+  </div>
+
 
   <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--yesil)">
     <h3>📌 Güzel Ahlaki Tutum ve Davranışlar (2/2)</h3>
@@ -579,10 +629,12 @@
       <li>Güzel ahlaki değerler: Adalet (doğruluk, eşitlik, hakkını verme), Dostluk (sevilen, güvenilen kimselerle kurulan bağ), Dürüstlük/Doğruluk (Sıdk — hakikati söyleme), Öz denetim (otokontrol — davranışları denetleme),…</li>
     </ul>
   </div>
-  <div class="sunum-slayt s-zg s-zg-bilgi" data-tip="zg">
-    <p class="zg-slayt-ust">💡 BİLGİ KUTUSU</p>
-    <p class="zg-slayt-metin">Hz. Salih (as), Semud kavmine gönderilmiş, kayadan çıkan dişi deve mucizesiyle desteklenmiş bir peygamberdir.</p>
+  <div class="sunum-slayt s-zb s-zb-yanlis" data-tip="zb">
+    <p class="zb-slayt-ust">❌ YANLIŞ BİLİNENLER</p>
+    <p class="zb-slayt-yanlis">❌ Bazıları öz denetimin (otokontrol) doğuştan gelen, geliştirilemeyen bir özellik olduğunu düşünür.</p>
+    <p class="zb-slayt-dogru">✅ Öz denetim, kişinin çabasıyla geliştirilebilen, önemli bir amaca ulaşmak için anlık isteklerini kontrol edebilme becerisidir.</p>
   </div>
+
 
 
   <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--mavi)">
@@ -591,10 +643,15 @@
       <li>Hz. Salih, babası Ubeyd, Semud kavmine gönderilen peygamberdir.</li><li>Semud kavmi, Âd kavminden sonra Hicr bölgesinde yaşamış, taş oymacılığıyla uğraşan bir kavimdir. Zamanla putperestliğe yönelen kavme Hz.</li><li>Salih tevhidi tebliğ etti.</li>
     </ul>
   </div>
-  <div class="sunum-slayt s-zg s-zg-merak" data-tip="zg">
-    <p class="zg-slayt-ust">🤔 MERAK ETTİN Mİ?</p>
-    <p class="zg-slayt-metin">"Öz denetim" (otokontrol) nedir? Kişinin daha önemli bir amaca ulaşmak için anlık isteklerini kontrol edebilmesidir — örneğin sınav çalışırken oyun oynama isteğini erteleme gibi.</p>
+  <div class="sunum-slayt s-zb s-zb-ornek" data-tip="zb">
+    <p class="zb-slayt-ust">🌍 GERÇEK HAYATTAN BİR ÖRNEK</p>
+    <p class="zb-slayt-metin">Bir öğrencinin sınav öncesi oyun oynama isteğini erteleyip ders çalışması, öz denetimin günlük hayattaki somut bir örneğidir.</p>
   </div>
+  <div class="sunum-slayt s-zb s-zb-dusun" data-tip="zb">
+    <p class="zb-slayt-ust">💭 DÜŞÜN VE CEVAPLA</p>
+    <p class="zb-slayt-metin">Bugün öz denetimini nerede kullandın? Bu sana ne kazandırdı?</p>
+  </div>
+
 
 
   <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--mavi)">
@@ -603,10 +660,11 @@
       <li>Allah, kayadan çıkan dişi bir deveyi mucize olarak gönderdi; kavim deveyi kesince 3 gün sonra korkunç bir uğultulu sesle helak oldular.</li><li>Bu kıssa, Allah'a isyan etmemek için ibret alınması amacıyla anlatılır.</li>
     </ul>
   </div>
-  <div class="sunum-slayt s-zg s-zg-soru" data-tip="zg">
-    <p class="zg-slayt-ust">❓ GÜNÜN SORUSU</p>
-    <p class="zg-slayt-metin">Bugün öz denetimini nerede kullandın?</p>
+  <div class="sunum-slayt s-zb s-zb-aile" data-tip="zb">
+    <p class="zb-slayt-ust">👨‍👩‍👧 AİLEMLE YAPIYORUM</p>
+    <p class="zb-slayt-metin">Ailenle birlikte her birinizin geliştirmek istediği bir öz denetim hedefi (örn. ekran süresini azaltmak) belirleyip bir hafta takip edin.</p>
   </div>
+
 
 
   <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--kirmizi)">
@@ -615,10 +673,16 @@
       <li>Felak suresi, Medine döneminde inmiş, 5 ayetten oluşan Kur'an suresidir. "Felak" sabahın aydınlığı anlamına gelir.</li><li>Yaratılanların, gecenin karanlığının, büyücülerin ve hasetçilerin kötülüğünden Allah'a sığınmayı öğütler.</li><li>Nâs suresiyle birlikte "Muavvizeteyn" (iki koruyucu) diye anılır. Hz. Peygamber yatmadan önce ve namazlardan sonra bu sureyi okumuştur.</li>
     </ul>
   </div>
-  <div class="sunum-slayt s-zg s-zg-hayat" data-tip="zg">
-    <p class="zg-slayt-ust">🌍 GERÇEK HAYAT BAĞLANTISI</p>
-    <p class="zg-slayt-metin">Cömertlik sadece para vermek değildir; zamanını, bilgini, yardımını paylaşmak da cömertliktir.</p>
+  <div class="sunum-slayt s-zb s-zb-degerlendir" data-tip="zb">
+    <p class="zb-slayt-ust">✅ KENDİMİ DEĞERLENDİRİYORUM</p>
+    <ul class="zb-slayt-liste">
+      <li>☐ Öz denetim kavramını açıklayabilirim.</li>
+      <li>☐ Cömertliğin anlamını örneklerle anlatabilirim.</li>
+      <li>☐ Hz. Salih kıssasının ana hatlarını biliyorum.</li>
+      <li>☐ Öz denetimimi geliştirmeye çalışıyorum.</li>
+    </ul>
   </div>
+
 
 
   <div class="sunum-slayt s-kavram" data-tip="kavram">
@@ -686,34 +750,51 @@
     <p><b>Ahlak</b>, insanın yaratılışından gelen özellikleriyle iyilik ve mutluluğu hedef alan kuralların hayata geçirilmesiyle kazanılan güzel davranışlardır. <b>Değer</b> üstün nitelik ve kıymetlerdir; <b>tutum</b> bir duruma karşı izlenen yoldur; <b>davranış</b> dıştan gözlemlenebilen hareketlerdir. Ahlak ilkelerinin iki temel kaynağı Kur'an-ı Kerim ve Hz. Peygamber'in sünnetidir.</p>
     <p>Güzel ahlaki değerler: <b>Adalet</b> (doğruluk, eşitlik, hakkını verme), <b>Dostluk</b> (sevilen, güvenilen kimselerle kurulan bağ), <b>Dürüstlük/Doğruluk</b> (Sıdk — hakikati söyleme), <b>Öz denetim</b> (otokontrol — davranışları denetleme), <b>Sabır</b> (zorluklara özünü bozmadan dayanma), <b>Saygı</b> (kutsala/büyüğe özenli davranma), <b>Sevgi</b> (yakın ilgi ve bağlılık duygusu), <b>Sorumluluk</b> (davranışların sonucunu üstlenme), <b>Vatanseverlik</b> (vatanı sevip koruma — Vatan, Şehit, Gazi kavramları), <b>Yardımseverlik</b> (İnfak, Cömertlik ile muhtaçlara destek).</p>
   </div>
-  <div class="zg-kutu zg-bilgi">
-    <p class="zg-baslik">💡 Bilgi Kutusu</p>
-    <p class="zg-metin">Hz. Salih (as), Semud kavmine gönderilmiş, kayadan çıkan dişi deve mucizesiyle desteklenmiş bir peygamberdir.</p>
+  <div class="zb-kutu zb-merak">
+    <p class="zb-baslik">🤔 Merak Ettin mi?</p>
+    <p class="zb-metin">Hz. Salih (as), Semud kavmine gönderilmiş, kayadan çıkan dişi deve mucizesiyle desteklenmiş bir peygamberdir.</p>
   </div>
+  <div class="zb-kutu zb-yanlis">
+    <p class="zb-baslik">❌ Yanlış Bilinenler</p>
+    <p class="zb-metin zb-yanlis-satir">❌ Bazıları öz denetimin (otokontrol) doğuştan gelen, geliştirilemeyen bir özellik olduğunu düşünür.</p>
+    <p class="zb-metin zb-dogru-satir">✅ Öz denetim, kişinin çabasıyla geliştirilebilen, önemli bir amaca ulaşmak için anlık isteklerini kontrol edebilme becerisidir.</p>
+  </div>
+
 
 
   <div class="kutu-panel">
     <h3 style="color:var(--mavi)">2️⃣ Bir Peygamber Tanıyorum: Hz. Salih (as)</h3>
     <p><b>Hz. Salih</b>, babası Ubeyd, <b>Semud</b> kavmine gönderilen peygamberdir. Semud kavmi, Âd kavminden sonra Hicr bölgesinde yaşamış, taş oymacılığıyla uğraşan bir kavimdir. Zamanla putperestliğe yönelen kavme Hz. Salih tevhidi tebliğ etti. Allah, kayadan çıkan dişi bir deveyi mucize olarak gönderdi; kavim deveyi kesince 3 gün sonra korkunç bir uğultulu sesle helak oldular. Bu <b>kıssa</b>, Allah'a isyan etmemek için ibret alınması amacıyla anlatılır.</p>
   </div>
-  <div class="zg-kutu zg-merak">
-    <p class="zg-baslik">🤔 Merak Ettin mi?</p>
-    <p class="zg-metin">"Öz denetim" (otokontrol) nedir? Kişinin daha önemli bir amaca ulaşmak için anlık isteklerini kontrol edebilmesidir — örneğin sınav çalışırken oyun oynama isteğini erteleme gibi.</p>
+  <div class="zb-kutu zb-ornek">
+    <p class="zb-baslik">🌍 Gerçek Hayattan Bir Örnek</p>
+    <p class="zb-metin">Bir öğrencinin sınav öncesi oyun oynama isteğini erteleyip ders çalışması, öz denetimin günlük hayattaki somut bir örneğidir.</p>
   </div>
-  <div class="zg-kutu zg-soru">
-    <p class="zg-baslik">❓ Günün Sorusu</p>
-    <p class="zg-metin">Bugün öz denetimini nerede kullandın?</p>
+  <div class="zb-kutu zb-dusun">
+    <p class="zb-baslik">💭 Düşün ve Cevapla</p>
+    <p class="zb-metin">Bugün öz denetimini nerede kullandın? Bu sana ne kazandırdı?</p>
   </div>
+
 
 
   <div class="kutu-panel">
     <h3 style="color:var(--mavi)">3️⃣ Bir Sure Tanıyorum: Felak Suresi</h3>
     <p><b>Felak suresi</b>, Medine döneminde inmiş, 5 ayetten oluşan Kur'an suresidir. "Felak" sabahın aydınlığı anlamına gelir. Yaratılanların, gecenin karanlığının, büyücülerin ve hasetçilerin kötülüğünden Allah'a sığınmayı öğütler. Nâs suresiyle birlikte "<b>Muavvizeteyn</b>" (iki koruyucu) diye anılır. Hz. Peygamber yatmadan önce ve namazlardan sonra bu sureyi okumuştur.</p>
   </div>
-  <div class="zg-kutu zg-hayat">
-    <p class="zg-baslik">🌍 Gerçek Hayat Bağlantısı</p>
-    <p class="zg-metin">Cömertlik sadece para vermek değildir; zamanını, bilgini, yardımını paylaşmak da cömertliktir.</p>
+  <div class="zb-kutu zb-aile">
+    <p class="zb-baslik">👨‍👩‍👧 Ailemle Yapıyorum</p>
+    <p class="zb-metin">Ailenle birlikte her birinizin geliştirmek istediği bir öz denetim hedefi (örn. ekran süresini azaltmak) belirleyip bir hafta takip edin.</p>
   </div>
+  <div class="zb-kutu zb-degerlendir">
+    <p class="zb-baslik">✅ Kendimi Değerlendiriyorum</p>
+    <ul>
+      <li><input type="checkbox" id="deg_7-3_0" onchange="degKaydet('7-3')"><label for="deg_7-3_0">Öz denetim kavramını açıklayabilirim.</label></li>
+      <li><input type="checkbox" id="deg_7-3_1" onchange="degKaydet('7-3')"><label for="deg_7-3_1">Cömertliğin anlamını örneklerle anlatabilirim.</label></li>
+      <li><input type="checkbox" id="deg_7-3_2" onchange="degKaydet('7-3')"><label for="deg_7-3_2">Hz. Salih kıssasının ana hatlarını biliyorum.</label></li>
+      <li><input type="checkbox" id="deg_7-3_3" onchange="degKaydet('7-3')"><label for="deg_7-3_3">Öz denetimimi geliştirmeye çalışıyorum.</label></li>
+    </ul>
+  </div>
+
 
 </section>
 
@@ -3160,6 +3241,27 @@ function ozelOnay(mesaj, callback){
   btnler[0].onclick = ()=>{ arka.remove(); callback(true); };
   btnler[1].onclick = ()=>{ arka.remove(); callback(false); };
 }
+
+
+// ===================== KENDIMI DEGERLENDIRIYORUM - CHECKBOX KAYDI =====================
+function degOku(uniteKimlik){
+  try{ return JSON.parse(localStorage.getItem('dkabDegerlendirme_'+uniteKimlik)) || {}; }catch(e){ return {}; }
+}
+function degKaydet(uniteKimlik){
+  const durum = {};
+  document.querySelectorAll('[id^="deg_'+uniteKimlik+'_"]').forEach(cb=>{ durum[cb.id] = cb.checked; });
+  try{ localStorage.setItem('dkabDegerlendirme_'+uniteKimlik, JSON.stringify(durum)); }catch(e){}
+}
+function degYukle(uniteKimlik){
+  const durum = degOku(uniteKimlik);
+  Object.keys(durum).forEach(id=>{
+    const cb = document.getElementById(id);
+    if(cb) cb.checked = durum[id];
+  });
+}
+document.addEventListener('DOMContentLoaded', function(){
+  if(typeof UNITE_KIMLIK !== 'undefined') degYukle(UNITE_KIMLIK);
+});
 
 </script>
 </body>
