@@ -2,7 +2,9 @@
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>7. Sınıf Din Kültürü - 5. Ünite: İslam Düşüncesinde Yorumlar</title>
+<meta name="description" content="7. Sınıf Din Kültürü - 5. Ünite: İslam Düşüncesinde Yorumlar — İnteraktif oyunlar, konu özeti, test ve sunum içeren dijital ders materyali.">
 <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
 <style>
@@ -125,7 +127,7 @@
   .aciklama{ background:#fff8e1; border-left:5px solid var(--sari); padding:10px 14px; margin:14px 0; border-radius:6px;}
   .sonuc-kutusu{ text-align:center; font-size:1.3em; font-weight:bold; margin-top:20px; color:var(--mavi); min-height:1.6em;}
   .balon-durum{ text-align:center; font-size:1.2em; font-weight:bold; margin:10px 0; min-height:28px; }
-  footer{ text-align:center; padding:20px; color:#888; font-size:.85em;}
+  footer{ text-align:center; padding:20px; color:#5f5f5f; font-size:.85em;}
 
   .hafiza-izgara{ display:grid; grid-template-columns:repeat(4,1fr); gap:10px; max-width:520px; margin:16px auto;}
   .hafiza-kart{ position:relative; height:78px; cursor:pointer; }
@@ -310,7 +312,7 @@
 .sb-ust{ letter-spacing:2px; color:var(--sari); font-weight:bold; font-size:.95em; margin:0 0 8px; }
 .sb-baslik{ font-size:1.7em; margin:0 0 14px; }
 .sb-ders{ color:#cbd5e1; margin:2px 0; }
-.sb-ogretmen{ color:#94a3b8; font-style:italic; font-size:.9em; margin:2px 0; }
+.sb-ogretmen{ color:#b8c4d9; font-style:italic; font-size:.9em; margin:2px 0; }
 
 .s-liste{ background:var(--acik); color:#22333b; }
 .s-liste h3{ color:var(--mavi); font-size:1.3em; margin-top:0; }
@@ -425,6 +427,16 @@
   100%{ opacity:0; transform:translate(32px,-125%) scale(1.1) rotate(60deg); }
 }
 
+
+/* ===================== OZEL MODAL / BILDIRIM (alert-confirm yerine) ===================== */
+.ozel-modal-arka{ position:fixed; inset:0; background:rgba(0,0,0,.5); display:flex; align-items:center; justify-content:center; z-index:1000; padding:20px; }
+.ozel-modal-kutu{ background:#fff; border-radius:16px; padding:24px; max-width:360px; text-align:center; box-shadow:0 10px 30px rgba(0,0,0,.35); animation:ozelModalGir .2s ease; }
+@keyframes ozelModalGir{ from{opacity:0; transform:scale(.9);} to{opacity:1; transform:scale(1);} }
+.ozel-modal-mesaj{ margin:0 0 18px; font-size:1.05em; line-height:1.4; }
+.ozel-modal-btn{ padding:10px 20px; border:none; border-radius:20px; font-weight:bold; cursor:pointer; margin:0 6px; font-size:.95em; }
+.ozel-toast{ position:fixed; bottom:24px; left:50%; transform:translateX(-50%); background:#22333b; color:#fff; padding:14px 22px; border-radius:24px; box-shadow:0 6px 20px rgba(0,0,0,.3); z-index:1000; animation:ozelToastGir .3s ease; font-weight:bold; max-width:80vw; text-align:center; }
+@keyframes ozelToastGir{ from{opacity:0; transform:translateX(-50%) translateY(20px);} to{opacity:1; transform:translateX(-50%) translateY(0);} }
+
 </style>
 </head>
 <body>
@@ -435,7 +447,7 @@
   <p>Din Kültürü ve Ahlak Bilgisi — İnteraktif Oyunlar</p>
   <p style="margin-top:10px;font-size:.95em;opacity:.95;">👩‍🏫 Hazırlayan: DKAB Öğretmeni Ayşe Yazıcı</p>
 </header>
-<div class="op-baglanti-satiri"><a onclick="goster('ogretmenpaneli')">🔒 Öğretmen Paneli</a></div>
+<div class="op-baglanti-satiri"><a onclick="goster('ogretmenpaneli')" role="button" aria-label="Öğretmen paneline git">🔒 Öğretmen Paneli</a></div>
 
 <section class="hero">
   <div class="hero-sekiller">
@@ -461,8 +473,8 @@
   <div class="istatistik-kutu"><span class="ist-ikon">📈</span><b id="istTamamlanan">0</b><span class="ist-etiket">Tamamlanan Etkinlik</span></div>
 </div>
 
-<div id="oyun-gruplari">
-<nav class="kategori-nav">
+<div id="oyun-gruplari" role="navigation" aria-label="Ünite bölümleri menüsü">
+<nav class="kategori-nav" role="navigation" aria-label="Ana kategori menüsü">
   <button onclick="kategoriGoster('kat-unite75')" class="kat-aktif">📿 Ünite Konuları</button>
   <button onclick="kategoriGoster('kat-bulmaca75')">🧩 Kelime Bulmacaları</button>
   <button onclick="kategoriGoster('kat-yarisma75')">🎮 Yarışma Oyunları</button>
@@ -535,7 +547,7 @@
   <div class="sunum-sarmal">
     <div class="sunum-ust">
       <span class="sunum-sayac" id="sunumSayac">1 / 15</span>
-      <button class="sunum-tamekran-btn" onclick="sunumTamEkran('')">⛶ Tam Ekran</button>
+      <button class="sunum-tamekran-btn" onclick="sunumTamEkran('')" aria-label="Sunumu tam ekran aç">⛶ Tam Ekran</button>
     </div>
     <div class="sunum-alan" id="sunumAlan">
       
@@ -664,9 +676,9 @@
   </div>
     </div>
     <div class="sunum-nav">
-      <button onclick="sunumGit('',-1)">⬅ Önceki</button>
+      <button onclick="sunumGit('',-1)" aria-label="Önceki slayt">⬅ Önceki</button>
       <div class="sunum-noktalar" id="sunumNoktalar"></div>
-      <button onclick="sunumGit('',1)">Sonraki ➡</button>
+      <button onclick="sunumGit('',1)" aria-label="Sonraki slayt">Sonraki ➡</button>
     </div>
   </div>
 </section>
@@ -3047,7 +3059,7 @@ function opOgrenciAdi(){
 }
 function opOgrenciDegistir(){
   sessionStorage.removeItem('dkabAktifOgrenci');
-  alert('Öğrenci bilgisi sıfırlandı. Bir sonraki oyun tamamlandığında yeni isim sorulacak.');
+  ozelBildirim('Öğrenci bilgisi sıfırlandı. Bir sonraki oyun tamamlandığında yeni isim sorulacak.');
 }
 function opVerileriOku(){
   try{ return JSON.parse(localStorage.getItem(OP_ANAHTAR)) || {}; }catch(e){ return {}; }
@@ -3079,7 +3091,7 @@ function opGirisKontrol(){
     opGirisYapildi = true;
     opPaneliGoster();
   } else if(girilen !== null){
-    alert('Şifre yanlış.');
+    ozelBildirim('Şifre yanlış.');
     document.getElementById('opGirisEkrani').style.display = 'block';
     document.getElementById('opPanelEkrani').style.display = 'none';
   }
@@ -3125,10 +3137,36 @@ function opDetayGoster(btn, ad){
   tr.style.display = tr.style.display === 'none' ? 'table-row' : 'none';
 }
 function opVerileriTemizle(){
-  if(confirm('Bu ünitedeki tüm öğrenci verileri silinecek. Emin misiniz?')){
-    localStorage.removeItem(OP_ANAHTAR);
-    opPaneliGoster();
-  }
+  ozelOnay('Bu ünitedeki tüm öğrenci verileri silinecek. Emin misiniz?', function(onaylandi){
+    if(onaylandi){
+      localStorage.removeItem(OP_ANAHTAR);
+      opPaneliGoster();
+    }
+  });
+}
+
+
+// ===================== OZEL MODAL / BILDIRIM (alert-confirm yerine) =====================
+function ozelBildirim(mesaj){
+  const eski = document.querySelector('.ozel-toast');
+  if(eski) eski.remove();
+  const toast = document.createElement('div');
+  toast.className = 'ozel-toast';
+  toast.textContent = mesaj;
+  document.body.appendChild(toast);
+  setTimeout(()=>toast.remove(), 3200);
+}
+function ozelOnay(mesaj, callback){
+  const arka = document.createElement('div');
+  arka.className = 'ozel-modal-arka';
+  arka.innerHTML = '<div class="ozel-modal-kutu"><p class="ozel-modal-mesaj"></p>' +
+    '<button class="ozel-modal-btn" style="background:var(--kirmizi);color:#fff;">Evet</button>' +
+    '<button class="ozel-modal-btn" style="background:#e2e8f0;">Vazgeç</button></div>';
+  arka.querySelector('.ozel-modal-mesaj').textContent = mesaj;
+  document.body.appendChild(arka);
+  const btnler = arka.querySelectorAll('.ozel-modal-btn');
+  btnler[0].onclick = ()=>{ arka.remove(); callback(true); };
+  btnler[1].onclick = ()=>{ arka.remove(); callback(false); };
 }
 
 </script>
