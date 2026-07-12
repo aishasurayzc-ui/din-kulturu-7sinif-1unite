@@ -280,6 +280,85 @@
     background:var(--mavi); color:white; cursor:pointer; font-weight:bold;
   }
   .labirent-tus:hover{ background:#1c4e6b; }
+
+/* ===================== SUNUM (SLAYT) GORUNUMU ===================== */
+.sunum-sarmal{ max-width:900px; margin:0 auto; }
+.sunum-ust{ display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; }
+.sunum-sayac{ font-weight:bold; color:var(--mavi); background:var(--acikgri); padding:6px 14px; border-radius:16px; font-size:.9em; }
+.sunum-tamekran-btn{ background:var(--navy); color:#fff; border:none; padding:8px 16px; border-radius:16px; cursor:pointer; font-weight:bold; font-size:.9em; }
+.sunum-tamekran-btn:hover{ background:var(--mavi); }
+.sunum-alan{
+  position:relative; width:100%; aspect-ratio:16/9; background:#0d1f2d;
+  border-radius:14px; overflow:hidden; box-shadow:0 6px 24px rgba(0,0,0,.25);
+}
+.sunum-alan:fullscreen{ border-radius:0; aspect-ratio:auto; display:flex; align-items:center; justify-content:center; }
+.sunum-alan:fullscreen .sunum-slayt{ max-width:1400px; max-height:90vh; margin:auto; }
+.sunum-slayt{
+  position:absolute; inset:0; display:none; flex-direction:column; align-items:center; justify-content:center;
+  padding:6% 8%; text-align:center; color:#fff; font-family:"Nunito","Segoe UI",sans-serif;
+  animation:sunumFade .35s ease;
+}
+.sunum-slayt.aktif{ display:flex; }
+@keyframes sunumFade{ from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:translateY(0);} }
+
+.s-baslik, .s-kapanis{ background:linear-gradient(160deg,#1E3A8A,#0d1f2d); }
+.sb-daire{
+  width:90px; height:90px; border-radius:50%; background:var(--sari); color:#1E3A8A;
+  display:flex; align-items:center; justify-content:center; font-size:2.6em; margin-bottom:16px;
+  box-shadow:0 0 0 4px #fff3;
+}
+.sb-ust{ letter-spacing:2px; color:var(--sari); font-weight:bold; font-size:.95em; margin:0 0 8px; }
+.sb-baslik{ font-size:1.7em; margin:0 0 14px; }
+.sb-ders{ color:#cbd5e1; margin:2px 0; }
+.sb-ogretmen{ color:#94a3b8; font-style:italic; font-size:.9em; margin:2px 0; }
+
+.s-liste{ background:var(--acik); color:#22333b; }
+.s-liste h3{ color:var(--mavi); font-size:1.3em; margin-top:0; }
+.sl-liste{ text-align:left; list-style:none; padding:0; margin:0; width:100%; max-width:640px; }
+.sl-liste li{
+  background:#fff; border-left:6px solid var(--mavi); border-radius:8px; padding:10px 16px;
+  margin-bottom:10px; font-size:.95em; box-shadow:0 2px 6px rgba(0,0,0,.08);
+}
+.s-ozet .sl-liste li{ border-left-color:var(--yesil); }
+
+.s-icerik{ background:#fff; color:#22333b; }
+.s-icerik h3{ color:var(--vurgu, var(--mavi)); font-size:1.25em; margin-top:0; }
+.si-liste{ text-align:left; list-style:none; padding:0; margin:0; width:100%; max-width:640px; }
+.si-liste li{
+  background:var(--acikgri); border-left:6px solid var(--vurgu, var(--mavi)); border-radius:8px;
+  padding:10px 16px; margin-bottom:10px; font-size:.92em; line-height:1.4;
+}
+
+.s-kavram{ background:var(--acikgri); color:#22333b; }
+.s-kavram h3{ color:var(--mavi); margin-top:0; }
+.sk-izgara{ display:flex; flex-wrap:wrap; gap:10px; justify-content:center; max-width:700px; }
+.sk-etiket{ color:#fff; font-weight:bold; padding:10px 18px; border-radius:20px; font-size:.9em; box-shadow:0 2px 6px rgba(0,0,0,.15); }
+
+.s-ayet{ background:linear-gradient(160deg,#1E3A8A,#0d1f2d); }
+.sa-ust{ color:var(--sari); font-weight:bold; letter-spacing:2px; font-size:.9em; }
+.sa-meal{ font-size:1.25em; font-style:italic; max-width:640px; line-height:1.5; margin:14px 0; font-family:Georgia,serif; }
+.sa-kaynak{ color:var(--sari); font-weight:bold; }
+
+.s-video{ background:linear-gradient(160deg,#1E3A8A,#0d1f2d); }
+.sv-ust{ color:#8FD9B8; font-weight:bold; letter-spacing:2px; font-size:.9em; margin-bottom:10px; }
+.sv-cerceve{ width:100%; max-width:640px; aspect-ratio:16/9; border-radius:10px; overflow:hidden; border:2px solid var(--sari); box-shadow:0 4px 18px rgba(0,0,0,.4); }
+.sv-cerceve iframe{ width:100%; height:100%; border:none; }
+.sv-baslik{ margin-top:10px; font-size:.95em; color:#e5e7eb; }
+
+.sunum-nav{ display:flex; justify-content:space-between; align-items:center; margin-top:10px; gap:10px; }
+.sunum-nav button{
+  background:var(--mavi); color:#fff; border:none; padding:10px 20px; border-radius:20px;
+  cursor:pointer; font-weight:bold; font-size:.95em;
+}
+.sunum-nav button:hover{ background:var(--yesil); }
+.sunum-nav button:disabled{ opacity:.4; cursor:default; }
+.sunum-noktalar{ display:flex; gap:6px; flex-wrap:wrap; justify-content:center; max-width:400px; }
+.sunum-nokta{ width:9px; height:9px; border-radius:50%; background:#cbd5e1; cursor:pointer; }
+.sunum-nokta.aktif{ background:var(--mavi); }
+@media(max-width:640px){
+  .sb-baslik{ font-size:1.25em; } .sa-meal{ font-size:1em; } .sl-liste li,.si-liste li{ font-size:.85em; }
+}
+
 </style>
 </head>
 <body>
@@ -322,12 +401,12 @@
   <button onclick="kategoriGoster('kat-yarisma75')">🎮 Yarışma Oyunları</button>
   <button onclick="kategoriGoster('kat-mantik75')">🕵️ Mantık &amp; Dedektiflik</button>
   <button onclick="kategoriGoster('kat-macera75')">🌀 Macera</button>
-  <a href="slayt5.pptx" download class="slayt-link">📊 Ders Slaydı</a>
 </nav>
 
 <div class="oyun-grubu aktif" id="kat-unite75">
   <button onclick="goster('ozet75')" class="aktif">📖 Konu Özeti</button>
   <button onclick="goster('konutekrari75')">📝 Konu Tekrarı Testi</button>
+  <button onclick="goster('slayt')">🖥️ Ünite Sunumu</button>
 </div>
 
 <div class="oyun-grubu" id="kat-bulmaca75">
@@ -363,6 +442,129 @@
 </div>
 
 <main>
+<section id="slayt">
+<h2>🖥️ Ünite Sunumu</h2>
+
+  <div class="sunum-sarmal">
+    <div class="sunum-ust">
+      <span class="sunum-sayac" id="sunumSayac">1 / 15</span>
+      <button class="sunum-tamekran-btn" onclick="sunumTamEkran('')">⛶ Tam Ekran</button>
+    </div>
+    <div class="sunum-alan" id="sunumAlan">
+      
+  <div class="sunum-slayt aktif s-baslik" data-tip="baslik">
+    <div class="sb-daire">🕊️</div>
+    <p class="sb-ust">7. SINIF — 5. ÜNİTE</p>
+    <h2 class="sb-baslik">İslam Düşüncesinde Yorumlar</h2>
+    <p class="sb-ders">Din Kültürü ve Ahlak Bilgisi</p>
+    <p class="sb-ogretmen">Ayşe Yazıcı</p>
+  </div>
+
+  <div class="sunum-slayt s-liste" data-tip="hedef">
+    <h3>🎯 Bu Ünitede Neler Öğreneceğiz?</h3>
+    <ul class="sl-liste">
+      <li>Din Anlayışındaki Yorum Farklılıklarının Sebepleri</li><li>İslam Düşüncesinde Yorum Biçimleri</li><li>İslam Düşüncesinde Tasavvufi Yorumlar</li>
+    </ul>
+  </div>
+
+  <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--yesil)">
+    <h3>📌 Din Anlayışındaki Yorum Farklılıklarının Sebepleri</h3>
+    <ul class="si-liste">
+      <li>Din anlayışı, insanların Allah'ın buyruklarını algılama, yorumlama ve uygulama biçimidir.</li><li>Din değişmez (Kur'an ve sünnet), din anlayışı ise kişiye, topluma ve döneme göre değişebilir.</li><li>Farklılıkların sebepleri: farklı coğrafya/kültürler, dinin temel kaynaklarında yoruma açık hükümler, sosyal-siyasi-insani sebepler, teknolojik gelişmeler, tarihteki savaş ve göçler.</li>
+    </ul>
+  </div>
+
+  <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--mavi)">
+    <h3>📌 İslam Düşüncesinde Yorum Biçimleri (1/2)</h3>
+    <ul class="si-liste">
+      <li>Mezhep, bir âlimin dinin ayrıntılarına ilişkin oluşturduğu görüşlerin bütünüdür.</li><li>Üç grupta incelenir: İtikadi yorumlar (inançla ilgili — itikat, tevhit): Matüridilik (Ebû Mansur Matüridi), Eşarilik (Ebülhasan Eşâri), Şiilik (Hz.</li><li>Ali'nin halifeliği).</li>
+    </ul>
+  </div>
+
+  <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--mavi)">
+    <h3>📌 İslam Düşüncesinde Yorum Biçimleri (2/2)</h3>
+    <ul class="si-liste">
+      <li>Fıkhi yorumlar (ibadet/muamelat — fıkıh): Hanefilik (Ebu Hanife, Türkiye), Malikilik (Malik bin Enes, Afrika), Şafiilik (İmam Şafii, Mısır/GD Anadolu), Hanbelilik (Ahmet bin Hanbel, Suudi Arabistan), Caferilik (Cafer…</li><li>Tasavvufi yorumlar (ahlak).</li>
+    </ul>
+  </div>
+
+  <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--kirmizi)">
+    <h3>📌 İslam Düşüncesinde Tasavvufi Yorumlar (1/3)</h3>
+    <ul class="si-liste">
+      <li>Tasavvuf, İslam'ın ruhi/manevi yönünü öne çıkarır.</li><li>Şeyh (mürşit) tekkede dervişlere önderlik eder, mürit onu takip eder, tekke/dergâhta eğitim alınır.</li><li>Başlıca yorumlar: Yesevilik (Hoca Ahmet Yesevi, Divan-ı Hikmet), Kadirilik (Abdülkadir Geylani, Fütûhu'l-Gayb), Mevlevilik (Mevlana Celaleddin Rumi, Mesnevi, sema ayini, Şebiarus), Nakşibendilik (Bahaeddin Nakşibend),…</li>
+    </ul>
+  </div>
+
+  <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--kirmizi)">
+    <h3>📌 İslam Düşüncesinde Tasavvufi Yorumlar (2/3)</h3>
+    <ul class="si-liste">
+      <li>Ali sevgisi; Hacı Bektaş Veli, Makâlât, dört kapı: Şeriat-Tarikat-Hakikat-Marifet).</li><li>Alevilik Bektaşilik kavramları: Cem (dede/pir önderliğinde toplantı), cemevi (kırklar meydanı), semah (dönerek yapılan ayin), gülbank (dua), musahiplik, talip, ocak.</li><li>Cemde on iki hizmet (dede, rehber, peykçi, çerağcı, gözcü, zakir, sakkacı, pervane, iznikçi, sofracı, bekçi, ferraş) on iki imamı temsil eder.</li>
+    </ul>
+  </div>
+
+  <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--kirmizi)">
+    <h3>📌 İslam Düşüncesinde Tasavvufi Yorumlar (3/3)</h3>
+    <ul class="si-liste">
+      <li>Hızır orucu (Şubat 13-14-15) ve Muharrem orucu (Hz. Hüseyin'in Kerbela'da şehadeti anısına) önemli oruçlardır.</li>
+    </ul>
+  </div>
+
+  <div class="sunum-slayt s-kavram" data-tip="kavram">
+    <h3>🔑 Önemli Kavramlar (1/2)</h3>
+    <div class="sk-izgara">
+      <span class="sk-etiket" style="background:var(--yesil)">Din anlayışı</span><span class="sk-etiket" style="background:var(--mavi)">Mezhep</span><span class="sk-etiket" style="background:var(--kirmizi)">İtikadi yorumlar</span><span class="sk-etiket" style="background:var(--turkuaz)">itikat</span><span class="sk-etiket" style="background:#7c3aed">tevhit</span><span class="sk-etiket" style="background:var(--yesil)">Fıkhi yorumlar</span><span class="sk-etiket" style="background:var(--mavi)">fıkıh</span><span class="sk-etiket" style="background:var(--kirmizi)">Tasavvufi yorumlar</span><span class="sk-etiket" style="background:var(--turkuaz)">Tasavvuf</span><span class="sk-etiket" style="background:#7c3aed">Şeyh</span>
+    </div>
+  </div>
+
+  <div class="sunum-slayt s-kavram" data-tip="kavram">
+    <h3>🔑 Önemli Kavramlar (2/2)</h3>
+    <div class="sk-izgara">
+      <span class="sk-etiket" style="background:var(--yesil)">mürit</span><span class="sk-etiket" style="background:var(--mavi)">tekke/dergâh</span><span class="sk-etiket" style="background:var(--kirmizi)">Yesevilik</span><span class="sk-etiket" style="background:var(--turkuaz)">Kadirilik</span><span class="sk-etiket" style="background:#7c3aed">Mevlevilik</span><span class="sk-etiket" style="background:var(--yesil)">sema</span>
+    </div>
+  </div>
+
+  <div class="sunum-slayt s-ayet" data-tip="ayet">
+    <p class="sa-ust">📖 AYETLERLE DÜŞÜNELİM</p>
+    <p class="sa-meal">"De ki: Ben de ancak sizin gibi bir insanım; ancak bana ilâhınızın bir tek ilâh olduğu vahyolunuyor."</p>
+    <p class="sa-kaynak">— Fussilet suresi, 6. ayet</p>
+  </div>
+
+  <div class="sunum-slayt s-ayet" data-tip="ayet">
+    <p class="sa-ust">📖 AYETLERLE DÜŞÜNELİM</p>
+    <p class="sa-meal">"Şüphesiz Allah, adaleti, iyiliği... emreder."</p>
+    <p class="sa-kaynak">— Nahl suresi, 90. ayet</p>
+  </div>
+
+  <div class="sunum-slayt s-video" data-tip="video">
+    <p class="sv-ust">🎬 KONUYLA İLGİLİ VİDEO</p>
+    <div class="sv-cerceve">
+      <iframe src="https://www.youtube.com/embed/RLFpenFUhww" title="Mevlana Celaleddin Rumi - Hoşgörü Çizgi Filmi" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+    </div>
+    <p class="sv-baslik">Mevlana Celaleddin Rumi - Hoşgörü Çizgi Filmi</p>
+  </div>
+
+  <div class="sunum-slayt s-liste s-ozet" data-tip="ozet">
+    <h3>📝 Ünite Özeti</h3>
+    <ul class="sl-liste">
+      <li>Din Anlayışındaki Yorum Farklılıklarının Sebepleri</li><li>İslam Düşüncesinde Yorum Biçimleri</li><li>İslam Düşüncesinde Tasavvufi Yorumlar</li>
+    </ul>
+  </div>
+
+  <div class="sunum-slayt s-kapanis" data-tip="kapanis">
+    <div class="sb-daire">🌟</div>
+    <h2 class="sb-baslik">Dinlediğiniz İçin Teşekkürler</h2>
+    <p class="sb-ders">Başarılar dilerim.</p>
+    <p class="sb-ogretmen">Ayşe Yazıcı — Din Kültürü ve Ahlak Bilgisi Öğretmeni</p>
+  </div>
+    </div>
+    <div class="sunum-nav">
+      <button onclick="sunumGit('',-1)">⬅ Önceki</button>
+      <div class="sunum-noktalar" id="sunumNoktalar"></div>
+      <button onclick="sunumGit('',1)">Sonraki ➡</button>
+    </div>
+  </div>
+</section>
+
 
 <!-- KONU ÖZETİ -->
 <section id="ozet75" class="aktif">
@@ -2643,6 +2845,59 @@ ks75Olustur();
 nonogram75Olustur();
 istatistikleriGuncelleGoster();
 sonucIzlemeBaslat();
+
+// ===================== SUNUM (SLAYT) GORUNUMU JS =====================
+window.sunumDurumu = window.sunumDurumu || {};
+function sunumNoktalariOlustur(suf){
+  const alan = document.getElementById('sunumAlan'+suf);
+  const nokta = document.getElementById('sunumNoktalar'+suf);
+  if(!alan || !nokta) return;
+  const toplam = alan.querySelectorAll('.sunum-slayt').length;
+  nokta.innerHTML = '';
+  for(let i=0;i<toplam;i++){
+    const d = document.createElement('span');
+    d.className = 'sunum-nokta' + (i===0?' aktif':'');
+    d.onclick = function(){ sunumIndexeGit(suf, i); };
+    nokta.appendChild(d);
+  }
+}
+function sunumGuncelle(suf){
+  const alan = document.getElementById('sunumAlan'+suf);
+  if(!alan) return;
+  const slaytlar = alan.querySelectorAll('.sunum-slayt');
+  const idx = sunumDurumu[suf] || 0;
+  slaytlar.forEach(function(s,i){ s.classList.toggle('aktif', i===idx); });
+  const sayac = document.getElementById('sunumSayac'+suf);
+  if(sayac) sayac.textContent = (idx+1)+' / '+slaytlar.length;
+  document.querySelectorAll('#sunumNoktalar'+suf+' .sunum-nokta').forEach(function(n,i){ n.classList.toggle('aktif', i===idx); });
+}
+function sunumIndexeGit(suf, i){
+  sunumDurumu[suf] = i;
+  sunumGuncelle(suf);
+}
+function sunumGit(suf, yon){
+  const alan = document.getElementById('sunumAlan'+suf);
+  if(!alan) return;
+  const toplam = alan.querySelectorAll('.sunum-slayt').length;
+  let idx = (sunumDurumu[suf]||0) + yon;
+  if(idx<0) idx=0;
+  if(idx>=toplam) idx=toplam-1;
+  sunumIndexeGit(suf, idx);
+}
+function sunumTamEkran(suf){
+  const alan = document.getElementById('sunumAlan'+suf);
+  if(!alan) return;
+  if(alan.requestFullscreen) alan.requestFullscreen();
+  else if(alan.webkitRequestFullscreen) alan.webkitRequestFullscreen();
+}
+document.addEventListener('keydown', function(e){
+  const slaytBolumu = document.getElementById('slayt');
+  if(!slaytBolumu || !slaytBolumu.classList.contains('aktif')) return;
+  if(e.key === 'ArrowRight') sunumGit('', 1);
+  if(e.key === 'ArrowLeft') sunumGit('', -1);
+});
+document.addEventListener('DOMContentLoaded', function(){ sunumNoktalariOlustur(''); sunumGuncelle(''); });
+
 </script>
 </body>
 </html>
