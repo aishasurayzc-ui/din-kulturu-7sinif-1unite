@@ -77,6 +77,8 @@
   nav.kategori-nav button{ background:#22333b; color:white; font-size:1em; }
   nav.kategori-nav button:hover{ background:var(--yesil); }
   nav.kategori-nav button.kat-aktif{ background:var(--yesil); }
+  nav.kategori-nav a.slayt-link{ padding:10px 18px; border:none; border-radius:20px; cursor:pointer; font-weight:bold; font-size:1em; color:white; background:#8a5a00; text-decoration:none; display:inline-block; transition:.15s; }
+  nav.kategori-nav a.slayt-link:hover{ background:var(--yesil); }
   .oyun-grubu{
     display:none; flex-wrap:wrap; justify-content:center; gap:10px;
     padding:10px 16px 16px; background:white; box-shadow:0 2px 6px rgba(0,0,0,.08);
@@ -320,6 +322,7 @@
   <button onclick="kategoriGoster('kat-yarisma73')">🎮 Yarışma Oyunları</button>
   <button onclick="kategoriGoster('kat-mantik73')">🕵️ Mantık &amp; Dedektiflik</button>
   <button onclick="kategoriGoster('kat-macera73')">🌀 Macera</button>
+  <a href="slayt3.pptx" download class="slayt-link">📊 Ders Slaydı</a>
 </nav>
 
 <div class="oyun-grubu aktif" id="kat-unite73">
