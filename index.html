@@ -494,6 +494,10 @@
 
 .oyun-amaci{ background:#fff3cd; border-left:5px solid #f4a261; padding:8px 14px; margin:10px 0 14px; border-radius:6px; font-weight:bold; font-size:.92em; color:#7a4a00; }
 
+
+.zb-cevap-alani{ width:100%; box-sizing:border-box; margin-top:10px; padding:10px; border-radius:8px; border:1px solid #d0d0d0; font-family:inherit; font-size:.95em; resize:vertical; min-height:60px; }
+.zb-cevap-not{ font-size:.82em; color:#2a9d8f; font-weight:bold; margin:4px 0 0; min-height:1.1em; }
+
 </style>
 </head>
 <body>
@@ -818,10 +822,14 @@
   <div class="zb-kutu zb-dusun">
     <p class="zb-baslik">💭 Düşün ve Cevapla</p>
     <p class="zb-metin">Ahirete inanmak, bugünkü davranışlarını nasıl etkiliyor?</p>
+  <textarea id="zbAlan_dusun" class="zb-cevap-alani" placeholder="Cevabını buraya yazabilirsin..." onchange="zbCevapKaydet('dusun', this)" aria-label="Cevabını buraya yazabilirsin..."></textarea>
+  <p class="zb-cevap-not" id="zbNot_dusun"></p>
   </div>
   <div class="zb-kutu zb-aile">
     <p class="zb-baslik">👨‍👩‍👧 Ailemle Yapıyorum</p>
     <p class="zb-metin">Ailenle birlikte dört büyük meleğin (Cebrail, Mikâil, İsrafil, Azrail) görevlerini konuşup küçük bir kart oyunu hazırlayın.</p>
+  <textarea id="zbAlan_aile" class="zb-cevap-alani" placeholder="Ailenle yaptığın etkinliği kısaca anlat..." onchange="zbCevapKaydet('aile', this)" aria-label="Ailenle yaptığın etkinliği kısaca anlat..."></textarea>
+  <p class="zb-cevap-not" id="zbNot_aile"></p>
   </div>
 
 
@@ -1369,8 +1377,25 @@ const konuTekrariSorulari7 = [
 ];
 let kt7rIndex = 0, kt7rPuan = 0, kt7rSiraliSorular = [], kt7rKilit = false;
 
+function kt7rZayifAnahtari(){ return 'dkabZayifSorular_' + (typeof UNITE_KIMLIK !== 'undefined' ? UNITE_KIMLIK : location.pathname); }
+function kt7rZayifOku(){
+  try{ return JSON.parse(localStorage.getItem(kt7rZayifAnahtari())) || {}; }catch(e){ return {}; }
+}
+function kt7rZayifKaydet(soruMetni){
+  const v = kt7rZayifOku();
+  v[soruMetni] = (v[soruMetni]||0) + 1;
+  try{ localStorage.setItem(kt7rZayifAnahtari(), JSON.stringify(v)); }catch(e){}
+}
+function kt7rAgirlikliKaristir(sorular){
+  const zayif = kt7rZayifOku();
+  return sorular
+    .map(s => ({s, r: Math.random() - (zayif[s.soru]||0) * 0.15}))
+    .sort((a,b)=>a.r-b.r)
+    .map(x=>x.s);
+}
+
 function kt7rBaslat(){
-  kt7rSiraliSorular = karistir(konuTekrariSorulari7.slice());
+  kt7rSiraliSorular = kt7rAgirlikliKaristir(konuTekrariSorulari7.slice());
   kt7rIndex = 0; kt7rPuan = 0;
   document.getElementById('kt7rPuan').textContent = 0;
   document.getElementById('kt7rToplam').textContent = kt7rSiraliSorular.length;
@@ -1422,6 +1447,7 @@ function kt7rSoruGoster(){
       } else {
         btn.classList.add('yanlis');
         tumBtn[oge.dogru].classList.add('dogru');
+        kt7rZayifKaydet(oge.soru);
       }
       const aciklamaKutu = document.getElementById('kt7rAciklama');
       aciklamaKutu.style.display = 'block';
@@ -3339,6 +3365,45 @@ function degYukle(uniteKimlik){
 document.addEventListener('DOMContentLoaded', function(){
   if(typeof UNITE_KIMLIK !== 'undefined') degYukle(UNITE_KIMLIK);
 });
+
+
+// ===================== DUSUN VE CEVAPLA / AILEMLE YAPIYORUM - CEVAP KAYDI =====================
+function zbCevapAnahtari(tur){ return 'dkabZbCevap_' + (typeof UNITE_KIMLIK !== 'undefined' ? UNITE_KIMLIK : location.pathname) + '_' + tur; }
+function zbCevapKaydet(tur, el){
+  try{ localStorage.setItem(zbCevapAnahtari(tur), el.value); }catch(e){}
+  const not = document.getElementById('zbNot_'+tur);
+  if(not){
+    not.textContent = '✓ Cevabın kaydedildi';
+    clearTimeout(not._zbT);
+    not._zbT = setTimeout(()=>{ not.textContent=''; }, 2500);
+  }
+}
+function zbCevapYukle(){
+  ['dusun','aile'].forEach(tur=>{
+    const el = document.getElementById('zbAlan_'+tur);
+    if(!el) return;
+    try{ const v = localStorage.getItem(zbCevapAnahtari(tur)); if(v) el.value = v; }catch(e){}
+  });
+}
+document.addEventListener('DOMContentLoaded', zbCevapYukle);
+
+
+// ===================== TEKRAR ZAMANI HATIRLATMASI =====================
+function zbTekrarHatirlatmaKontrol(){
+  const uniteKimlik = (typeof UNITE_KIMLIK !== 'undefined') ? UNITE_KIMLIK : location.pathname;
+  const anahtar = 'dkabSonZiyaret_' + uniteKimlik;
+  let son = null;
+  try{ son = localStorage.getItem(anahtar); }catch(e){}
+  const bugun = new Date();
+  if(son){
+    const gecenGun = Math.floor((bugun - new Date(son)) / 86400000);
+    if(gecenGun >= 3 && typeof ozelBildirim === 'function'){
+      setTimeout(()=>{ ozelBildirim('👋 Bu üniteyi ' + gecenGun + ' gündür tekrar etmedin. Hafızanı tazelemek ister misin?'); }, 1500);
+    }
+  }
+  try{ localStorage.setItem(anahtar, bugun.toISOString()); }catch(e){}
+}
+document.addEventListener('DOMContentLoaded', zbTekrarHatirlatmaKontrol);
 
 </script>
 </body>

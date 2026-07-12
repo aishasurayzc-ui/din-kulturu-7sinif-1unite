@@ -494,6 +494,10 @@
 
 .oyun-amaci{ background:#fff3cd; border-left:5px solid #f4a261; padding:8px 14px; margin:10px 0 14px; border-radius:6px; font-weight:bold; font-size:.92em; color:#7a4a00; }
 
+
+.zb-cevap-alani{ width:100%; box-sizing:border-box; margin-top:10px; padding:10px; border-radius:8px; border:1px solid #d0d0d0; font-family:inherit; font-size:.95em; resize:vertical; min-height:60px; }
+.zb-cevap-not{ font-size:.82em; color:#2a9d8f; font-weight:bold; margin:4px 0 0; min-height:1.1em; }
+
 </style>
 </head>
 <body>
@@ -795,6 +799,8 @@
   <div class="zb-kutu zb-dusun">
     <p class="zb-baslik">💭 Düşün ve Cevapla</p>
     <p class="zb-metin">Bugün öz denetimini nerede kullandın? Bu sana ne kazandırdı?</p>
+  <textarea id="zbAlan_dusun" class="zb-cevap-alani" placeholder="Cevabını buraya yazabilirsin..." onchange="zbCevapKaydet('dusun', this)" aria-label="Cevabını buraya yazabilirsin..."></textarea>
+  <p class="zb-cevap-not" id="zbNot_dusun"></p>
   </div>
 
 
@@ -816,6 +822,8 @@
   <div class="zb-kutu zb-aile">
     <p class="zb-baslik">👨‍👩‍👧 Ailemle Yapıyorum</p>
     <p class="zb-metin">Ailenle birlikte her birinizin geliştirmek istediği bir öz denetim hedefi (örn. ekran süresini azaltmak) belirleyip bir hafta takip edin.</p>
+  <textarea id="zbAlan_aile" class="zb-cevap-alani" placeholder="Ailenle yaptığın etkinliği kısaca anlat..." onchange="zbCevapKaydet('aile', this)" aria-label="Ailenle yaptığın etkinliği kısaca anlat..."></textarea>
+  <p class="zb-cevap-not" id="zbNot_aile"></p>
   </div>
   <div class="zb-kutu zb-degerlendir">
     <p class="zb-baslik">✅ Kendimi Değerlendiriyorum</p>
@@ -1345,8 +1353,25 @@ const konuTekrariSorulari73 = [
 ];
 let kt73rIndex = 0, kt73rPuan = 0, kt73rSiraliSorular = [], kt73rKilit = false;
 
+function kt73rZayifAnahtari(){ return 'dkabZayifSorular_' + (typeof UNITE_KIMLIK !== 'undefined' ? UNITE_KIMLIK : location.pathname); }
+function kt73rZayifOku(){
+  try{ return JSON.parse(localStorage.getItem(kt73rZayifAnahtari())) || {}; }catch(e){ return {}; }
+}
+function kt73rZayifKaydet(soruMetni){
+  const v = kt73rZayifOku();
+  v[soruMetni] = (v[soruMetni]||0) + 1;
+  try{ localStorage.setItem(kt73rZayifAnahtari(), JSON.stringify(v)); }catch(e){}
+}
+function kt73rAgirlikliKaristir(sorular){
+  const zayif = kt73rZayifOku();
+  return sorular
+    .map(s => ({s, r: Math.random() - (zayif[s.soru]||0) * 0.15}))
+    .sort((a,b)=>a.r-b.r)
+    .map(x=>x.s);
+}
+
 function kt73rBaslat(){
-  kt73rSiraliSorular = karistir(konuTekrariSorulari73.slice());
+  kt73rSiraliSorular = kt73rAgirlikliKaristir(konuTekrariSorulari73.slice());
   kt73rIndex = 0; kt73rPuan = 0;
   document.getElementById('kt73rPuan').textContent = 0;
   document.getElementById('kt73rToplam').textContent = kt73rSiraliSorular.length;
@@ -1398,6 +1423,7 @@ function kt73rSoruGoster(){
       } else {
         btn.classList.add('yanlis');
         tumBtn[oge.dogru].classList.add('dogru');
+        kt73rZayifKaydet(oge.soru);
       }
       const aciklamaKutu = document.getElementById('kt73rAciklama');
       aciklamaKutu.style.display = 'block';
@@ -3315,6 +3341,45 @@ function degYukle(uniteKimlik){
 document.addEventListener('DOMContentLoaded', function(){
   if(typeof UNITE_KIMLIK !== 'undefined') degYukle(UNITE_KIMLIK);
 });
+
+
+// ===================== DUSUN VE CEVAPLA / AILEMLE YAPIYORUM - CEVAP KAYDI =====================
+function zbCevapAnahtari(tur){ return 'dkabZbCevap_' + (typeof UNITE_KIMLIK !== 'undefined' ? UNITE_KIMLIK : location.pathname) + '_' + tur; }
+function zbCevapKaydet(tur, el){
+  try{ localStorage.setItem(zbCevapAnahtari(tur), el.value); }catch(e){}
+  const not = document.getElementById('zbNot_'+tur);
+  if(not){
+    not.textContent = '✓ Cevabın kaydedildi';
+    clearTimeout(not._zbT);
+    not._zbT = setTimeout(()=>{ not.textContent=''; }, 2500);
+  }
+}
+function zbCevapYukle(){
+  ['dusun','aile'].forEach(tur=>{
+    const el = document.getElementById('zbAlan_'+tur);
+    if(!el) return;
+    try{ const v = localStorage.getItem(zbCevapAnahtari(tur)); if(v) el.value = v; }catch(e){}
+  });
+}
+document.addEventListener('DOMContentLoaded', zbCevapYukle);
+
+
+// ===================== TEKRAR ZAMANI HATIRLATMASI =====================
+function zbTekrarHatirlatmaKontrol(){
+  const uniteKimlik = (typeof UNITE_KIMLIK !== 'undefined') ? UNITE_KIMLIK : location.pathname;
+  const anahtar = 'dkabSonZiyaret_' + uniteKimlik;
+  let son = null;
+  try{ son = localStorage.getItem(anahtar); }catch(e){}
+  const bugun = new Date();
+  if(son){
+    const gecenGun = Math.floor((bugun - new Date(son)) / 86400000);
+    if(gecenGun >= 3 && typeof ozelBildirim === 'function'){
+      setTimeout(()=>{ ozelBildirim('👋 Bu üniteyi ' + gecenGun + ' gündür tekrar etmedin. Hafızanı tazelemek ister misin?'); }, 1500);
+    }
+  }
+  try{ localStorage.setItem(anahtar, bugun.toISOString()); }catch(e){}
+}
+document.addEventListener('DOMContentLoaded', zbTekrarHatirlatmaKontrol);
 
 </script>
 </body>
