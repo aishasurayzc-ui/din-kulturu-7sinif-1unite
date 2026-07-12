@@ -386,6 +386,19 @@
 .s-zg-hayat .zg-slayt-ust{ color:#40916c; }
 .zg-slayt-metin{ font-size:1.15em; line-height:1.55; max-width:640px; }
 
+
+/* ===================== OGRETMEN PANELI ===================== */
+.op-baglanti-satiri{ text-align:center; padding:6px; background:#f1f5f9; }
+.op-baglanti-satiri a{ color:#64748b; font-size:.8em; text-decoration:none; cursor:pointer; }
+.op-baglanti-satiri a:hover{ text-decoration:underline; }
+.op-tablo{ width:100%; border-collapse:collapse; margin:16px 0; font-size:.92em; }
+.op-tablo th{ background:var(--navy); color:#fff; padding:8px 10px; text-align:left; }
+.op-tablo td{ padding:8px 10px; border-bottom:1px solid #e2e8f0; }
+.op-tablo tr:nth-child(4n+1){ background:#f8fafc; }
+.op-detay-btn{ background:var(--mavi); color:#fff; border:none; padding:4px 12px; border-radius:12px; cursor:pointer; font-size:.85em; }
+.op-detay-satir td{ background:#eef2f7; font-size:.88em; }
+#ogretmenpaneli .aciklama{ margin-bottom:14px; }
+
 </style>
 </head>
 <body>
@@ -396,6 +409,7 @@
   <p>Din Kültürü ve Ahlak Bilgisi — İnteraktif Oyunlar</p>
   <p style="margin-top:10px;font-size:.95em;opacity:.95;">👩‍🏫 Hazırlayan: DKAB Öğretmeni Ayşe Yazıcı</p>
 </header>
+<div class="op-baglanti-satiri"><a onclick="goster('ogretmenpaneli')">🔒 Öğretmen Paneli</a></div>
 
 <section class="hero">
   <div class="hero-sekiller">
@@ -469,6 +483,26 @@
 </div>
 
 <main>
+<section id="ogretmenpaneli">
+<h2>🔒 Öğretmen Paneli</h2>
+<div id="opGirisEkrani">
+  <p class="aciklama">Bu panel yalnızca öğretmenler içindir. Devam etmek için giriş yapın.</p>
+  <button class="eylem" onclick="opGirisKontrol()">🔑 Giriş Yap</button>
+</div>
+<div id="opPanelEkrani" style="display:none;">
+  <p class="aciklama">Bu ünitede kayıtlı öğrenci ilerlemesi (yalnızca bu cihazda/tarayıcıda kaydedilen veriler görünür; başka cihazlardan girenler burada listelenmez).</p>
+  <table class="op-tablo">
+    <thead><tr><th>Öğrenci</th><th>Puan</th><th>Tamamlanan Oyun</th><th>Rozetler</th><th>Son Aktivite</th><th></th></tr></thead>
+    <tbody id="opTabloGovde"></tbody>
+  </table>
+  <p id="opBosMesaj" style="display:none;">Henüz kayıtlı öğrenci verisi yok. Bir öğrenci oyun tamamladığında burada görünecek.</p>
+  <div style="display:flex;gap:10px;flex-wrap:wrap;">
+    <button class="eylem" style="background:var(--kirmizi)" onclick="opVerileriTemizle()">🗑️ Verileri Temizle</button>
+    <button class="eylem" onclick="opOgrenciDegistir()">👤 Sıradaki Öğrenciye Geç</button>
+  </div>
+</div>
+</section>
+
 <section id="slayt">
 <h2>🖥️ Ünite Sunumu</h2>
 
@@ -1051,7 +1085,7 @@ function istatistikleriGuncelleGoster(){
   document.getElementById('istRozet').textContent = puanDurumu.rozetler.length;
 }
 
-function oyunTamamlandi(){
+function oyunTamamlandi(bolumId){
   puanDurumu.toplamPuan += 10;
   puanDurumu.tamamlanan++;
   gunlukSeriGuncelle();
@@ -1061,6 +1095,7 @@ function oyunTamamlandi(){
   });
   puanKaydet();
   istatistikleriGuncelleGoster();
+  opOyunTamamlandiKaydet(bolumId, puanDurumu.toplamPuan, puanDurumu.rozetler);
 }
 
 function sonucIzlemeBaslat(){
@@ -1069,7 +1104,7 @@ function sonucIzlemeBaslat(){
       const metin = el.textContent;
       if((metin.includes('🎉') || metin.includes('🏆')) && el.dataset.sonOdul !== metin){
         el.dataset.sonOdul = metin;
-        oyunTamamlandi();
+        oyunTamamlandi(el.closest('section') ? el.closest('section').id : null);
       }
     });
     gozlemci.observe(el, {childList:true, characterData:true, subtree:true});
@@ -1184,7 +1219,12 @@ function kt72rSoruGoster(){
     document.getElementById('kt72rZorluk').textContent = '';
     document.getElementById('kt72rSonrakiBtn').style.display = 'none';
     const yuzde = Math.round((kt72rPuan/kt72rSiraliSorular.length)*100);
-    document.getElementById('kt72rSonuc').textContent = `🎉 Test bitti! ${kt72rPuan}/${kt72rSiraliSorular.length} doğru (%${yuzde})`;
+    let kt72rSeviye;
+    if(yuzde>=90) kt72rSeviye = '🏆 Din Bilgisi Ustası';
+    else if(yuzde>=70) kt72rSeviye = '🥇 Çok Başarılı';
+    else if(yuzde>=50) kt72rSeviye = '🥈 Biraz Daha Çalış';
+    else kt72rSeviye = '📚 Konuyu Tekrar Et';
+    document.getElementById('kt72rSonuc').innerHTML = `🎉 Test bitti!<br><span style="font-size:1.25em;font-weight:bold;">${kt72rSeviye}</span><br>${kt72rPuan}/${kt72rSiraliSorular.length} doğru (%${yuzde})`;
     return;
   }
   kt72rKilit = false;
@@ -2982,6 +3022,108 @@ document.addEventListener('keydown', function(e){
   if(e.key === 'ArrowLeft') sunumGit('', -1);
 });
 document.addEventListener('DOMContentLoaded', function(){ sunumNoktalariOlustur(''); sunumGuncelle(''); });
+
+
+const UNITE_KIMLIK = '7-2';
+
+// ===================== OGRENCI KIMLIGI VE OGRETMEN PANELI =====================
+const OP_ANAHTAR = 'dkabOgretmenPaneli_' + (typeof UNITE_KIMLIK !== 'undefined' ? UNITE_KIMLIK : location.pathname);
+
+function opOgrenciAdi(){
+  let ad = sessionStorage.getItem('dkabAktifOgrenci');
+  if(!ad){
+    ad = prompt('Merhaba! Öğretmenin ilerlemeni takip edebilmesi için adını ve soyadını yazar mısın?');
+    if(!ad || !ad.trim()) ad = 'İsimsiz Öğrenci';
+    ad = ad.trim().slice(0,40);
+    sessionStorage.setItem('dkabAktifOgrenci', ad);
+  }
+  return ad;
+}
+function opOgrenciDegistir(){
+  sessionStorage.removeItem('dkabAktifOgrenci');
+  alert('Öğrenci bilgisi sıfırlandı. Bir sonraki oyun tamamlandığında yeni isim sorulacak.');
+}
+function opVerileriOku(){
+  try{ return JSON.parse(localStorage.getItem(OP_ANAHTAR)) || {}; }catch(e){ return {}; }
+}
+function opVerileriYaz(v){
+  try{ localStorage.setItem(OP_ANAHTAR, JSON.stringify(v)); }catch(e){}
+}
+function opOgrenciKaydiGetir(v, ad){
+  if(!v[ad]) v[ad] = {oyunlar:[], sonPuan:0, sonRozetler:[], ilkTarih:new Date().toLocaleString('tr-TR')};
+  return v[ad];
+}
+function opOyunTamamlandiKaydet(bolumId, toplamPuan, rozetler){
+  const ad = opOgrenciAdi();
+  const v = opVerileriOku();
+  const kayit = opOgrenciKaydiGetir(v, ad);
+  kayit.oyunlar.push({bolum: bolumId || 'bilinmiyor', tarih: new Date().toLocaleString('tr-TR')});
+  kayit.sonPuan = toplamPuan;
+  kayit.sonRozetler = rozetler || [];
+  opVerileriYaz(v);
+}
+
+const OP_SIFRE = 'ogretmen2026';
+let opGirisYapildi = false;
+
+function opGirisKontrol(){
+  if(opGirisYapildi){ opPaneliGoster(); return; }
+  const girilen = prompt('Öğretmen paneline erişim için şifreyi girin:');
+  if(girilen === OP_SIFRE){
+    opGirisYapildi = true;
+    opPaneliGoster();
+  } else if(girilen !== null){
+    alert('Şifre yanlış.');
+    document.getElementById('opGirisEkrani').style.display = 'block';
+    document.getElementById('opPanelEkrani').style.display = 'none';
+  }
+}
+
+function opPaneliGoster(){
+  document.getElementById('opGirisEkrani').style.display = 'none';
+  document.getElementById('opPanelEkrani').style.display = 'block';
+  const v = opVerileriOku();
+  const isimler = Object.keys(v);
+  const govde = document.getElementById('opTabloGovde');
+  const bosMesaj = document.getElementById('opBosMesaj');
+  govde.innerHTML = '';
+  if(isimler.length === 0){
+    bosMesaj.style.display = 'block';
+    return;
+  }
+  bosMesaj.style.display = 'none';
+  isimler.sort((a,b)=> (v[b].oyunlar.length - v[a].oyunlar.length)).forEach(ad=>{
+    const kayit = v[ad];
+    const tr = document.createElement('tr');
+    const sonAktivite = kayit.oyunlar.length ? kayit.oyunlar[kayit.oyunlar.length-1].tarih : '-';
+    const oyunListesi = kayit.oyunlar.map(o=>o.bolum).join(', ');
+    tr.innerHTML = `
+      <td>${ad}</td>
+      <td>${kayit.sonPuan}</td>
+      <td>${kayit.oyunlar.length}</td>
+      <td>${(kayit.sonRozetler||[]).join(' ') || '-'}</td>
+      <td>${sonAktivite}</td>
+      <td><button class="op-detay-btn" onclick="opDetayGoster(this, '${ad.replace(/'/g,"\\'")}')">Detay</button></td>
+    `;
+    govde.appendChild(tr);
+    const detayTr = document.createElement('tr');
+    detayTr.className = 'op-detay-satir';
+    detayTr.style.display = 'none';
+    detayTr.innerHTML = `<td colspan="6"><b>Tamamlanan bölümler:</b> ${esc(oyunListesi) || 'Henüz yok'}</td>`;
+    govde.appendChild(detayTr);
+  });
+}
+function esc(s){ return String(s).replace(/</g,'&lt;'); }
+function opDetayGoster(btn, ad){
+  const tr = btn.closest('tr').nextElementSibling;
+  tr.style.display = tr.style.display === 'none' ? 'table-row' : 'none';
+}
+function opVerileriTemizle(){
+  if(confirm('Bu ünitedeki tüm öğrenci verileri silinecek. Emin misiniz?')){
+    localStorage.removeItem(OP_ANAHTAR);
+    opPaneliGoster();
+  }
+}
 
 </script>
 </body>
