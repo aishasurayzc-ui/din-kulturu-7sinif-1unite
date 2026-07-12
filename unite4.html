@@ -482,6 +482,15 @@
 .zb-slayt-liste{ list-style:none; padding:0; margin:0; text-align:left; max-width:600px; }
 .zb-slayt-liste li{ font-size:1em; margin:8px 0; }
 
+
+.zb-derin{ background:#e6f7f9; border-left:6px solid #0891b2; }
+.zb-derin .zb-baslik{ color:#0891b2; }
+.zb-derin-liste{ list-style:none; padding:0; margin:8px 0 0; }
+.zb-derin-liste li{ font-size:.97em; margin:6px 0; padding-left:20px; position:relative; }
+.zb-derin-liste li::before{ content:'❓'; position:absolute; left:0; }
+.s-zb-derin{ background:#e6f7f9; }
+.s-zb-derin .zb-slayt-ust{ color:#0891b2; }
+
 </style>
 </head>
 <body>
@@ -727,6 +736,16 @@
     <p class="sv-baslik">Hz. Muhammed (s.a.v) - Son Peygamber</p>
   </div>
 
+    <div class="sunum-slayt s-zb s-zb-derin" data-tip="zb">
+    <p class="zb-slayt-ust">🔍 DERİNLEMESİNE DÜŞÜNELİM</p>
+    <ul class="zb-slayt-liste">
+      <li>Bu bilgi benim hayatımı nasıl etkiler?</li>
+      <li>Bu kavram neden önemlidir?</li>
+      <li>Günlük yaşamda bunun karşılığı nedir?</li>
+    </ul>
+  </div>
+
+
   <div class="sunum-slayt s-liste s-ozet" data-tip="ozet">
     <h3>📝 Ünite Özeti</h3>
     <ul class="sl-liste">
@@ -789,6 +808,16 @@
     <h3 style="color:var(--mavi)">3️⃣ Bir Sure Tanıyorum: Kâfirun Suresi</h3>
     <p><b>Kâfirun suresi</b>, Mekke döneminde inmiş, 6 ayetlik suredir; "kâfirun" (inkârcılar) kelimesinden adını alır. Müşrikler "bir sene bizim ilahlarımıza, bir sene de biz seninkine tapalım" teklif edince inmiştir. Mesajı: şirk ile iman asla bir arada olamaz, tevhitten taviz verilemez; "Sizin dininiz size, benim dinim de banadır" diyerek herkesin inancının sorumluluğu kendisine aittir.</p>
   </div>
+  <div class="zb-kutu zb-derin">
+    <p class="zb-baslik">🔍 Derinlemesine Düşünelim</p>
+    <p class="zb-metin">Bu ünitede öğrendiklerini derinlemesine değerlendirmek için kendine şu soruları sor:</p>
+    <ul class="zb-derin-liste">
+      <li>Bu bilgi benim hayatımı nasıl etkiler?</li>
+      <li>Bu kavram neden önemlidir?</li>
+      <li>Günlük yaşamda bunun karşılığı nedir?</li>
+    </ul>
+  </div>
+
   <div class="zb-kutu zb-aile">
     <p class="zb-baslik">👨‍👩‍👧 Ailemle Yapıyorum</p>
     <p class="zb-metin">Ailenle birlikte Hz. Muhammed'in bir hadisini (örneğin "Size iki emanet bırakıyorum...") okuyup anlamı üzerine sohbet edin.</p>
