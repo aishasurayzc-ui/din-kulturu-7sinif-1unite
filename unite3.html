@@ -359,6 +359,33 @@
   .sb-baslik{ font-size:1.25em; } .sa-meal{ font-size:1em; } .sl-liste li,.si-liste li{ font-size:.85em; }
 }
 
+
+/* ===================== ZENGINLESTIRME KUTULARI ===================== */
+.zg-kutu{ border-radius:12px; padding:16px 18px; margin:16px 0; box-shadow:0 3px 10px rgba(0,0,0,.08); }
+.zg-baslik{ font-weight:bold; font-size:1.05em; margin:0 0 8px; display:flex; align-items:center; gap:8px; }
+.zg-metin{ margin:0; line-height:1.55; font-size:.97em; }
+.zg-bilgi{ background:#eaf2ff; border-left:6px solid #2a6f97; }
+.zg-bilgi .zg-baslik{ color:#2a6f97; }
+.zg-merak{ background:#f3ecfb; border-left:6px solid #7c3aed; }
+.zg-merak .zg-baslik{ color:#7c3aed; }
+.zg-soru{ background:#fff4e6; border-left:6px solid #f4a261; }
+.zg-soru .zg-baslik{ color:#c9740b; }
+.zg-hayat{ background:#eafaf1; border-left:6px solid #40916c; }
+.zg-hayat .zg-baslik{ color:#40916c; }
+
+
+.s-zg{ color:#22333b; }
+.s-zg-bilgi{ background:#eaf2ff; }
+.s-zg-merak{ background:#f3ecfb; }
+.s-zg-soru{ background:#fff4e6; }
+.s-zg-hayat{ background:#eafaf1; }
+.zg-slayt-ust{ font-weight:bold; letter-spacing:1.5px; font-size:.95em; margin-bottom:14px; }
+.s-zg-bilgi .zg-slayt-ust{ color:#2a6f97; }
+.s-zg-merak .zg-slayt-ust{ color:#7c3aed; }
+.s-zg-soru .zg-slayt-ust{ color:#c9740b; }
+.s-zg-hayat .zg-slayt-ust{ color:#40916c; }
+.zg-slayt-metin{ font-size:1.15em; line-height:1.55; max-width:640px; }
+
 </style>
 </head>
 <body>
@@ -480,6 +507,11 @@
       <li>Güzel ahlaki değerler: Adalet (doğruluk, eşitlik, hakkını verme), Dostluk (sevilen, güvenilen kimselerle kurulan bağ), Dürüstlük/Doğruluk (Sıdk — hakikati söyleme), Öz denetim (otokontrol — davranışları denetleme),…</li>
     </ul>
   </div>
+  <div class="sunum-slayt s-zg s-zg-bilgi" data-tip="zg">
+    <p class="zg-slayt-ust">💡 BİLGİ KUTUSU</p>
+    <p class="zg-slayt-metin">Hz. Salih (as), Semud kavmine gönderilmiş, kayadan çıkan dişi deve mucizesiyle desteklenmiş bir peygamberdir.</p>
+  </div>
+
 
   <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--mavi)">
     <h3>📌 Bir Peygamber Tanıyorum: Hz. Salih (as) (1/2)</h3>
@@ -487,6 +519,11 @@
       <li>Hz. Salih, babası Ubeyd, Semud kavmine gönderilen peygamberdir.</li><li>Semud kavmi, Âd kavminden sonra Hicr bölgesinde yaşamış, taş oymacılığıyla uğraşan bir kavimdir. Zamanla putperestliğe yönelen kavme Hz.</li><li>Salih tevhidi tebliğ etti.</li>
     </ul>
   </div>
+  <div class="sunum-slayt s-zg s-zg-merak" data-tip="zg">
+    <p class="zg-slayt-ust">🤔 MERAK ETTİN Mİ?</p>
+    <p class="zg-slayt-metin">"Öz denetim" (otokontrol) nedir? Kişinin daha önemli bir amaca ulaşmak için anlık isteklerini kontrol edebilmesidir — örneğin sınav çalışırken oyun oynama isteğini erteleme gibi.</p>
+  </div>
+
 
   <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--mavi)">
     <h3>📌 Bir Peygamber Tanıyorum: Hz. Salih (as) (2/2)</h3>
@@ -494,6 +531,11 @@
       <li>Allah, kayadan çıkan dişi bir deveyi mucize olarak gönderdi; kavim deveyi kesince 3 gün sonra korkunç bir uğultulu sesle helak oldular.</li><li>Bu kıssa, Allah'a isyan etmemek için ibret alınması amacıyla anlatılır.</li>
     </ul>
   </div>
+  <div class="sunum-slayt s-zg s-zg-soru" data-tip="zg">
+    <p class="zg-slayt-ust">❓ GÜNÜN SORUSU</p>
+    <p class="zg-slayt-metin">Bugün öz denetimini nerede kullandın?</p>
+  </div>
+
 
   <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--kirmizi)">
     <h3>📌 Bir Sure Tanıyorum: Felak Suresi</h3>
@@ -501,6 +543,11 @@
       <li>Felak suresi, Medine döneminde inmiş, 5 ayetten oluşan Kur'an suresidir. "Felak" sabahın aydınlığı anlamına gelir.</li><li>Yaratılanların, gecenin karanlığının, büyücülerin ve hasetçilerin kötülüğünden Allah'a sığınmayı öğütler.</li><li>Nâs suresiyle birlikte "Muavvizeteyn" (iki koruyucu) diye anılır. Hz. Peygamber yatmadan önce ve namazlardan sonra bu sureyi okumuştur.</li>
     </ul>
   </div>
+  <div class="sunum-slayt s-zg s-zg-hayat" data-tip="zg">
+    <p class="zg-slayt-ust">🌍 GERÇEK HAYAT BAĞLANTISI</p>
+    <p class="zg-slayt-metin">Cömertlik sadece para vermek değildir; zamanını, bilgini, yardımını paylaşmak da cömertliktir.</p>
+  </div>
+
 
   <div class="sunum-slayt s-kavram" data-tip="kavram">
     <h3>🔑 Önemli Kavramlar (1/2)</h3>
@@ -542,7 +589,6 @@
       <li>Güzel Ahlaki Tutum ve Davranışlar</li><li>Bir Peygamber Tanıyorum: Hz. Salih (as)</li><li>Bir Sure Tanıyorum: Felak Suresi</li>
     </ul>
   </div>
-
   <div class="sunum-slayt s-kapanis" data-tip="kapanis">
     <div class="sb-daire">🌟</div>
     <h2 class="sb-baslik">Dinlediğiniz İçin Teşekkürler</h2>
@@ -568,16 +614,35 @@
     <p><b>Ahlak</b>, insanın yaratılışından gelen özellikleriyle iyilik ve mutluluğu hedef alan kuralların hayata geçirilmesiyle kazanılan güzel davranışlardır. <b>Değer</b> üstün nitelik ve kıymetlerdir; <b>tutum</b> bir duruma karşı izlenen yoldur; <b>davranış</b> dıştan gözlemlenebilen hareketlerdir. Ahlak ilkelerinin iki temel kaynağı Kur'an-ı Kerim ve Hz. Peygamber'in sünnetidir.</p>
     <p>Güzel ahlaki değerler: <b>Adalet</b> (doğruluk, eşitlik, hakkını verme), <b>Dostluk</b> (sevilen, güvenilen kimselerle kurulan bağ), <b>Dürüstlük/Doğruluk</b> (Sıdk — hakikati söyleme), <b>Öz denetim</b> (otokontrol — davranışları denetleme), <b>Sabır</b> (zorluklara özünü bozmadan dayanma), <b>Saygı</b> (kutsala/büyüğe özenli davranma), <b>Sevgi</b> (yakın ilgi ve bağlılık duygusu), <b>Sorumluluk</b> (davranışların sonucunu üstlenme), <b>Vatanseverlik</b> (vatanı sevip koruma — Vatan, Şehit, Gazi kavramları), <b>Yardımseverlik</b> (İnfak, Cömertlik ile muhtaçlara destek).</p>
   </div>
+  <div class="zg-kutu zg-bilgi">
+    <p class="zg-baslik">💡 Bilgi Kutusu</p>
+    <p class="zg-metin">Hz. Salih (as), Semud kavmine gönderilmiş, kayadan çıkan dişi deve mucizesiyle desteklenmiş bir peygamberdir.</p>
+  </div>
+
 
   <div class="kutu-panel">
     <h3 style="color:var(--mavi)">2️⃣ Bir Peygamber Tanıyorum: Hz. Salih (as)</h3>
     <p><b>Hz. Salih</b>, babası Ubeyd, <b>Semud</b> kavmine gönderilen peygamberdir. Semud kavmi, Âd kavminden sonra Hicr bölgesinde yaşamış, taş oymacılığıyla uğraşan bir kavimdir. Zamanla putperestliğe yönelen kavme Hz. Salih tevhidi tebliğ etti. Allah, kayadan çıkan dişi bir deveyi mucize olarak gönderdi; kavim deveyi kesince 3 gün sonra korkunç bir uğultulu sesle helak oldular. Bu <b>kıssa</b>, Allah'a isyan etmemek için ibret alınması amacıyla anlatılır.</p>
   </div>
+  <div class="zg-kutu zg-merak">
+    <p class="zg-baslik">🤔 Merak Ettin mi?</p>
+    <p class="zg-metin">"Öz denetim" (otokontrol) nedir? Kişinin daha önemli bir amaca ulaşmak için anlık isteklerini kontrol edebilmesidir — örneğin sınav çalışırken oyun oynama isteğini erteleme gibi.</p>
+  </div>
+  <div class="zg-kutu zg-soru">
+    <p class="zg-baslik">❓ Günün Sorusu</p>
+    <p class="zg-metin">Bugün öz denetimini nerede kullandın?</p>
+  </div>
+
 
   <div class="kutu-panel">
     <h3 style="color:var(--mavi)">3️⃣ Bir Sure Tanıyorum: Felak Suresi</h3>
     <p><b>Felak suresi</b>, Medine döneminde inmiş, 5 ayetten oluşan Kur'an suresidir. "Felak" sabahın aydınlığı anlamına gelir. Yaratılanların, gecenin karanlığının, büyücülerin ve hasetçilerin kötülüğünden Allah'a sığınmayı öğütler. Nâs suresiyle birlikte "<b>Muavvizeteyn</b>" (iki koruyucu) diye anılır. Hz. Peygamber yatmadan önce ve namazlardan sonra bu sureyi okumuştur.</p>
   </div>
+  <div class="zg-kutu zg-hayat">
+    <p class="zg-baslik">🌍 Gerçek Hayat Bağlantısı</p>
+    <p class="zg-metin">Cömertlik sadece para vermek değildir; zamanını, bilgini, yardımını paylaşmak da cömertliktir.</p>
+  </div>
+
 </section>
 
 <!-- KONU TEKRARI TESTİ -->

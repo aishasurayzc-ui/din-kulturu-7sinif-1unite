@@ -359,6 +359,33 @@
   .sb-baslik{ font-size:1.25em; } .sa-meal{ font-size:1em; } .sl-liste li,.si-liste li{ font-size:.85em; }
 }
 
+
+/* ===================== ZENGINLESTIRME KUTULARI ===================== */
+.zg-kutu{ border-radius:12px; padding:16px 18px; margin:16px 0; box-shadow:0 3px 10px rgba(0,0,0,.08); }
+.zg-baslik{ font-weight:bold; font-size:1.05em; margin:0 0 8px; display:flex; align-items:center; gap:8px; }
+.zg-metin{ margin:0; line-height:1.55; font-size:.97em; }
+.zg-bilgi{ background:#eaf2ff; border-left:6px solid #2a6f97; }
+.zg-bilgi .zg-baslik{ color:#2a6f97; }
+.zg-merak{ background:#f3ecfb; border-left:6px solid #7c3aed; }
+.zg-merak .zg-baslik{ color:#7c3aed; }
+.zg-soru{ background:#fff4e6; border-left:6px solid #f4a261; }
+.zg-soru .zg-baslik{ color:#c9740b; }
+.zg-hayat{ background:#eafaf1; border-left:6px solid #40916c; }
+.zg-hayat .zg-baslik{ color:#40916c; }
+
+
+.s-zg{ color:#22333b; }
+.s-zg-bilgi{ background:#eaf2ff; }
+.s-zg-merak{ background:#f3ecfb; }
+.s-zg-soru{ background:#fff4e6; }
+.s-zg-hayat{ background:#eafaf1; }
+.zg-slayt-ust{ font-weight:bold; letter-spacing:1.5px; font-size:.95em; margin-bottom:14px; }
+.s-zg-bilgi .zg-slayt-ust{ color:#2a6f97; }
+.s-zg-merak .zg-slayt-ust{ color:#7c3aed; }
+.s-zg-soru .zg-slayt-ust{ color:#c9740b; }
+.s-zg-hayat .zg-slayt-ust{ color:#40916c; }
+.zg-slayt-metin{ font-size:1.15em; line-height:1.55; max-width:640px; }
+
 </style>
 </head>
 <body>
@@ -480,6 +507,11 @@
       <li>Mezhep, bir âlimin dinin ayrıntılarına ilişkin oluşturduğu görüşlerin bütünüdür.</li><li>Üç grupta incelenir: İtikadi yorumlar (inançla ilgili — itikat, tevhit): Matüridilik (Ebû Mansur Matüridi), Eşarilik (Ebülhasan Eşâri), Şiilik (Hz.</li><li>Ali'nin halifeliği).</li>
     </ul>
   </div>
+  <div class="sunum-slayt s-zg s-zg-bilgi" data-tip="zg">
+    <p class="zg-slayt-ust">💡 BİLGİ KUTUSU</p>
+    <p class="zg-slayt-metin">Tasavvuf, İslam'ın manevi/ruhi yönünü öne çıkaran bir yorumdur; Mevlana, Yunus Emre, Hacı Bektaş Veli gibi önemli isimleri vardır.</p>
+  </div>
+
 
   <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--mavi)">
     <h3>📌 İslam Düşüncesinde Yorum Biçimleri (2/2)</h3>
@@ -487,6 +519,11 @@
       <li>Fıkhi yorumlar (ibadet/muamelat — fıkıh): Hanefilik (Ebu Hanife, Türkiye), Malikilik (Malik bin Enes, Afrika), Şafiilik (İmam Şafii, Mısır/GD Anadolu), Hanbelilik (Ahmet bin Hanbel, Suudi Arabistan), Caferilik (Cafer…</li><li>Tasavvufi yorumlar (ahlak).</li>
     </ul>
   </div>
+  <div class="sunum-slayt s-zg s-zg-merak" data-tip="zg">
+    <p class="zg-slayt-ust">🤔 MERAK ETTİN Mİ?</p>
+    <p class="zg-slayt-metin">Neden İslam düşüncesinde farklı mezhepler ortaya çıkmıştır? Farklı coğrafya, kültür ve âlimlerin Kur'an ve sünneti farklı yöntemlerle yorumlamasından kaynaklanır.</p>
+  </div>
+
 
   <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--kirmizi)">
     <h3>📌 İslam Düşüncesinde Tasavvufi Yorumlar (1/3)</h3>
@@ -494,6 +531,11 @@
       <li>Tasavvuf, İslam'ın ruhi/manevi yönünü öne çıkarır.</li><li>Şeyh (mürşit) tekkede dervişlere önderlik eder, mürit onu takip eder, tekke/dergâhta eğitim alınır.</li><li>Başlıca yorumlar: Yesevilik (Hoca Ahmet Yesevi, Divan-ı Hikmet), Kadirilik (Abdülkadir Geylani, Fütûhu'l-Gayb), Mevlevilik (Mevlana Celaleddin Rumi, Mesnevi, sema ayini, Şebiarus), Nakşibendilik (Bahaeddin Nakşibend),…</li>
     </ul>
   </div>
+  <div class="sunum-slayt s-zg s-zg-soru" data-tip="zg">
+    <p class="zg-slayt-ust">❓ GÜNÜN SORUSU</p>
+    <p class="zg-slayt-metin">Farklı görüşlere sahip insanlarla nasıl hoşgörüyle iletişim kurabiliriz?</p>
+  </div>
+
 
   <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--kirmizi)">
     <h3>📌 İslam Düşüncesinde Tasavvufi Yorumlar (2/3)</h3>
@@ -501,6 +543,11 @@
       <li>Ali sevgisi; Hacı Bektaş Veli, Makâlât, dört kapı: Şeriat-Tarikat-Hakikat-Marifet).</li><li>Alevilik Bektaşilik kavramları: Cem (dede/pir önderliğinde toplantı), cemevi (kırklar meydanı), semah (dönerek yapılan ayin), gülbank (dua), musahiplik, talip, ocak.</li><li>Cemde on iki hizmet (dede, rehber, peykçi, çerağcı, gözcü, zakir, sakkacı, pervane, iznikçi, sofracı, bekçi, ferraş) on iki imamı temsil eder.</li>
     </ul>
   </div>
+  <div class="sunum-slayt s-zg s-zg-hayat" data-tip="zg">
+    <p class="zg-slayt-ust">🌍 GERÇEK HAYAT BAĞLANTISI</p>
+    <p class="zg-slayt-metin">Farklı yorumların var olması İslam düşüncesinin zenginliğidir; farklı görüşlere saygı duymak, günlük hayatta da hoşgörülü olmayı öğretir.</p>
+  </div>
+
 
   <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--kirmizi)">
     <h3>📌 İslam Düşüncesinde Tasavvufi Yorumlar (3/3)</h3>
@@ -549,7 +596,6 @@
       <li>Din Anlayışındaki Yorum Farklılıklarının Sebepleri</li><li>İslam Düşüncesinde Yorum Biçimleri</li><li>İslam Düşüncesinde Tasavvufi Yorumlar</li>
     </ul>
   </div>
-
   <div class="sunum-slayt s-kapanis" data-tip="kapanis">
     <div class="sb-daire">🌟</div>
     <h2 class="sb-baslik">Dinlediğiniz İçin Teşekkürler</h2>
@@ -574,17 +620,36 @@
     <h3 style="color:var(--mavi)">1️⃣ Din Anlayışındaki Yorum Farklılıklarının Sebepleri</h3>
     <p><b>Din anlayışı</b>, insanların Allah'ın buyruklarını algılama, yorumlama ve uygulama biçimidir. Din değişmez (Kur'an ve sünnet), din anlayışı ise kişiye, topluma ve döneme göre değişebilir. Farklılıkların sebepleri: farklı coğrafya/kültürler, dinin temel kaynaklarında yoruma açık hükümler, sosyal-siyasi-insani sebepler, teknolojik gelişmeler, tarihteki savaş ve göçler.</p>
   </div>
+  <div class="zg-kutu zg-bilgi">
+    <p class="zg-baslik">💡 Bilgi Kutusu</p>
+    <p class="zg-metin">Tasavvuf, İslam'ın manevi/ruhi yönünü öne çıkaran bir yorumdur; Mevlana, Yunus Emre, Hacı Bektaş Veli gibi önemli isimleri vardır.</p>
+  </div>
+
 
   <div class="kutu-panel">
     <h3 style="color:var(--mavi)">2️⃣ İslam Düşüncesinde Yorum Biçimleri</h3>
     <p><b>Mezhep</b>, bir âlimin dinin ayrıntılarına ilişkin oluşturduğu görüşlerin bütünüdür. Üç grupta incelenir: <b>İtikadi yorumlar</b> (inançla ilgili — <b>itikat</b>, <b>tevhit</b>): Matüridilik (Ebû Mansur Matüridi), Eşarilik (Ebülhasan Eşâri), Şiilik (Hz. Ali'nin halifeliği). <b>Fıkhi yorumlar</b> (ibadet/muamelat — <b>fıkıh</b>): Hanefilik (Ebu Hanife, Türkiye), Malikilik (Malik bin Enes, Afrika), Şafiilik (İmam Şafii, Mısır/GD Anadolu), Hanbelilik (Ahmet bin Hanbel, Suudi Arabistan), Caferilik (Cafer Sadık, İran). <b>Tasavvufi yorumlar</b> (ahlak).</p>
   </div>
+  <div class="zg-kutu zg-merak">
+    <p class="zg-baslik">🤔 Merak Ettin mi?</p>
+    <p class="zg-metin">Neden İslam düşüncesinde farklı mezhepler ortaya çıkmıştır? Farklı coğrafya, kültür ve âlimlerin Kur'an ve sünneti farklı yöntemlerle yorumlamasından kaynaklanır.</p>
+  </div>
+  <div class="zg-kutu zg-soru">
+    <p class="zg-baslik">❓ Günün Sorusu</p>
+    <p class="zg-metin">Farklı görüşlere sahip insanlarla nasıl hoşgörüyle iletişim kurabiliriz?</p>
+  </div>
+
 
   <div class="kutu-panel">
     <h3 style="color:var(--mavi)">3️⃣ İslam Düşüncesinde Tasavvufi Yorumlar</h3>
     <p><b>Tasavvuf</b>, İslam'ın ruhi/manevi yönünü öne çıkarır. <b>Şeyh</b> (mürşit) tekkede dervişlere önderlik eder, <b>mürit</b> onu takip eder, <b>tekke/dergâh</b>ta eğitim alınır. Başlıca yorumlar: <b>Yesevilik</b> (Hoca Ahmet Yesevi, Divan-ı Hikmet), <b>Kadirilik</b> (Abdülkadir Geylani, Fütûhu'l-Gayb), <b>Mevlevilik</b> (Mevlana Celaleddin Rumi, Mesnevi, <b>sema</b> ayini, Şebiarus), <b>Nakşibendilik</b> (Bahaeddin Nakşibend), <b>Alevilik Bektaşilik</b> (Hz. Ali sevgisi; Hacı Bektaş Veli, Makâlât, dört kapı: Şeriat-Tarikat-Hakikat-Marifet).</p>
     <p>Alevilik Bektaşilik kavramları: <b>Cem</b> (dede/pir önderliğinde toplantı), <b>cemevi</b> (kırklar meydanı), <b>semah</b> (dönerek yapılan ayin), <b>gülbank</b> (dua), musahiplik, talip, ocak. Cemde on iki hizmet (dede, rehber, peykçi, çerağcı, gözcü, zakir, sakkacı, pervane, iznikçi, sofracı, bekçi, ferraş) on iki imamı temsil eder. Hızır orucu (Şubat 13-14-15) ve Muharrem orucu (Hz. Hüseyin'in Kerbela'da şehadeti anısına) önemli oruçlardır.</p>
   </div>
+  <div class="zg-kutu zg-hayat">
+    <p class="zg-baslik">🌍 Gerçek Hayat Bağlantısı</p>
+    <p class="zg-metin">Farklı yorumların var olması İslam düşüncesinin zenginliğidir; farklı görüşlere saygı duymak, günlük hayatta da hoşgörülü olmayı öğretir.</p>
+  </div>
+
 </section>
 
 <!-- KONU TEKRARI TESTİ -->

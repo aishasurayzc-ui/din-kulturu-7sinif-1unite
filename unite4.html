@@ -359,6 +359,33 @@
   .sb-baslik{ font-size:1.25em; } .sa-meal{ font-size:1em; } .sl-liste li,.si-liste li{ font-size:.85em; }
 }
 
+
+/* ===================== ZENGINLESTIRME KUTULARI ===================== */
+.zg-kutu{ border-radius:12px; padding:16px 18px; margin:16px 0; box-shadow:0 3px 10px rgba(0,0,0,.08); }
+.zg-baslik{ font-weight:bold; font-size:1.05em; margin:0 0 8px; display:flex; align-items:center; gap:8px; }
+.zg-metin{ margin:0; line-height:1.55; font-size:.97em; }
+.zg-bilgi{ background:#eaf2ff; border-left:6px solid #2a6f97; }
+.zg-bilgi .zg-baslik{ color:#2a6f97; }
+.zg-merak{ background:#f3ecfb; border-left:6px solid #7c3aed; }
+.zg-merak .zg-baslik{ color:#7c3aed; }
+.zg-soru{ background:#fff4e6; border-left:6px solid #f4a261; }
+.zg-soru .zg-baslik{ color:#c9740b; }
+.zg-hayat{ background:#eafaf1; border-left:6px solid #40916c; }
+.zg-hayat .zg-baslik{ color:#40916c; }
+
+
+.s-zg{ color:#22333b; }
+.s-zg-bilgi{ background:#eaf2ff; }
+.s-zg-merak{ background:#f3ecfb; }
+.s-zg-soru{ background:#fff4e6; }
+.s-zg-hayat{ background:#eafaf1; }
+.zg-slayt-ust{ font-weight:bold; letter-spacing:1.5px; font-size:.95em; margin-bottom:14px; }
+.s-zg-bilgi .zg-slayt-ust{ color:#2a6f97; }
+.s-zg-merak .zg-slayt-ust{ color:#7c3aed; }
+.s-zg-soru .zg-slayt-ust{ color:#c9740b; }
+.s-zg-hayat .zg-slayt-ust{ color:#40916c; }
+.zg-slayt-metin{ font-size:1.15em; line-height:1.55; max-width:640px; }
+
 </style>
 </head>
 <body>
@@ -480,6 +507,11 @@
       <li>Müşrikler onun bir melek olmasını beklerken Kur'an "De ki: Ben de ancak sizin gibi bir insanım" (Fussilet 6) diyerek bunun yanlışlığını bildirmiştir.</li><li>Kelimeişehadette önce "Allah'ın kulu" sonra "Resulü" denilmesi bu sırayı vurgular.</li>
     </ul>
   </div>
+  <div class="sunum-slayt s-zg s-zg-bilgi" data-tip="zg">
+    <p class="zg-slayt-ust">💡 BİLGİ KUTUSU</p>
+    <p class="zg-slayt-metin">Hz. Muhammed'e "rahmet peygamberi" denmesinin sebebi, Kur'an'daki "Seni ancak âlemlere rahmet olarak gönderdik." ayetidir.</p>
+  </div>
+
 
   <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--mavi)">
     <h3>📌 Allah'ın Elçisi Hz. Muhammed (1/3)</h3>
@@ -487,6 +519,11 @@
       <li>Elçi/Resul/Nebi: insanları hak dine çağıran, vahiy alan peygamber.</li><li>Risalet=elçilik görevi, Nübüvvet=peygamberlik makamı, Tebliğ=vahyi eksiksiz bildirme. Hz.</li><li>Muhammed 40 yaşında peygamber oldu; Hatemülenbiya (peygamberlerin sonuncusu)dır — ondan sonra peygamber gelmeyecektir (Ahzab 40).</li><li>O bir Rahmet (incelik, şefkat, merhamet) peygamberidir: "Biz seni âlemlere ancak rahmet olarak gönderdik" (Enbiya 107).</li>
     </ul>
   </div>
+  <div class="sunum-slayt s-zg s-zg-merak" data-tip="zg">
+    <p class="zg-slayt-ust">🤔 MERAK ETTİN Mİ?</p>
+    <p class="zg-slayt-metin">Hz. Muhammed Taif'te taşlandığında ne yapmıştır? Cebrail'in "isterseniz bu halkı helak edeyim" teklifine karşılık, onları helak etmek istemediğini söylemiştir.</p>
+  </div>
+
 
   <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--mavi)">
     <h3>📌 Allah'ın Elçisi Hz. Muhammed (2/3)</h3>
@@ -494,6 +531,11 @@
       <li>Taif'te taşlanmasına rağmen halkına beddua etmemiştir.</li><li>Kur'an'ı açıklayıcıdır: namazı, haccı, orucu (siyah-beyaz iplik=gece-gündüz), "zulüm"ü (=şirk) açıklamıştır.</li><li>Uyarıcı (Kur'an'da nezir) ve Müjdeleyici (Kur'an'da beşir)dir.</li><li>Güzel ahlakı tamamlamak için gönderilmiştir: "Sen elbette yüce bir ahlak üzeresin" (Kalem 4). Hz.</li>
     </ul>
   </div>
+  <div class="sunum-slayt s-zg s-zg-soru" data-tip="zg">
+    <p class="zg-slayt-ust">❓ GÜNÜN SORUSU</p>
+    <p class="zg-slayt-metin">Hz. Muhammed'in affedicilik örneğinden ne öğrendin?</p>
+  </div>
+
 
   <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--mavi)">
     <h3>📌 Allah'ın Elçisi Hz. Muhammed (3/3)</h3>
@@ -501,6 +543,11 @@
       <li>Hatice peygamberlik gelince onu güzel ahlakından dolayı teselli etmiştir.</li><li>Vahiy meleği Cebrail, ilk vahiy Hira mağarasında geldi. Medine'de Mescid-i Nebevi'yi inşa etti. Hz.</li><li>Peygamber'in söz, fiil ve onayları Sünnettir.</li>
     </ul>
   </div>
+  <div class="sunum-slayt s-zg s-zg-hayat" data-tip="zg">
+    <p class="zg-slayt-ust">🌍 GERÇEK HAYAT BAĞLANTISI</p>
+    <p class="zg-slayt-metin">Kızgın anlarımızda bile affedici ve sabırlı olmayı, Hz. Muhammed'in hayatından örnek alabiliriz.</p>
+  </div>
+
 
   <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--kirmizi)">
     <h3>📌 Bir Sure Tanıyorum: Kâfirun Suresi</h3>
@@ -549,7 +596,6 @@
       <li>Allah'ın Kulu Hz. Muhammed</li><li>Allah'ın Elçisi Hz. Muhammed</li><li>Bir Sure Tanıyorum: Kâfirun Suresi</li>
     </ul>
   </div>
-
   <div class="sunum-slayt s-kapanis" data-tip="kapanis">
     <div class="sb-daire">🌟</div>
     <h2 class="sb-baslik">Dinlediğiniz İçin Teşekkürler</h2>
@@ -574,17 +620,36 @@
     <h3 style="color:var(--mavi)">1️⃣ Allah'ın Kulu Hz. Muhammed</h3>
     <p>Hz. Peygamber'in iki yönü vardır: insani yönü ve peygamberlik yönü. O, bizler gibi bir <b>kul</b> olarak yaratılmış, kulluk görevini hayatı boyunca yerine getirmiştir. Bir anne babadan doğmuş, ticaretle uğraşmış, aile kurmuş, Mekke'de yoksulların hakkını koruyan <b>Hilfülfudul</b> (Erdemliler Topluluğu)'e katılmıştır. Müşrikler onun bir melek olmasını beklerken Kur'an "De ki: Ben de ancak sizin gibi bir insanım" (Fussilet 6) diyerek bunun yanlışlığını bildirmiştir. <b>Kelimeişehadet</b>te önce "Allah'ın kulu" sonra "Resulü" denilmesi bu sırayı vurgular.</p>
   </div>
+  <div class="zg-kutu zg-bilgi">
+    <p class="zg-baslik">💡 Bilgi Kutusu</p>
+    <p class="zg-metin">Hz. Muhammed'e "rahmet peygamberi" denmesinin sebebi, Kur'an'daki "Seni ancak âlemlere rahmet olarak gönderdik." ayetidir.</p>
+  </div>
+
 
   <div class="kutu-panel">
     <h3 style="color:var(--mavi)">2️⃣ Allah'ın Elçisi Hz. Muhammed</h3>
     <p><b>Elçi/Resul/Nebi</b>: insanları hak dine çağıran, vahiy alan peygamber. <b>Risalet</b>=elçilik görevi, <b>Nübüvvet</b>=peygamberlik makamı, <b>Tebliğ</b>=vahyi eksiksiz bildirme. Hz. Muhammed 40 yaşında peygamber oldu; <b>Hatemülenbiya</b> (peygamberlerin sonuncusu)dır — ondan sonra peygamber gelmeyecektir (Ahzab 40). O bir <b>Rahmet</b> (incelik, şefkat, merhamet) peygamberidir: "Biz seni âlemlere ancak rahmet olarak gönderdik" (Enbiya 107). Taif'te taşlanmasına rağmen halkına beddua etmemiştir.</p>
     <p>Kur'an'ı açıklayıcıdır: namazı, haccı, orucu (siyah-beyaz iplik=gece-gündüz), "zulüm"ü (=şirk) açıklamıştır. <b>Uyarıcı</b> (Kur'an'da <b>nezir</b>) ve <b>Müjdeleyici</b> (Kur'an'da <b>beşir</b>)dir. Güzel <b>ahlak</b>ı tamamlamak için gönderilmiştir: "Sen elbette yüce bir ahlak üzeresin" (Kalem 4). Hz. <b>Hatice</b> peygamberlik gelince onu güzel ahlakından dolayı teselli etmiştir. Vahiy meleği <b>Cebrail</b>, ilk vahiy <b>Hira</b> mağarasında geldi. Medine'de <b>Mescid-i Nebevi</b>'yi inşa etti. Hz. Peygamber'in söz, fiil ve onayları <b>Sünnet</b>tir.</p>
   </div>
+  <div class="zg-kutu zg-merak">
+    <p class="zg-baslik">🤔 Merak Ettin mi?</p>
+    <p class="zg-metin">Hz. Muhammed Taif'te taşlandığında ne yapmıştır? Cebrail'in "isterseniz bu halkı helak edeyim" teklifine karşılık, onları helak etmek istemediğini söylemiştir.</p>
+  </div>
+  <div class="zg-kutu zg-soru">
+    <p class="zg-baslik">❓ Günün Sorusu</p>
+    <p class="zg-metin">Hz. Muhammed'in affedicilik örneğinden ne öğrendin?</p>
+  </div>
+
 
   <div class="kutu-panel">
     <h3 style="color:var(--mavi)">3️⃣ Bir Sure Tanıyorum: Kâfirun Suresi</h3>
     <p><b>Kâfirun suresi</b>, Mekke döneminde inmiş, 6 ayetlik suredir; "kâfirun" (inkârcılar) kelimesinden adını alır. Müşrikler "bir sene bizim ilahlarımıza, bir sene de biz seninkine tapalım" teklif edince inmiştir. Mesajı: şirk ile iman asla bir arada olamaz, tevhitten taviz verilemez; "Sizin dininiz size, benim dinim de banadır" diyerek herkesin inancının sorumluluğu kendisine aittir.</p>
   </div>
+  <div class="zg-kutu zg-hayat">
+    <p class="zg-baslik">🌍 Gerçek Hayat Bağlantısı</p>
+    <p class="zg-metin">Kızgın anlarımızda bile affedici ve sabırlı olmayı, Hz. Muhammed'in hayatından örnek alabiliriz.</p>
+  </div>
+
 </section>
 
 <!-- KONU TEKRARI TESTİ -->

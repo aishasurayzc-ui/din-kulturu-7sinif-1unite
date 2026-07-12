@@ -359,6 +359,33 @@
   .sb-baslik{ font-size:1.25em; } .sa-meal{ font-size:1em; } .sl-liste li,.si-liste li{ font-size:.85em; }
 }
 
+
+/* ===================== ZENGINLESTIRME KUTULARI ===================== */
+.zg-kutu{ border-radius:12px; padding:16px 18px; margin:16px 0; box-shadow:0 3px 10px rgba(0,0,0,.08); }
+.zg-baslik{ font-weight:bold; font-size:1.05em; margin:0 0 8px; display:flex; align-items:center; gap:8px; }
+.zg-metin{ margin:0; line-height:1.55; font-size:.97em; }
+.zg-bilgi{ background:#eaf2ff; border-left:6px solid #2a6f97; }
+.zg-bilgi .zg-baslik{ color:#2a6f97; }
+.zg-merak{ background:#f3ecfb; border-left:6px solid #7c3aed; }
+.zg-merak .zg-baslik{ color:#7c3aed; }
+.zg-soru{ background:#fff4e6; border-left:6px solid #f4a261; }
+.zg-soru .zg-baslik{ color:#c9740b; }
+.zg-hayat{ background:#eafaf1; border-left:6px solid #40916c; }
+.zg-hayat .zg-baslik{ color:#40916c; }
+
+
+.s-zg{ color:#22333b; }
+.s-zg-bilgi{ background:#eaf2ff; }
+.s-zg-merak{ background:#f3ecfb; }
+.s-zg-soru{ background:#fff4e6; }
+.s-zg-hayat{ background:#eafaf1; }
+.zg-slayt-ust{ font-weight:bold; letter-spacing:1.5px; font-size:.95em; margin-bottom:14px; }
+.s-zg-bilgi .zg-slayt-ust{ color:#2a6f97; }
+.s-zg-merak .zg-slayt-ust{ color:#7c3aed; }
+.s-zg-soru .zg-slayt-ust{ color:#c9740b; }
+.s-zg-hayat .zg-slayt-ust{ color:#40916c; }
+.zg-slayt-metin{ font-size:1.15em; line-height:1.55; max-width:640px; }
+
 </style>
 </head>
 <body>
@@ -480,6 +507,11 @@
       <li>Hurafe ve batıl inanç, akla aykırı, din adına öne sürülen uydurma sözlerdir.</li><li>Sihir, hile yapıp insanları aldatmadır; fal, geleceği öğrenmek amacıyla nesnelere bakarak anlam çıkarmadır.</li><li>Bunlar genelde cahillikten ve dinî bilgi eksikliğinden kaynaklanır, kişisel ve toplumsal zararları vardır.</li>
     </ul>
   </div>
+  <div class="sunum-slayt s-zg s-zg-bilgi" data-tip="zg">
+    <p class="zg-slayt-ust">💡 BİLGİ KUTUSU</p>
+    <p class="zg-slayt-metin">Dört büyük melek vardır: Cebrail (vahiy getirir), Mikâil (rızık/tabiat olayları), İsrafil (sûra üfler), Azrail (canları alır).</p>
+  </div>
+
 
   <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--mavi)">
     <h3>📌 Melekler ve Özellikleri (1/2)</h3>
@@ -487,6 +519,11 @@
       <li>Melek, nurdan yaratılmış, cinsiyeti olmayan, Allah'ın emirlerine tam itaat eden, görülemeyen varlıktır.</li><li>Meleklere iman, imanın altı şartından biridir.</li><li>Dört büyük melek: Cebrail (vahiy meleği, Allah'ın emirlerini peygamberlere iletir), Azrail (ölüm meleği, canları alır), Mikâil (tabiat olaylarını düzenler, rızkı dağıtır), İsrafil (sûra üfleyen melek).</li>
     </ul>
   </div>
+  <div class="sunum-slayt s-zg s-zg-merak" data-tip="zg">
+    <p class="zg-slayt-ust">🤔 MERAK ETTİN Mİ?</p>
+    <p class="zg-slayt-metin">Kiramen Kâtibin melekleri ne iş yapar? İnsanların sağında ve solunda bulunup yaptıkları her iyilik ve kötülüğü kaydederler.</p>
+  </div>
+
 
   <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--mavi)">
     <h3>📌 Melekler ve Özellikleri (2/2)</h3>
@@ -501,6 +538,11 @@
       <li>Ahiret, dünya yaşamından sonraki hayattır; imanın şartlarından biridir.</li><li>Aşamaları sırasıyla: Ölüm (ecel: belirlenen zaman) → Berzah (kabir hayatı, sadece insanlar için geçerlidir) → Kıyamet (evrenin yok olması, İsrafil'in ilk üflemesi) → Diriliş/Baas (İsrafil'in ikinci üflemesi) →…</li>
     </ul>
   </div>
+  <div class="sunum-slayt s-zg s-zg-soru" data-tip="zg">
+    <p class="zg-slayt-ust">❓ GÜNÜN SORUSU</p>
+    <p class="zg-slayt-metin">Ahirete inanmak, bugünkü davranışlarını nasıl etkiliyor?</p>
+  </div>
+
 
   <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--turkuaz)">
     <h3>📌 Ahiret İnancının Etkisi ve Hz. İsa (as) (1/2)</h3>
@@ -508,6 +550,11 @@
       <li>Ahiret inancı olan insan iyilik yapmaya gayret eder, hesap vereceğinin bilinciyle hareket eder, sabreder ve Allah'ın affediciliğine güvenir.</li><li>Hz. İsa, Nasıra'da babasız doğdu; annesi Hz. Meryem'dir (Kur'an'da adı geçen tek kadın).</li><li>İsrailoğullarına gönderildi, kendisine İncil verildi. Ona inanan 12 kişiye havari denir.</li>
     </ul>
   </div>
+  <div class="sunum-slayt s-zg s-zg-hayat" data-tip="zg">
+    <p class="zg-slayt-ust">🌍 GERÇEK HAYAT BAĞLANTISI</p>
+    <p class="zg-slayt-metin">Her davranışımızın kaydedildiğini bilmek, günlük hayatta daha dikkatli ve sorumlu davranmamızı sağlar.</p>
+  </div>
+
 
   <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--turkuaz)">
     <h3>📌 Ahiret İnancının Etkisi ve Hz. İsa (as) (2/2)</h3>
@@ -556,7 +603,6 @@
       <li>Görülen ve Görülemeyen Varlıklar</li><li>Melekler ve Özellikleri</li><li>Dünya ve Ahiret Hayatı, Ahiretin Aşamaları</li><li>Ahiret İnancının Etkisi ve Hz. İsa (as)</li>
     </ul>
   </div>
-
   <div class="sunum-slayt s-kapanis" data-tip="kapanis">
     <div class="sb-daire">🌟</div>
     <h2 class="sb-baslik">Dinlediğiniz İçin Teşekkürler</h2>
@@ -582,23 +628,43 @@
     <p><b>Âlem</b>, akıl ve duyu organlarıyla bilinebilen veya varlığı düşünülebilen, Allah'ın dışındaki tüm varlıklara verilen isimdir. <b>Gayb</b>, gözle görülemeyen, duyularımızla bilgi edinemeyeceğimiz varlıklar âlemidir; bunu ancak Allah'ın bildirmesiyle biliriz. Gayb âleminde <b>cin</b> (irade sahibi, ateşten yaratılan varlık), <b>şeytan</b> (Âdem'e secde emrine isyan edip kovulan varlık) ve <b>melek</b>ler bulunur.</p>
     <p><b>Hurafe</b> ve batıl inanç, akla aykırı, din adına öne sürülen uydurma sözlerdir. <b>Sihir</b>, hile yapıp insanları aldatmadır; <b>fal</b>, geleceği öğrenmek amacıyla nesnelere bakarak anlam çıkarmadır. Bunlar genelde cahillikten ve dinî bilgi eksikliğinden kaynaklanır, kişisel ve toplumsal zararları vardır.</p>
   </div>
+  <div class="zg-kutu zg-bilgi">
+    <p class="zg-baslik">💡 Bilgi Kutusu</p>
+    <p class="zg-metin">Dört büyük melek vardır: Cebrail (vahiy getirir), Mikâil (rızık/tabiat olayları), İsrafil (sûra üfler), Azrail (canları alır).</p>
+  </div>
+
 
   <div class="kutu-panel">
     <h3 style="color:var(--mavi)">2️⃣ Melekler ve Özellikleri</h3>
     <p><b>Melek</b>, nurdan yaratılmış, cinsiyeti olmayan, Allah'ın emirlerine tam itaat eden, görülemeyen varlıktır. Meleklere iman, imanın altı şartından biridir. Dört büyük melek: <b>Cebrail</b> (vahiy meleği, Allah'ın emirlerini peygamberlere iletir), <b>Azrail</b> (ölüm meleği, canları alır), <b>Mikâil</b> (tabiat olaylarını düzenler, rızkı dağıtır), <b>İsrafil</b> (sûra üfleyen melek).</p>
     <p>Diğer melekler: <b>Kiramen Kâtibin</b> (yazıcı melekler, iyilik-kötülükleri kaydeder), <b>Hafaza</b> (koruyucu melekler), Rahmet melekleri (müminler için dua eder), <b>Münker ve Nekir</b> (sorgu melekleri, kabirde sorgular).</p>
   </div>
+  <div class="zg-kutu zg-merak">
+    <p class="zg-baslik">🤔 Merak Ettin mi?</p>
+    <p class="zg-metin">Kiramen Kâtibin melekleri ne iş yapar? İnsanların sağında ve solunda bulunup yaptıkları her iyilik ve kötülüğü kaydederler.</p>
+  </div>
+
 
   <div class="kutu-panel">
     <h3 style="color:var(--mavi)">3️⃣ Dünya ve Ahiret Hayatı, Ahiretin Aşamaları</h3>
     <p><b>Ahiret</b>, dünya yaşamından sonraki hayattır; imanın şartlarından biridir. Aşamaları sırasıyla: Ölüm (<b>ecel</b>: belirlenen zaman) → <b>Berzah</b> (kabir hayatı, sadece insanlar için geçerlidir) → <b>Kıyamet</b> (evrenin yok olması, İsrafil'in ilk üflemesi) → Diriliş/<b>Baas</b> (İsrafil'in ikinci üflemesi) → <b>Haşir</b>/<b>Mahşer</b> (toplanma) → Hesap/<b>Mizan</b> (amellerin tartılması) → <b>Cennet</b> veya <b>Cehennem</b>.</p>
   </div>
+  <div class="zg-kutu zg-soru">
+    <p class="zg-baslik">❓ Günün Sorusu</p>
+    <p class="zg-metin">Ahirete inanmak, bugünkü davranışlarını nasıl etkiliyor?</p>
+  </div>
+
 
   <div class="kutu-panel">
     <h3 style="color:var(--mavi)">4️⃣ Ahiret İnancının Etkisi ve Hz. İsa (as)</h3>
     <p>Ahiret inancı olan insan iyilik yapmaya gayret eder, hesap vereceğinin bilinciyle hareket eder, sabreder ve Allah'ın affediciliğine güvenir. <b>Hz. İsa</b>, Nasıra'da babasız doğdu; annesi Hz. Meryem'dir (Kur'an'da adı geçen tek kadın). İsrailoğullarına gönderildi, kendisine <b>İncil</b> verildi. Ona inanan 12 kişiye <b>havari</b> denir. Yahudiler onu öldürmek istedi ama Allah onu kurtardı, benzeri öldürüldü. Sonradan Hristiyanlar <b>teslis</b> inancını ortaya attı.</p>
     <p><b>Nâs suresi</b>, Kur'an'ın 114. ve son suresidir, Mekke'de inmiştir, 6 ayettir. Felak suresiyle birlikte "Muavvizeteyn" denir. Şeytanın ve insanların kalbine <b>vesvese</b> veren varlıkların şerrinden Allah'a sığınmayı öğütler.</p>
   </div>
+  <div class="zg-kutu zg-hayat">
+    <p class="zg-baslik">🌍 Gerçek Hayat Bağlantısı</p>
+    <p class="zg-metin">Her davranışımızın kaydedildiğini bilmek, günlük hayatta daha dikkatli ve sorumlu davranmamızı sağlar.</p>
+  </div>
+
 </section>
 
 <!-- KONU TEKRARI TESTİ -->
