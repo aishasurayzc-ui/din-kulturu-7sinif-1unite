@@ -504,6 +504,10 @@
 .kutu-kazanim ul{ margin:0; padding-left:22px; }
 .kutu-kazanim li{ margin-bottom:6px; }
 
+
+.zb-ikilem{ background:#eefcf3; border-left:6px solid #0f9d58; }
+.zb-ikilem .zb-baslik{ color:#0f7a44; }
+
 </style>
 </head>
 <body>
@@ -859,6 +863,12 @@
       <li>Bu kavram neden önemlidir?</li>
       <li>Günlük yaşamda bunun karşılığı nedir?</li>
     </ul>
+  </div>
+  <div class="zb-kutu zb-ikilem">
+    <p class="zb-baslik">⚖️ Ahlaki İkilem — Sen Olsaydın Ne Yapardın?</p>
+    <p class="zb-metin">Kurban bayramında hayvan kesmek yerine parasını doğrudan bağışlamanın daha "mantıklı" olduğunu söyleyen bir arkadaşın var. Kurbanın ekonomik boyutunun yanı sıra ibadet ve dayanışma boyutunu düşünerek ona ne söylerdin?</p>
+    <textarea id="zbAlan_ikilem" class="zb-cevap-alani" placeholder="Ne yapardın ve neden? Düşünceni buraya yazabilirsin..." onchange="zbCevapKaydet('ikilem', this)" aria-label="Ahlaki ikilem cevabın"></textarea>
+    <p class="zb-cevap-not" id="zbNot_ikilem"></p>
   </div>
 
   <div class="zb-kutu zb-degerlendir">
@@ -3404,7 +3414,7 @@ function zbCevapKaydet(tur, el){
   }
 }
 function zbCevapYukle(){
-  ['dusun','aile'].forEach(tur=>{
+  ['dusun','aile','ikilem'].forEach(tur=>{
     const el = document.getElementById('zbAlan_'+tur);
     if(!el) return;
     try{ const v = localStorage.getItem(zbCevapAnahtari(tur)); if(v) el.value = v; }catch(e){}
