@@ -399,6 +399,32 @@
 .op-detay-satir td{ background:#eef2f7; font-size:.88em; }
 #ogretmenpaneli .aciklama{ margin-bottom:14px; }
 
+
+/* ===================== DOGRU CEVAPTA YILDIZ + KONFETI PATLAMASI ===================== */
+.dogru{ position:relative; overflow:visible !important; }
+.dogru::before{
+  content:'⭐';
+  position:absolute; top:50%; left:-4px; font-size:1.5em;
+  animation: dogruPatlamaSol .9s ease-out forwards;
+  pointer-events:none; z-index:5;
+}
+.dogru::after{
+  content:'🎊';
+  position:absolute; top:50%; right:-4px; font-size:1.5em;
+  animation: dogruPatlamaSag .9s ease-out forwards;
+  pointer-events:none; z-index:5;
+}
+@keyframes dogruPatlamaSol{
+  0%{ opacity:0; transform:translate(0,-50%) scale(0) rotate(0deg); }
+  25%{ opacity:1; transform:translate(-10px,-70%) scale(1.4) rotate(-20deg); }
+  100%{ opacity:0; transform:translate(-32px,-125%) scale(1.1) rotate(-60deg); }
+}
+@keyframes dogruPatlamaSag{
+  0%{ opacity:0; transform:translate(0,-50%) scale(0) rotate(0deg); }
+  25%{ opacity:1; transform:translate(10px,-70%) scale(1.4) rotate(20deg); }
+  100%{ opacity:0; transform:translate(32px,-125%) scale(1.1) rotate(60deg); }
+}
+
 </style>
 </head>
 <body>
