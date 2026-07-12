@@ -508,6 +508,15 @@
 .zb-ikilem{ background:#eefcf3; border-left:6px solid #0f9d58; }
 .zb-ikilem .zb-baslik{ color:#0f7a44; }
 
+
+.kavram-harita-panel .kavram-harita-aciklama{ font-size:.9em; color:#555; margin-bottom:6px; }
+.kavram-harita{ display:flex; flex-direction:column; align-items:center; margin-top:18px; }
+.kh-merkez{ background:#7c3aed; color:#fff; font-weight:bold; padding:12px 22px; border-radius:30px; box-shadow:0 4px 10px rgba(124,58,237,.35); position:relative; margin-bottom:26px; text-align:center; max-width:80%; }
+.kh-merkez::after{ content:''; position:absolute; bottom:-22px; left:50%; width:2px; height:22px; background:#c4b5fd; }
+.kh-dallar{ display:flex; flex-wrap:wrap; justify-content:center; gap:20px 16px; }
+.kh-kavram{ background:#f3eefc; border:2px solid #c4b5fd; color:#5b21b6; font-weight:bold; padding:8px 16px; border-radius:20px; position:relative; }
+.kh-kavram::before{ content:''; position:absolute; top:-16px; left:50%; width:2px; height:16px; background:#c4b5fd; }
+
 </style>
 </head>
 <body>
@@ -901,6 +910,19 @@
       <li><b>7.2.5</b> — Hz. İsmail'in (a.s.) hayatını ana hatlarıyla tanır.</li>
       <li><b>7.2.6</b> — En'âm suresi 162. ayeti okur, anlamını söyler.</li>
     </ul>
+  </div>
+
+  <div class="kutu-panel kavram-harita-panel">
+    <h3 style="color:#5b21b6">🗺️ Kavram Haritası</h3>
+    <p class="kavram-harita-aciklama">Bu ünitenin MEB öğretim programında belirlenen anahtar kavramları, ünite temasıyla bağlantılı olarak aşağıda gösterilmiştir.</p>
+    <div class="kavram-harita">
+      <div class="kh-merkez">Hac ve Kurban</div>
+      <div class="kh-dallar">
+      <div class="kh-kavram">Hac</div>
+      <div class="kh-kavram">Umre</div>
+      <div class="kh-kavram">Kurban</div>
+      </div>
+    </div>
   </div>
   <div class="oyun-bilgi">
     <span>🗂️ Soru: <b id="kt72rTur">1</b>/<b id="kt72rToplam">50</b></span>
